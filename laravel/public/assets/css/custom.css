@@ -1,0 +1,36 @@
+body .navbar .navbar-header .navbar-brand {
+	background: none;
+}
+
+body #content .tile.transparent-black .form-control[readonly] {
+	color: white;
+}
+
+body.bg-6 {
+    background-image: url(../images/noise.png), url(../images/backgrounds/6.jpg);
+    background-repeat: repeat, repeat;
+    background-position: left top;
+    background-size: auto, cover; 
+}
+body.no-bg {
+    background: #333030; 
+}
+
+.tab-content > div {
+	padding: 5px 0;
+}
+
+.profile-pic {
+	margin-bottom: 10px;
+}
+
+.side-ad {
+	background-image: url(../images/220x2400.png);
+	background-repeat: no-repeat, no-repeat;
+	background-position: left top;
+	background-size: auto, cover;
+}
+
+.candidate-selected {
+	opacity: 0.5;
+}
