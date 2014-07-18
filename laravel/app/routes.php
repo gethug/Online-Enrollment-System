@@ -12,4 +12,6 @@
 */
 
 
-Route::resource('/', 'LoginController');
+Route::resource('/', 'HomeController');
+Route::resource('login', 'LoginController');
+Route::resource('admin', 'DashController');

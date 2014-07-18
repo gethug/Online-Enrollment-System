@@ -50,7 +50,7 @@
 
 
 
-							  	{{ Form::open(array('route' => 'store', 'id' => 'form-signin', 'class' => 'form-signin')) }}
+							  	{{ Form::open(array('route' => 'login.store', 'id' => 'form-signin', 'class' => 'form-signin')) }}
 
 										 <div class="input-group" id = "IDN">
 										      <div class="input-group-addon" style = " background-color: #008ddd;"><i class="fa fa-user" style = "color: white;"></i></div>

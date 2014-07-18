@@ -1,10 +1,11 @@
 <?php
 
-	class LoginController extends BaseController {
+	class DashController extends BaseController {
 
 		
 				public function __construct() {
-
+					
+						$this->beforeFilter('auth');
 
 				}
 
@@ -16,7 +17,7 @@
 				public function index()
 				{
 
-					return View::make('server.admin');
+					return View::make('server.dash');
 
 				}
 
@@ -39,41 +40,6 @@
 				{
 
 
-					$accounts = array(
-						'idnumber' => Input::get('idnumber'),
-						'password' => Input::get('password')
-					);
-
-					$rules = array(
-						'idnumber' => 'required',
-						'password' => 'required'
-						);
-
-						$validator = Validator::make($accounts, $rules);
-
-
-						if(!$validator->fails()){
- 
-							if (Auth::attempt(array('user' => Input::get('idnumber'), 'password' => Input::get('password')))) {
-
-								if(Input::get('route')){
-									return Redirect::to(Input::get('route'));
-								}
-								else{
-									return Redirect::to('admin');
-								}
-
-							}
-							else {
-
-								return Redirect::to('/login')->withInput(Input::except('password'))->with('error', 'Invalid ID number or Password');
-							}
-
-						}
-					else {
-
-						return Redirect::to('/login')->withInput(Input::except('password'))->withErrors($validator);
-					}
 
 		
 				}

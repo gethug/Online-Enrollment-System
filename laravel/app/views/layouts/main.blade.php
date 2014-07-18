@@ -43,6 +43,7 @@
 	<body style = "background-color: #f8fafa;">
 
 			@yield('content')
+			@yield('dash')
 		
 	</body>
 </html>
