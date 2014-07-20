@@ -6,9 +6,8 @@
 	<div class="container" >
 
 		<div class="row">
-				  <div class="col-xs-12 col-md-12" style = "height: 131px; margin-top: 50px;">
-						<h1 class="text-center" id = "sai" ><strong>SAI</strong></h1>
-						<h3 class="text-center" id = "saint">Saint Augustine Institute</h3>
+				  <div class="col-xs-12 col-md-12" style = "height: 80px; ">
+						
 				   </div>
 				</div>
 
@@ -17,12 +16,16 @@
 						<div class="row">
 							  <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4" id = "login">
 
-							  	<div  id = "head">
+							  	<div  id = "head" >
+							  		<div id = "des">
+
+							  		</div>
 							  			<div id = "ap">
-							  			<h4 class="text-center" id = "sign"> SIGN IN TO YOUR ACCOUNT</h4>
+							  			<h1 class="text-center" id = "Logo" style = "font-size: 93px;"><strong> SAI</strong></h1>
+							  			<h4 class="text-center" id = "sign"> Saint Augustine Institute</h4>
 							  			</div>
 							  	</div>
-
+							  			<h4 id = "log" > Log in</h4>
 							  			@if (Session::get('error'))
 
 							  			<div class="bg-danger text-center" id = "error">
@@ -53,16 +56,16 @@
 							  	{{ Form::open(array('route' => 'login.store', 'id' => 'form-signin', 'class' => 'form-signin')) }}
 
 										 <div class="input-group" id = "IDN">
-										      <div class="input-group-addon" style = " background-color: #008ddd;"><i class="fa fa-user" style = "color: white;"></i></div>
-										      {{ Form::text('idnumber', '', array('placeholder' => 'ID Number', 'autofocus' => '', 'class' => 'form-control')) }}
+										      <div class="input-group-addon" id = "rad" style = " background-color: #14b9d5;"><i class="fa fa-user" style = "color: white;"></i></div>
+										      {{ Form::text('idnumber', '', array('placeholder' => 'ID Number', 'autofocus' => '', 'class' => 'form-control', 'id' => 'rad')) }}
 										    </div>
 
 										 <div class="input-group" id = "pass">
-										      <div class="input-group-addon" style = " background-color: #008ddd;"><i class="fa fa-lock" style = "color: white;"></i></div>
-										       {{ Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control')) }}
+										      <div class="input-group-addon" id = "rad" style = " background-color: #14b9d5;"><i class="fa fa-lock" style = "color: white;"></i></div>
+										       {{ Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control', 'id' => 'rad')) }}
 										   </div>
 
-										   		{{ Form::submit('Sign In', array('class' => 'btn btn-info', 'id' => 'submit')) }}
+										   		{{ Form::submit('Log in', array('class' => 'btn btn-info', 'id' => 'submit', 'style' => 'color:white;')) }}
 
 								{{ Form::close() }}
 								

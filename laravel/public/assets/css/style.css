@@ -1,14 +1,28 @@
 @font-face { font-family: DroidSansMono; src: url(assets/fonts/DroidSansMono.ttf) }
 
 
-
+body {
+	background-image:url(/assets/images/bg.png);
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
 #head {
-	border-top-right-radius: 7px;
-	border-top-left-radius: 7px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
 	width:100%;
-	height: 59px;
-	background-color:#008ddd;
+	height: 249px;
+	background-color:white;
+	border-bottom:1px solid #DADCDD;
 
+}
+
+#des{
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	width: 100%;
+	height: 5px;
+	background-color: #14b9d5;
 }
 
 #error {
@@ -37,46 +51,53 @@
 	width:100%;
 }
 
-
-#sai {
-	margin-bottom: 0px; 
-	color: #2980b9; 
-	font-size: 60px;
-	font-family: DroidSansMono;
-}
-
-#sign{
-	margin-top: 20px;
-	color:white;
+#Logo {
+	margin-top: 60px;
+	margin-bottom:-13px;
+	color:#454545;
 	position: relative;
 }
 
-#saint {
-	margin: 0px; 
-	color:#bdc3c7;
-	font-family: DroidSansMono;
-
+#sign{
+	margin-top: 10px;
+	color:#a3a3a3;
+	position: relative;
 }
-	
+
+#log{
+	margin-left: 13px;
+	font-size: 21px;
+	color:#a3a3a3;
+}
 #login {
+
 	background-color:white;
-	border-radius: 7px;
-	box-shadow: 0 0 6px rgba(0,0,0,0.2);
+	border-radius: 5px;
 	padding:0px;
 }
 
 #IDN {
 	margin:15px 20px;
+	margin-bottom:10px ;
 }
+
 
 #pass{
 	margin:15px 20px;
+	margin-top: 10px;
 }
 
 #submit{
-	margin-top:8px;
-	margin-bottom: 20px;
-	float:right;
-	background-color: #008ddd;
-	margin-right: 20px;
+	margin-left:20px;
+	margin-top:10px;
+	margin-bottom: 34px;
+	border-radius: 0px;
+	width:90%;
+	height: 38px;
+	background-color: #14b9d5;
+	
+}
+
+#rad {
+	border-radius: 0px;
 }
