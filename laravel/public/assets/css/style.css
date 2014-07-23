@@ -1,5 +1,8 @@
 @font-face { font-family: DroidSansMono; src: url(assets/fonts/DroidSansMono.ttf) }
 
+#admin{
+	background-color: #f3f3f1 ;
+}
 
 #con {
 	background-image:url(/assets/images/bg.png);
@@ -107,4 +110,19 @@
 }
 #rad4{
 	border-radius: 0px;
+}
+
+#navbr{
+	background-color:white;
+	border-radius: 0px;
+	height: 90px;
+	border-bottom:2px solid #ecf0f1;
+}
+
+#navbr1{
+	margin-top:20px;
+}
+
+.links{
+	color:#454545;
 }
