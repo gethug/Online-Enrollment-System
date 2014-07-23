@@ -1,7 +1,7 @@
 @font-face { font-family: DroidSansMono; src: url(assets/fonts/DroidSansMono.ttf) }
 
 
-body {
+#con {
 	background-image:url(/assets/images/bg.png);
 	background-position: center;
 	background-size: 100%;
@@ -33,17 +33,17 @@ body {
 }
 
 #error2{
-	border-style: solid;
-    border-color: #deadad;
-	width: 97%;
-	margin: 5px auto;;
+	color:#a94442;
+	font-size: 11px;
+	margin-left:52px;
+	margin-top:-10px;
 }
 
 #error3{
-	border-style: solid;
-    border-color: #deadad;
-	width: 97%;
-	margin: 5px auto;
+	color:#a94442;
+	font-size: 11px;
+	margin-left:52px;
+	margin-top:-14px;
 }
 
 #ap{
@@ -70,7 +70,7 @@ body {
 	color:#a3a3a3;
 }
 #login {
-
+	box-shadow:0 0 6px rgba(0,0,0,0.2);
 	background-color:white;
 	border-radius: 5px;
 	padding:0px;
@@ -99,5 +99,12 @@ body {
 }
 
 #rad {
+	border-radius: 0px;
+}
+
+#rad3{
+	border-radius: 0px;
+}
+#rad4{
 	border-radius: 0px;
 }
