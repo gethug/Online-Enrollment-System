@@ -4,7 +4,7 @@
 
 	<div  class = "navbr">
 				<nav class="navbar navbar-default" role="navigation" id = "navbr">
-						<div style = "height : 70px; background-color: #14b9d5; width: 10px;position:absolute;">
+						<div style = "height : 70px; background-color: #14b9d5; width: 5px;position:absolute;margin-top:23px;">
 						</div>
 			  <div class="container" id = "navbr1">
 			    <!-- Brand and toggle get grouped for better mobile display -->
@@ -29,7 +29,7 @@
 			  </div><!-- /.container-fluid -->
 			</nav>
 				</div>
-<div class = "container-fluid" style = "height:49px; background-color:#F9FCFF;">
+<div class = "container-fluid" style = "height:48px; background-color:#81CFE0;">
 	<div class="container" style = "padding: 0px;" >
 
 	 	<ol class="breadcrumb" id = "dirc">
