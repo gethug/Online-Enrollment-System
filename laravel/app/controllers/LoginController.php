@@ -60,6 +60,7 @@
 									return Redirect::to(Input::get('route'));
 								}
 								else{
+									
 									return Redirect::to('admin');
 								}
 

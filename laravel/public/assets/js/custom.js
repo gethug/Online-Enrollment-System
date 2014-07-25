@@ -12,4 +12,9 @@ $(document).ready(function(){
 		  $("#error3").hide();
 	});
 
+	$(".lsthead li a").click(function(){
+		$(".lsthead li a").removeClass("active1");
+		 $( this ).addClass( "active1" );
+	});
+
 });

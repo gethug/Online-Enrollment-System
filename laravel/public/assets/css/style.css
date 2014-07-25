@@ -1,7 +1,7 @@
 @font-face { font-family: DroidSansMono; src: url(assets/fonts/DroidSansMono.ttf) }
 
 #admin{
-	background-color: #f3f3f1 ;
+	
 }
 
 #con {
@@ -115,14 +115,69 @@
 #navbr{
 	background-color:white;
 	border-radius: 0px;
-	height: 90px;
-	border-bottom:2px solid #ecf0f1;
+	height: 70px;
+	margin-bottom:0px;
 }
 
 #navbr1{
-	margin-top:20px;
+	margin-top:16px;
 }
 
-.links{
+#links{
 	color:#454545;
+}
+
+#logo{
+	color:#454545;
+	margin:0px;
+}
+
+#sub{
+	font-size:17px;
+}
+
+#icn{
+	margin-right: 8px;
+	font-size: 23px;
+}
+
+
+#dirc{
+	border-radius:0px;
+	padding:12px 15px;
+	background-color: #F9FCFF;
+}
+#dirc li{
+	font-size: 15px;
+}
+
+#file{
+	list-style: none;
+	padding-left:0px;
+}
+
+.subs{
+	text-decoration: none;
+	font-size: 12px;
+	color:#999;
+	padding-left:26px;
+}
+
+.lsthead li a:hover{
+	text-decoration: none;
+	color:#14b9d5;
+}
+
+.sdehead {
+	font-weight: 700;
+	margin: 0px; 
+	margin-bottom:5px;
+	font-size: 15px;
+	color:#14b9d5;
+	border-left:4px solid #14b9d5;
+	padding-left:10px;
+}
+.active1{
+	color: #14b9d5;
+	border-left:2px solid #14b9d5;
 }
