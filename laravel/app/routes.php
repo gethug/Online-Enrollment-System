@@ -15,3 +15,9 @@
 Route::resource('/', 'HomeController');
 Route::resource('login', 'LoginController');
 Route::resource('admin', 'DashController');
+Route::resource('administrator', 'AdminController');
+Route::resource('Room', 'RoomController');
+Route::resource('Section', 'SectionController');
+Route::resource('SY', 'SyController');
+Route::resource('Level', 'LevelController');
+

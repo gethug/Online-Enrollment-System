@@ -41,16 +41,19 @@
 
 	</div>
 	<div class = "container" >
-		<div class="sidebar">
+		<div class="sidebar" style = "width: 200px;">
 			<h4 class = "sdehead" >File</h4>
 			<ul class = "lsthead" id = "file">
-				<li><a class = "subs" href = "#">Student</a></li>
-				<li><a class = "subs" href = "#">Teacher</a></li>
-				<li><a class = "subs" href = "#">Section</a></li>
-				<li><a class = "subs" href = "#">Rooms</a></li>
-				<li><a class = "subs" href = "#">Subjects</a></li>
-				<li><a class = "subs" href = "#">School year</a></li>
-				<li><a class = "subs" href = "#">levels</a></li>
+				<li><a class = "subs" id = "hsec" href = "Section">Section</a></li>
+				<li><a class = "subs" id = "hrm" href = "Room">Rooms</a></li>
+				<li><a class = "subs" id = "hsubj" href = "#Subject">Subjects</a></li>
+				<li><a class = "subs" id = "hsy" href = "SY">School year</a></li>
+				<li><a class = "subs" id = "hlvl" href = "Level">levels</a></li>
+				<li><a class = "subs" id = "hstud" href = "#Student">Student</a></li>
+				<li><a class = "subs" id = "hteachr" href = "#Teacher">Teacher</a></li>
+				<li><a class = "subs" id = "hcash" href = "#Cashier">Cashier</a></li>
+				<li><a class = "subs" id = "hadmin" href = "administrator">Administrator</a></li>
+
 			</ul>
 
 			<h4 class = "sdehead" >Transaction</h4>
@@ -60,7 +63,15 @@
 				
 			</ul>
 			
+			
+
+
 		</div>
+		@yield('add')
+		@yield('rooms')
+		@yield('section')
+		@yield('level')
+		@yield('sy')
 	</div>
 </div>
 @stop

@@ -12,9 +12,11 @@ $(document).ready(function(){
 		  $("#error3").hide();
 	});
 
-	$(".lsthead li a").click(function(){
+	$(".lsthead li a").click(function(e){
 		$(".lsthead li a").removeClass("active1");
-		 $( this ).addClass( "active1" );
+		 $( e.target ).addClass("active1" );
 	});
 
+ 	
 });
+

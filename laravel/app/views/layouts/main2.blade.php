@@ -21,6 +21,9 @@
 	    <script type="text/javascript" src="/assets/js/vendor/animate-numbers/jquery.animateNumbers.js"></script>
 	    <script type="text/javascript" src="/assets/js/vendor/videobackground/jquery.videobackground.js"></script>
 	    <script type="text/javascript" src="/assets/js/vendor/blockui/jquery.blockUI.js"></script>
+	     <script type="text/javascript" src="/assets/js/angular-1.3.0-beta.17/angular.js"></script>
+		 <script type="text/javascript" src="/assets/js/angular-1.3.0-beta.17/angular-route.js"></script>
+		 <script type="text/javascript" src="/assets/js/jquery.cookie.js"></script>
 
 	    <script src="/assets/js/vendor/datatables/jquery.dataTables.min.js"></script>
 	    <script src="/assets/js/vendor/datatables/ColReorderWithResize.js"></script>
