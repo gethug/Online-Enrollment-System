@@ -2,66 +2,38 @@
 
 @section('dash')
 
-	<div  class = "navbr">
-				<nav class="navbar navbar-default" role="navigation" id = "navbr">
-						<div style = "height : 70px; background-color: #14b9d5; width: 5px;position:absolute;margin-top:23px;">
-						</div>
-			  <div class="container" id = "navbr1">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			      <a class="navbar-brand" href="#"><h1 id = "logo"><strong>SAI</strong> 
-			      <small id = "sub">Saint Augustine Insitute</small></h1></a>
-			    </div>
+<div class = "container-fluid" style = "height:48px; background-color:#2980b9;padding:0px;">
 
-			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="#" id = "links"><strong><i id = "icn" class="fa fa-user"></i>{{Auth::user()->user}}</strong></a></li>
-			        <li><a href="#" id = "links"><strong>Logout</strong></a></li>
-			      </ul>
-			    </div><!-- /.navbar-collapse -->
-			  </div><!-- /.container-fluid -->
-			</nav>
-				</div>
-<div class = "container-fluid" style = "height:48px; background-color:#81CFE0;">
-	<div class="container" style = "padding: 0px;" >
+<div  class = "part">
+</div>
 
-	 	<ol class="breadcrumb" id = "dirc">
-	 		<i class="fa fa-folder-open" style = "font-size: 23px; margin-right:7px; margin-left:25px;"></i>
-		  <li><a href="#">File</a></li>
-		  <li><a href="#">Rooms</a></li>
-		  <li class="active">Add</li>
-		</ol>
+		<div class="btn-group" style = "float:right;">
+		  <button id = "btn-settings" class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+		    <i class = "fa fa-cog" style = "font-size: 17px;"></i> <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu" style = "left: -108px; padding:4px 0;">
+		    <li><a href = "#">Log out</a></li>
+		  </ul>
+		</div>
+</div>
 
-	</div>
-	<div class = "container" >
-		<div class="sidebar" style = "width: 200px;">
-			<h4 class = "sdehead" >File</h4>
+
+<div class = "container-fluid" style = "padding: 0px;">
+		<div class="sidebar" id = "sidebar">
+			<h4 class = "sdehead" ><i class="fa fa-file-text"></i>&nbsp;&nbsp;File</h4>
 			<ul class = "lsthead" id = "file">
-				<li><a class = "subs" id = "hsec" href = "Section">Section</a></li>
-				<li><a class = "subs" id = "hrm" href = "Room">Rooms</a></li>
-				<li><a class = "subs" id = "hsubj" href = "#Subject">Subjects</a></li>
-				<li><a class = "subs" id = "hsy" href = "SY">School year</a></li>
-				<li><a class = "subs" id = "hlvl" href = "Level">levels</a></li>
-				<li><a class = "subs" id = "hstud" href = "#Student">Student</a></li>
-				<li><a class = "subs" id = "hteachr" href = "#Teacher">Teacher</a></li>
-				<li><a class = "subs" id = "hcash" href = "#Cashier">Cashier</a></li>
-				<li><a class = "subs" id = "hadmin" href = "administrator">Administrator</a></li>
+				<li id = "hsec"> <i class="fa fa-users icon"></i><a class = "subs" id = "hseca" href = "Section">  Section</a></li>
+				<li id = "hrm"> <i class="fa fa-sign-in icon"></i><a class = "subs" id = "hrma" href = "Room">&nbsp;&nbsp;Rooms</a></li>
+				<li id = "hsubj"><i class="fa fa-book icon"></i><a class = "subs" id = "hsubja" href = "Subject">&nbsp;&nbsp;Subjects</a></li>
+				<li id = "hsy"><i class="fa fa-calendar icon"></i><a class = "subs" id = "hsya" href = "SY">&nbsp;&nbsp;School year</a></li>
+				<li id = "hlvl"><i class="fa fa-level-up icon"></i><a class = "subs" id = "hlvla" href = "Level">&nbsp;&nbsp;&nbsp;levels</a></li>
+				<li id = "hstud"><i class="fa fa-male icon"></i><a class = "subs" id = "hstuda" href = "#Student">&nbsp;&nbsp;&nbsp;Student</a></li>
+				<li id = "hteachr"><i class="fa fa-briefcase icon"></i><a class = "subs" id = "hteachra" href = "Teacher">&nbsp;Teacher</a></li>
+				<li  id = "hcash"><i class="fa fa-money icon"></i><a class = "subs" id = "hcasha" href = "#Cashier">&nbsp;Cashier</a></li>
+				<li id = "hadmin"><i class="fa fa-user icon"></i><a class = "subs" id = "hadmina" href = "administrator">&nbsp;&nbsp;Administrator</a></li>
 
 			</ul>
 
-			<h4 class = "sdehead" >Transaction</h4>
-			<ul class = "lsthead" id = "file">
-				<li><a class = "subs" href = "#">Enrollment</a></li>
-				<li><a class = "subs" href = "#">Billing</a></li>
-				
-			</ul>
 			
 			
 
@@ -72,6 +44,7 @@
 		@yield('section')
 		@yield('level')
 		@yield('sy')
+		@yield('subject')
+		@yield('teacher')
 	</div>
-</div>
 @stop

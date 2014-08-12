@@ -13,6 +13,8 @@
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/vendor/animate/animate.css">
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/vendor/animate/animate.min.css">
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/vendor/bootstrap/bootstrap.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700|Oswald' rel='stylesheet' type='text/css'>
 		<script src="/assets/js/jquery.js"></script>
 	    <script src="/assets/js/vendor/bootstrap/bootstrap.min.js"></script>
 	    <script type="text/javascript" src="/assets/js/vendor/mmenu/js/jquery.mmenu.min.js"></script>

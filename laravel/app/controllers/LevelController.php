@@ -17,7 +17,7 @@
 				public function index()
 				{
 					$levels = Level::all();
-					return View::make('server.level')->with('levels', $levels);
+					return View::make('server.level.level')->with('levels', $levels);
 
 				}
 

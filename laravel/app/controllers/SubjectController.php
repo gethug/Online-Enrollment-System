@@ -1,6 +1,6 @@
 <?php
 
-	class SectionController extends BaseController {
+	class SubjectController extends BaseController {
 
 		
 				public function __construct() {
@@ -16,8 +16,8 @@
 				 */
 				public function index()
 				{
-					$sections = Section::all();
-					return View::make('server.section.section')->with('sections', $sections);
+					$subjects = Subject::all();
+					return View::make('server.subject.subject')->with('subjects',$subjects);
 
 				}
 

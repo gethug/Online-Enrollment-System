@@ -17,7 +17,7 @@
 				public function index()
 				{
 					$admins = Admin::all();
-					return View::make('server.addmin')->with('admins', $admins);
+					return View::make('server.addmin.addmin')->with('admins', $admins);
 
 				}
 
@@ -28,7 +28,7 @@
 				 */
 				public function create()
 				{
-					
+					return View::make('server.addmin.create');
 				}
 
 				/**
@@ -52,7 +52,7 @@
 				 */
 				public function show($id)
 				{
-					//
+
 				}
 
 				/**
@@ -63,7 +63,10 @@
 				 */
 				public function edit($id)
 				{
-					//
+					$admin = Admin::find($id);
+
+					return View::make('server.addmin.edit')
+						->with('admin', $admin);
 				}
 
 				/**

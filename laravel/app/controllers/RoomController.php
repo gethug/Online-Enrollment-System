@@ -17,7 +17,7 @@
 				public function index()
 				{
 					$rooms = Room::all();
-					return View::make('server.rooms')->with('rooms', $rooms);
+					return View::make('server.rooms.rooms')->with('rooms', $rooms);
 
 				}
 

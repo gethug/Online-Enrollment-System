@@ -1,5 +1,4 @@
-@font-face { font-family: DroidSansMono; src: url(assets/fonts/DroidSansMono.ttf) }
-
+@font-face { font-family: 'Open Sans Condensed', sans-serif; src: url(assets/fonts/OpenSans-CondLight.ttf) }
 #admin{
 	
 }
@@ -112,29 +111,15 @@
 	border-radius: 0px;
 }
 
-#navbr{
-	background-color:white;
-	border-radius: 0px;
-	height: 115px;
-	margin-bottom:0px;
-}
-
-#navbr1{
-	margin-top:41px;
-}
-
-#links{
-	color:#454545;
-}
-
-#logo{
-	color:#454545;
-	margin:0px;
-	font-size:55px;
-	margin-top:-12px;
+#btn-settings{
+	margin:8px 0;
+	margin-right:15px;
+	background-color:#3498db;
+	border:none;
 }
 
 #sub{
+
 	font-size:17px;
 }
 
@@ -166,31 +151,71 @@
 }
 
 .subs{
+	margin-left:10px;
 	text-decoration: none;
-	font-size: 13px;
-	color:#999;
-	padding-left:26px;
+	font-size: 14px;
+	color:#ABD5F1;
+}
+.lsthead li{
+	padding:9px 0;
+}
+.subs:hover{
+	text-decoration: none;
+	color:white;
+
 }
 
-.lsthead li a:hover{
-	text-decoration: none;
-	color:#14b9d5;
 
+
+.icon{
+	margin-left:20px;
+	color:white;
+	font-size: 14px;
+}
+
+#sidebar{
+	border-top:2px solid #2277AF;
+	width: 210px;
+	margin-top:-2px;
+	padding-top:20px;
+	display:inline-block;
+	float:left;
+	background-color:#3498db;
+	height: 730px;
+}
+
+#tablet{
+	width : 909px; 
+	position:relative;
+	display: inline-block;
+	margin-left:60px;
+	margin-top:40px;
 }
 
 .sdehead {
-	font-weight: 700;
 	margin: 0px; 
+	margin-left: 10px;
 	margin-bottom:5px;
 	font-size: 18px;
-	color:#14b9d5;
-	border-left:4px solid #14b9d5;
+	color:white;
 	padding-left:10px;
 }
 .active1{
 	color: #14b9d5;
 	border-left:3px solid #14b9d5;
+	background-color:white;
 }
+
+.active{
+	color:#454545;
+	font-weight: bold;
+
+}
+
+.active:hover{
+	color:#454545;
+}
+
 
 #btnedit{
 	border-radius: 0px;
@@ -207,9 +232,17 @@
 }
 
 #cat {
+	font-family: 'Open Sans Condensed', sans-serif;
 	color: #454545; 
 	font-weight: bold;
-	 margin-bottom: 20px;
+	 margin-bottom: 50px;
 }
-
+.part{
+	height:47px; 
+	width:210px; 
+	background-color: #3498db;
+	position: absolute;
+	border-bottom: 2px solid #2980b9;
+	border-top: 3px solid #2980b9;
+}
 

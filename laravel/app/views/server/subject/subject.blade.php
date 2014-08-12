@@ -1,0 +1,52 @@
+@extends('server.dash')
+
+@section('subject')
+<script type="text/javascript">
+    $(document).ready(function(){
+         $( "#hsubj" ).addClass("active1" );
+          $( "#hsubja" ).addClass("active" );
+          $( "#hsubj i" ).addClass("active" );
+});
+</script>
+
+
+<div class = "table-responsive" id = "tablet" >
+<h2 id = "cat" style = "">List of Subjects</h2>
+<table class="table table-striped table-hover" id = "table">
+  <thead>
+        <tr style = "font-size:12px;">
+            <th class = "text-center">ID</th>
+            <th class = "text-center">Subject Code</th>
+            <th class = "text-center">Subject</th>
+            <th class = "text-center">Unit</th>
+            <th class = "text-center">Prerequisite</th>
+            <th class = "text-center">Level</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($subjects as $subject)
+            <tr style = "font-size:11px;">
+                <td class = "text-center"> {{ $subject->s_id}}</td>
+                <td class = "text-center"> {{ $subject->subj_code}}</td>
+                <td class = "text-center"> {{ $subject->subj_name}}</td>
+                <td class = "text-center"> {{ $subject->unit}}</td>
+                <td class = "text-center"> {{ $subject->prerequisite}}</td>
+                <td class = "text-center"> {{ $subject->lvl_id}}</td>
+                <td style = "width:13px;">{{ link_to_route('Subject.edit', 'Edit',
+                     array($subject->s_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
+                </td>
+                 <td  style = "width:13px;">
+                        {{ Form::open(array('method' 
+                    => 'DELETE', 'route' => array('Subject.destroy', $subject->s_id))) }}                       
+                            {{ Form::submit('Delete', array('class'
+                    => 'btn btn-danger', 'id' => 'btndel')) }}
+                        {{ Form::close() }}
+                    </td>
+            </tr>
+        @endforeach
+
+    </tbody>
+</table>
+</div>
+
+@stop

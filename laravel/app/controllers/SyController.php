@@ -17,7 +17,7 @@
 				public function index()
 				{
 					$schoolyears = Schoolyear::all();
-					return View::make('server.sy')->with('schoolyears', $schoolyears);
+					return View::make('server.sy.sy')->with('schoolyears', $schoolyears);
 
 				}
 

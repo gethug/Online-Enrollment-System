@@ -20,4 +20,6 @@ Route::resource('Room', 'RoomController');
 Route::resource('Section', 'SectionController');
 Route::resource('SY', 'SyController');
 Route::resource('Level', 'LevelController');
+Route::resource('Subject', 'SubjectController');
+Route::resource('Teacher', 'TeacherController');
 
