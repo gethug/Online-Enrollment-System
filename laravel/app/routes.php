@@ -16,6 +16,7 @@ Route::resource('/', 'HomeController');
 Route::resource('login', 'LoginController');
 Route::resource('admin', 'DashController');
 Route::resource('administrator', 'AdminController');
+Route::resource('administrator/create', 'AdminController@getCreate');
 Route::resource('Room', 'RoomController');
 Route::resource('Section', 'SectionController');
 Route::resource('SY', 'SyController');

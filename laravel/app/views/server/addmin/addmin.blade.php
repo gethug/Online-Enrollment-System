@@ -9,9 +9,8 @@
 });
 </script>
 
-
 <div class = "table-responsive" id = "tablet"  >
-<h2 id = "cat" style = "">List of Administrator&nbsp;/<a href = "#" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
+<h2 id = "cat" style = "">List of Administrator&nbsp;/<a href = "administrator/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
 <table class="table table-striped table-hover" id = "table">
   <thead>
         <tr style = "font-size:12px;">
@@ -27,7 +26,7 @@
                 <td class = "text-center"> {{ $admin->a_id}}</td>
                 <td class = "text-center">{{ ucwords($admin->Fname) . ' ' . ucwords($admin->Mname) . ' ' . ucwords($admin->Lname)}} </td>
                 <td class = "text-center"> {{ $admin->user}}</td>
-                <td class = "text-center"> {{ $admin->pass}}</td>
+                <td class = "text-center"> {{ $admin->password}}</td>
                 <td style = "width:13px;">{{ link_to_route('administrator.edit', 'Edit',
                      array($admin->a_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>

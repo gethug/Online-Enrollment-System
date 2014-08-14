@@ -44,9 +44,9 @@
 	   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	</head>
 
-	<body id = "admin">
+	<body style = "background-color: #ecf0f1;">
 
-			@yield('dash')
-		
+			@yield('admincreate')
+			@yield('adminedit')
 	</body>
 </html>

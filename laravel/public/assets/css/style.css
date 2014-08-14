@@ -100,6 +100,14 @@
 	
 }
 
+#csubmit{
+	margin-top:30px;
+	width:80px;
+	height: 38px;
+	background-color: #14b9d5;
+	color:white;
+}
+
 #rad {
 	border-radius: 0px;
 }
@@ -243,5 +251,48 @@
 	background-color: #3498db;
 	position: absolute;
 	border-bottom: 2px solid #2980b9;
+}
+
+.crud{
+	margin-top:100px;
+	background-color: #ecf0f1;
+}
+
+#crud-con{
+	background-color: white;
+	width:59%;
+	margin:0px auto;
+}
+
+.crud-head{
+	font-weight: bold;
+	color:#454545;
+}
+
+.div-filds{
+	margin-top:15px;
+}
+
+#n-filds{
+	width:177px;
+}
+
+#filds{
+	width:268px;
+}
+
+.feilds{
+	font-weight: bold;
+}
+
+.validte{
+	display:inline-block;
+}
+
+.val-lbl{
+	color:#a94442;;
+}
+.div-text{
+	display: inline-block;
 }
 

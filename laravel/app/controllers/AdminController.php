@@ -21,6 +21,15 @@
 
 				}
 
+
+
+				public function getCreate()
+				{
+
+					return View::make('server.addmin.create');
+					
+				}
+
 				/**
 				 * Show the form for creating a new resource.
 				 *
@@ -28,7 +37,7 @@
 				 */
 				public function create()
 				{
-					return View::make('server.addmin.create');
+					
 				}
 
 				/**
@@ -38,10 +47,43 @@
 				 */
 				public function store()
 				{
+					$rules = array(
+					'Firstname' => 'required',
+					'Lastname' => 'required',
+					'user'	=> 'required',
+					'password' => 'required'
+						);
+
+				$validator = Validator::make(Input::all(), $rules);
+
+				if ($validator->fails()){
+					return Redirect::to('administrator/create')
+						->withErrors($validator)
+						->withInput(Input::except('password'));
+				} else{
+					$user = Input::get('user');
+					$count = Admin::where('user', '=', $user)
+					->count();
+
+					if($count){
+						return Redirect::to('administrator/create')
+						->with('error', 'user already exist!')
+						->withInput(Input::except('password'));
+					}
+
+					$admins = new Admin;
+					$admins->Fname = Input::get('Firstname');
+					$admins->Mname = Input::get('Mname');
+					$admins->Lname = Input::get('Lastname');
+					$admins->user = Input::get('user');
+					$admins->password = Hash::make(Input::get('password'));
+					$admins->save();
 
 
+					Session::flash('message','Successfully Saved!');
+					return Redirect::to('administrator');
+				}
 
-		
 				}
 
 				/**
@@ -77,7 +119,40 @@
 				 */
 				public function update($id)
 				{
-					//
+					$rules = array(
+					'Firstname' => 'required',
+					'Lastname' => 'required',
+					'user'	=> 'required'
+						);
+
+				$validator = Validator::make(Input::all(), $rules);
+
+				if ($validator->fails()){
+					return Redirect::to('administrator/' . $id . '/edit')
+						->withErrors($validator)
+						->withInput();
+				} else{
+					$user = Input::get('user');
+					$count = Admin::where('user', '=', $user)
+					->count();
+
+					if($count){
+						return Redirect::to('administrator/' . $id . '/edit')
+						->with('error', 'user already exist!')
+						->withInput();
+					}
+
+					$admins = Admin::find($id);
+					$admins->Fname = Input::get('Firstname');
+					$admins->Mname = Input::get('Mname');
+					$admins->Lname = Input::get('Lastname');
+					$admins->user = Input::get('user');
+					$admins->save();
+
+
+					Session::flash('message','Successfully Updated!');
+					return Redirect::to('administrator');
+				}
 				}
 
 				/**
@@ -88,7 +163,9 @@
 				 */
 				public function destroy($id)
 				{
-					//
+					$admins= Admin::find($id);
+					$admins->delete();
+					return Redirect::to('administrator');
 				} 
 
 

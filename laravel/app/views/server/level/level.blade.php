@@ -11,7 +11,7 @@
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = "">List of Levels</h2>
+<h2 id = "cat" style = "">List of Levels&nbsp;/<a href = "Level/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
 <table class="table table-striped table-hover" id = "table">
   <thead>
         <tr style = "font-size:12px;">
