@@ -21,6 +21,16 @@
 
 				}
 
+
+
+				public function getCreate()
+				{
+
+					return View::make('server.rooms.create');
+					
+				}
+
+
 				/**
 				 * Show the form for creating a new resource.
 				 *
@@ -39,7 +49,26 @@
 				public function store()
 				{
 
+					$rules = array(
+					'room' => 'required|unique:tblrooms,room',
+						);
 
+				$validator = Validator::make(Input::all(), $rules);
+
+				if ($validator->fails()){
+					return Redirect::to('Room/create')
+						->withErrors($validator)
+						->withInput();
+				} else{
+					
+					$rooms = new Room;
+					$rooms->room = Input::get('room');
+					$rooms->save();
+
+
+					Session::flash('message','Successfully Saved!');
+					return Redirect::to('Room');
+				}
 
 		
 				}
@@ -63,7 +92,9 @@
 				 */
 				public function edit($id)
 				{
-					//
+					$room= Room::find($id);
+					return View::make('server.rooms.edit')
+					->with('room', $room);
 				}
 
 				/**
@@ -74,8 +105,28 @@
 				 */
 				public function update($id)
 				{
-					//
+					$rules = array(
+					'room' => 'required|unique:tblrooms,room,' . $id . ',r_id'
+						);
+
+				$validator = Validator::make(Input::all(), $rules);
+
+				if ($validator->fails()){
+					return Redirect::to('Room/' . $id . '/edit')
+						->withErrors($validator)
+						->withInput();
+				} else{
+					
+
+					$rooms = Room::find($id);
+					$rooms->room = Input::get('room');
+					$rooms->save();
+
+
+					Session::flash('message','Successfully Updated!');
+					return Redirect::to('Room');
 				}
+			}
 
 				/**
 				 * Remove the specified resource from storage.
@@ -85,7 +136,9 @@
 				 */
 				public function destroy($id)
 				{
-					//
+					$rooms= Room::find($id);
+					$rooms->delete();
+					return Redirect::to('Room');
 				} 
 
 

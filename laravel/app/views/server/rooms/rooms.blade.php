@@ -15,7 +15,7 @@
 <table class="table table-striped table-hover" id = "table">
   <thead>
         <tr style = "font-size:12px;">
-             <th class = "text-center">Room No.</th>
+             <th class = "text-center">ID</th>
             <th class = "text-center">Rooms</th>
         </tr>
     </thead>

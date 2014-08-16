@@ -17,7 +17,6 @@
              <th class = "text-center">ID</th>
             <th class = "text-center">Name</th>
             <th class = "text-center">UserName</th>
-             <th class = "text-center">Password</th>
         </tr>
     </thead>
     <tbody>
@@ -26,7 +25,6 @@
                 <td class = "text-center"> {{ $admin->a_id}}</td>
                 <td class = "text-center">{{ ucwords($admin->Fname) . ' ' . ucwords($admin->Mname) . ' ' . ucwords($admin->Lname)}} </td>
                 <td class = "text-center"> {{ $admin->user}}</td>
-                <td class = "text-center"> {{ $admin->password}}</td>
                 <td style = "width:13px;">{{ link_to_route('administrator.edit', 'Edit',
                      array($admin->a_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>

@@ -48,5 +48,15 @@
 
 			@yield('admincreate')
 			@yield('adminedit')
+			@yield('levelcreate')
+			@yield('leveledit')
+			@yield('rmcreate')
+			@yield('rmedit')
+			@yield('tcreate')
+			@yield('tedit')
+			@yield('seccreate')
+			@yield('secedit')
+			@yield('subjcreate')
+			@yield('subjedit')
 	</body>
 </html>

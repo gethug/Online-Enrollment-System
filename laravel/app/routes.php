@@ -18,9 +18,14 @@ Route::resource('admin', 'DashController');
 Route::resource('administrator', 'AdminController');
 Route::resource('administrator/create', 'AdminController@getCreate');
 Route::resource('Room', 'RoomController');
+Route::resource('Room/create', 'RoomController@getCreate');
 Route::resource('Section', 'SectionController');
+Route::resource('Section/create', 'SectionController@getCreate');
 Route::resource('SY', 'SyController');
 Route::resource('Level', 'LevelController');
+Route::resource('Level/create', 'LevelController@getCreate');
 Route::resource('Subject', 'SubjectController');
+Route::resource('Subject/create', 'SubjectController@getCreate');
 Route::resource('Teacher', 'TeacherController');
+Route::resource('Teacher/create', 'TeacherController@getCreate');
 

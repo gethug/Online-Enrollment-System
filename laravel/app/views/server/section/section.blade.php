@@ -25,7 +25,7 @@
             <tr style = "font-size:11px;">
                 <td class = "text-center">{{$section->sec_id}} </td>
                 <td class = "text-center">{{$section->section}} </td>
-                <td class = "text-center">{{$section->lvl_id}} </td>
+                <td class = "text-center">{{$section->level}} </td>
                 <td style = "width:13px;">{{ link_to_route('Section.edit', 'Edit',
                      array($section->sec_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>

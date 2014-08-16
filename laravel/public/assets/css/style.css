@@ -295,4 +295,8 @@
 .div-text{
 	display: inline-block;
 }
-
+#gender{
+	font-size: 18px;
+	font-weight: bold;
+	color: #a5a5a5;
+}

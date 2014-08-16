@@ -49,17 +49,7 @@
  			{{Form::text('user', $admin->user, array( 'class' => 'form-control feilds', 'id' => 'filds', 'style' => 'width:540px;'))}}
  		</div>
 
- 		@if(Session::has('error'))
- 			<div class = "validte">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".user" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ Session::get('error')}}</h6>
-			</div>
- 		@endif
-
+ 		
  		@if($errors->first('user')) 
 			<div class = "validte">
 				<script type="text/javascript">

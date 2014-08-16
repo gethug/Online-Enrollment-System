@@ -22,7 +22,6 @@
             <th class = "text-center">Degree</th>
             <th class = "text-center">Email</th>
             <th class = "text-center">Contact</th>
-            <th class = "text-center">Password</th>
         </tr>
     </thead>
     <tbody>
@@ -35,7 +34,6 @@
                 <td class = "text-center"> {{ $teacher->degree}}</td>
                 <td class = "text-center"> {{ $teacher->email}}</td>
                 <td class = "text-center"> {{ $teacher->contact}}</td>
-                <td class = "text-center"> {{ $teacher->password}}</td>
                 <td style = "width:13px;">{{ link_to_route('Teacher.edit', 'Edit',
                      array($teacher->t_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>

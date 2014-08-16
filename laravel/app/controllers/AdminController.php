@@ -50,7 +50,7 @@
 					$rules = array(
 					'Firstname' => 'required',
 					'Lastname' => 'required',
-					'user'	=> 'required',
+					'user'	=> 'required|unique:tbladmin,user',
 					'password' => 'required'
 						);
 
@@ -61,16 +61,7 @@
 						->withErrors($validator)
 						->withInput(Input::except('password'));
 				} else{
-					$user = Input::get('user');
-					$count = Admin::where('user', '=', $user)
-					->count();
-
-					if($count){
-						return Redirect::to('administrator/create')
-						->with('error', 'user already exist!')
-						->withInput(Input::except('password'));
-					}
-
+					
 					$admins = new Admin;
 					$admins->Fname = Input::get('Firstname');
 					$admins->Mname = Input::get('Mname');
@@ -122,7 +113,7 @@
 					$rules = array(
 					'Firstname' => 'required',
 					'Lastname' => 'required',
-					'user'	=> 'required'
+					'user'	=> 'required|unique:tbladmin,user,' . $id . ',a_id'
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
@@ -132,16 +123,7 @@
 						->withErrors($validator)
 						->withInput();
 				} else{
-					$user = Input::get('user');
-					$count = Admin::where('user', '=', $user)
-					->count();
-
-					if($count){
-						return Redirect::to('administrator/' . $id . '/edit')
-						->with('error', 'user already exist!')
-						->withInput();
-					}
-
+					
 					$admins = Admin::find($id);
 					$admins->Fname = Input::get('Firstname');
 					$admins->Mname = Input::get('Mname');
