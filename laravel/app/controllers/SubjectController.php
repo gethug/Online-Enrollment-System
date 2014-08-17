@@ -109,12 +109,12 @@
 				public function edit($id)
 				{
 					$subject = Subject::find($id);
-					$subjects = Subject::all();
+					$subs = Subject::all();
 					$levels = Level::all();
 					return View::make('server.subject.edit')
 					->with('levels', $levels)
 					->with('subject', $subject)
-					->with('subjects', $subjects);
+					->with('subs', $subs);
 				}
 
 				/**

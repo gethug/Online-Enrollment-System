@@ -7,9 +7,17 @@
  	{{Form::open(array('route' => array('Subject.update',$subject->s_id), 'class' => 'form-inline', 'method' => 'PUT'))}}
 
 <!-- div for LEvel //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<script type="text/javascript">
+			    $(document).ready(function(){
+			        $("#level option[value= {{$subject->lvl_id}}]").attr("selected", "selected");
+			           $("#prerequisite" ).val( "{{$subject->prerequisite}}" );
+				});
+	</script>
+
+
 	<div class="form-group div-filds" style = "width:100%">
 			<div class = "div-text" style = "width:100%">
-	 			<select class="form-control feilds" style = "width:98%;" name = "level">
+	 			<select class="form-control feilds" style = "width:98%;" name = "level" id = "level">
 	 			@foreach($levels as $level)
 				  <option value = "{{$level->lvl_id}}">{{$level->level}}</option>
 				@endforeach
@@ -84,13 +92,13 @@
  	</div>
 
 <!-- div for prerequisite and cost////////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 	
  	<div class="form-group div-filds">
-
  		<div class = "div-text">
- 			<select class="form-control feilds" style = "width:359px;" name = "prerequisite">
+ 			<select class="form-control feilds" style = "width:359px;" name = "prerequisite" id = "prerequisite">
  				  <option value = "none">none</option>
-	 			@foreach($subjects as $subject)
-				  <option value = "{{$subject->subj_name}}">{{$subject->subj_name}}</option>
+	 			@foreach($subs as $sub)
+				  <option value = "{{$sub->subj_name}}">{{$sub->subj_name}}</option>
 				@endforeach
 				</select>
  		</div>

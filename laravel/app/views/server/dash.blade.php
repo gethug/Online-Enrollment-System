@@ -29,9 +29,9 @@
 				<li id = "hlvl"><i class="fa fa-level-up icon"></i><a class = "subs" id = "hlvla" href = "Level">&nbsp;&nbsp;&nbsp;levels</a></li>
 				<li id = "hstud"><i class="fa fa-male icon"></i><a class = "subs" id = "hstuda" href = "#Student">&nbsp;&nbsp;&nbsp;Student</a></li>
 				<li id = "hteachr"><i class="fa fa-briefcase icon"></i><a class = "subs" id = "hteachra" href = "Teacher">&nbsp;Teacher</a></li>
-				<li  id = "hcash"><i class="fa fa-money icon"></i><a class = "subs" id = "hcasha" href = "#Cashier">&nbsp;Cashier</a></li>
+				<li  id = "hcash"><i class="fa fa-money icon"></i><a class = "subs" id = "hcasha" href = "Cashier">&nbsp;Cashier</a></li>
 				<li id = "hadmin"><i class="fa fa-user icon"></i><a class = "subs" id = "hadmina" href = "administrator">&nbsp;&nbsp;Administrator</a></li>
-
+				<li id = "htuition"><i class="fa fa-rub icon"></i><a class = "subs" id = "htuitiona" href = "Tuition">&nbsp;&nbsp;Tuition fees</a></li>
 			</ul>
 
 			
@@ -46,5 +46,7 @@
 		@yield('sy')
 		@yield('subject')
 		@yield('teacher')
+		@yield('cashier')
+		@yield('tuition')
 	</div>
 @stop

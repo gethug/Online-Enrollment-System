@@ -300,3 +300,11 @@
 	font-weight: bold;
 	color: #a5a5a5;
 }
+
+.sydash{
+	font-size: 50px;
+	color: #a5a5a5;
+	margin-left:9px;
+	position: absolute;
+	margin-top: -22px;
+}

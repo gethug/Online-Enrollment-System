@@ -23,10 +23,7 @@
         @foreach($schoolyears as $sy)
             <tr style = "font-size:11px;">
                 <td class = "text-center">{{$sy->sy_id}} </td>
-                <td class = "text-center">{{$sy->SY}} </td>
-                <td style = "width:13px;">{{ link_to_route('SY.edit', 'Edit',
-                     array($sy->sy_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
-                </td>
+                <td class = "text-center">{{ ucwords($sy->start) . '-' . ucwords($sy->end)}} </td>
                  <td  style = "width:13px;">
                         {{ Form::open(array('method' 
                     => 'DELETE', 'route' => array('SY.destroy', $sy->sy_id))) }}                       

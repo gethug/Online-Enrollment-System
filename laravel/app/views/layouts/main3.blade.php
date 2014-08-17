@@ -58,5 +58,11 @@
 			@yield('secedit')
 			@yield('subjcreate')
 			@yield('subjedit')
+			@yield('sycreate')
+			@yield('syedit')
+			@yield('cashcreate')
+			@yield('cashedit')
+			@yield('tucreate')
+			@yield('tuedit')
 	</body>
 </html>

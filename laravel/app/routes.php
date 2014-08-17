@@ -15,6 +15,12 @@
 Route::resource('/', 'HomeController');
 Route::resource('login', 'LoginController');
 Route::resource('admin', 'DashController');
+
+
+Route::resource('Tuition', 'TuitionController');
+Route::resource('Tuition/create', 'TuitionController@getCreate');
+Route::resource('Cashier', 'CashierController');
+Route::resource('Cashier/create', 'CashierController@getCreate');
 Route::resource('administrator', 'AdminController');
 Route::resource('administrator/create', 'AdminController@getCreate');
 Route::resource('Room', 'RoomController');
@@ -22,6 +28,7 @@ Route::resource('Room/create', 'RoomController@getCreate');
 Route::resource('Section', 'SectionController');
 Route::resource('Section/create', 'SectionController@getCreate');
 Route::resource('SY', 'SyController');
+Route::resource('SY/create', 'SYController@getCreate');
 Route::resource('Level', 'LevelController');
 Route::resource('Level/create', 'LevelController@getCreate');
 Route::resource('Subject', 'SubjectController');

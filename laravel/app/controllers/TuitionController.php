@@ -1,6 +1,6 @@
 <?php
 
-	class SectionController extends BaseController {
+	class TuitionController extends BaseController {
 
 		
 				public function __construct() {
@@ -16,12 +16,12 @@
 				 */
 				public function index()
 				{
-					$sections= Section::join('tbllevel', 'tblsections.lvl_id', '=', 'tbllevel.lvl_id')
-					->select('tblsections.sec_id', 'tblsections.section', 'tbllevel.level')
+					$tuitions = Tuition::join('tbllevel', 'tbltuition.lvl_id', '=', 'tbllevel.lvl_id')
+					->select('tbltuition.tu_id', 'tbltuition.tuition', 'tbllevel.level')
 					->get();
 
-					return View::make('server.section.section')
-					->with('sections', $sections);
+					return View::make('server.tuition.index')
+					->with('tuitions', $tuitions);
 
 				}
 
@@ -30,7 +30,7 @@
 				public function getCreate()
 				{
 					$levels = Level::all();
-					return View::make('server.section.create')->with('levels', $levels);
+					return View::make('server.tuition.create')->with('levels', $levels);
 					
 				}
 
@@ -51,27 +51,27 @@
 				 */
 				public function store()
 				{
-					$id = Input::get('level');
 					$rules = array(
-					'section' => 'required|unique:tblsections,section,NULL,id,lvl_id,' . $id
+					'level' => 'unique:tbltuition,lvl_id',
+					'tuition' => 'required|numeric'
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
 
 				if ($validator->fails()){
-					return Redirect::to('Section/create')
+					return Redirect::to('Tuition/create')
 						->withErrors($validator)
 						->withInput();
 				} else{
 					
-					$sections = new Section;
-					$sections->lvl_id = Input::get('level');
-					$sections->section = Input::get('section');
-					$sections->save();
+					$tuitions = new Tuition;
+					$tuitions->lvl_id = Input::get('level');
+					$tuitions->tuition = Input::get('tuition');
+					$tuitions->save();
 
 
 					Session::flash('message','Successfully Saved!');
-					return Redirect::to('Section');
+					return Redirect::to('Tuition');
 				}
 
 		
@@ -98,10 +98,10 @@
 				{
 					$levels = Level::all();
 
-					$section= Section::find($id);
+					$tuitions = Tuition::find($id);
 
-					return View::make('server.section.edit')
-					->with('section', $section)
+					return View::make('server.tuition.edit')
+					->with('tuitions', $tuitions)
 					->with('levels',$levels);
 
 				}
@@ -114,28 +114,28 @@
 				 */
 				public function update($id)
 				{
-					$lvlid = Input::get('level');
 					$rules = array(
-					'section' => 'required|unique:tblsections,section,' . $id . ',sec_id,lvl_id,' . $lvlid
+					'level' => 'unique:tbltuition,lvl_id,' . $id . ',tu_id',
+					'tuition' => 'required|numeric'
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
 
 				if ($validator->fails()){
-					return Redirect::to('Section/' . $id . '/edit')
+					return Redirect::to('Tuition/' . $id . '/edit')
 						->withErrors($validator)
 						->withInput();
 				} else{
 					
 
-					$sections = Section::find($id);
-					$sections->lvl_id = Input::get('level');
-					$sections->section = Input::get('section');
-					$sections->save();
+					$tuitions = Tuition::find($id);
+					$tuitions->lvl_id = Input::get('level');
+					$tuitions->tuition = Input::get('tuition');
+					$tuitions->save();
 
 
 					Session::flash('message','Successfully Updated!');
-					return Redirect::to('Section');
+					return Redirect::to('Tuition');
 				}
 				}
 
@@ -147,9 +147,9 @@
 				 */
 				public function destroy($id)
 				{
-					$sections = Section::find($id);
-					$sections->delete();
-					return Redirect::to('Section');
+					$tuitions = Tuition::find($id);
+					$tuitions->delete();
+					return Redirect::to('Tuition');
 				} 
 
 

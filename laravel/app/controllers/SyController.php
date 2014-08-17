@@ -21,6 +21,14 @@
 
 				}
 
+
+				public function getCreate()
+				{
+					return View::make('server.sy.create');
+					
+				}
+
+
 				/**
 				 * Show the form for creating a new resource.
 				 *
@@ -38,9 +46,27 @@
 				 */
 				public function store()
 				{
+					$rules = array(
+					'schoolyear' => 'required|unique:tblschoolyear,start'
+						);
+
+				$validator = Validator::make(Input::all(), $rules);
+
+				if ($validator->fails()){
+					return Redirect::to('SY/create')
+						->withErrors($validator)
+						->withInput();
+				} else{
+					
+					$schoolyears = new Schoolyear;
+					$schoolyears->start = Input::get('schoolyear');
+					$schoolyears->end = Input::get('end');
+					$schoolyears->save();
 
 
-
+					Session::flash('message','Successfully Saved!');
+					return Redirect::to('SY');
+				}
 		
 				}
 
@@ -85,7 +111,9 @@
 				 */
 				public function destroy($id)
 				{
-					//
+					$schoolyears = Schoolyear::find($id);
+					$schoolyears->delete();
+					return Redirect::to('SY');
 				} 
 
 
