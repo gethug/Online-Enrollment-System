@@ -12,9 +12,9 @@
 
 <div class = "table-responsive" id = "tablet" >
 <h2 id = "cat" style = "">List of Sections&nbsp;/<a href = "Section/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
-<table class="table table-striped table-hover" id = "table">
+<table class="table table-hover" id = "table">
   <thead>
-        <tr style = "font-size:12px;">
+        <tr style = "font-size:12px;" >
              <th class = "text-center">ID</th>
             <th class = "text-center">Section</th>
             <th class = "text-center">Level</th>
@@ -22,7 +22,7 @@
     </thead>
     <tbody>
         @foreach($sections as $section)
-            <tr style = "font-size:11px;">
+            <tr style = "font-size:11px;" id = "items">
                 <td class = "text-center">{{$section->sec_id}} </td>
                 <td class = "text-center">{{$section->section}} </td>
                 <td class = "text-center">{{$section->level}} </td>

@@ -11,7 +11,7 @@
 
 <div class = "table-responsive" id = "tablet"  >
 <h2 id = "cat" style = "">List of Administrator&nbsp;/<a href = "administrator/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
-<table class="table table-striped table-hover" id = "table">
+<table class="table table-hover" id = "table">
   <thead>
         <tr style = "font-size:12px;">
              <th class = "text-center">ID</th>
@@ -21,7 +21,7 @@
     </thead>
     <tbody>
         @foreach($admins as $admin)
-            <tr style = "font-size:11px;">
+            <tr style = "font-size:11px;" id = "items">
                 <td class = "text-center"> {{ $admin->a_id}}</td>
                 <td class = "text-center">{{ ucwords($admin->Fname) . ' ' . ucwords($admin->Mname) . ' ' . ucwords($admin->Lname)}} </td>
                 <td class = "text-center"> {{ $admin->user}}</td>

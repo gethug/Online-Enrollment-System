@@ -193,11 +193,11 @@
 }
 
 #tablet{
-	width : 909px; 
+	width : 82%; 
 	position:relative;
 	display: inline-block;
-	margin-left:60px;
-	margin-top:40px;
+	margin-left: 16px;
+	margin-top: 20px;
 }
 
 .sdehead {
@@ -240,10 +240,11 @@
 }
 
 #cat {
+	font-size:26px;
 	font-family: 'Open Sans Condensed', sans-serif;
 	color: #454545; 
 	font-weight: bold;
-	 margin-bottom: 50px;
+	margin-bottom: 25px;
 }
 .part{
 	height:47px; 
@@ -254,7 +255,7 @@
 }
 
 .crud{
-	margin-top:100px;
+	margin-top:65px;
 	background-color: #ecf0f1;
 }
 
@@ -307,4 +308,9 @@
 	margin-left:9px;
 	position: absolute;
 	margin-top: -22px;
+}
+
+
+#items{
+	background-color:#f9f9f9;
 }

@@ -12,7 +12,7 @@
 
 <div class = "table-responsive" id = "tablet" >
 <h2 id = "cat" style = "">List of Rooms&nbsp;/<a href = "Room/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
-<table class="table table-striped table-hover" id = "table">
+<table class="table table-hover" id = "table">
   <thead>
         <tr style = "font-size:12px;">
              <th class = "text-center">ID</th>
@@ -21,7 +21,7 @@
     </thead>
     <tbody>
         @foreach($rooms as $room)
-            <tr style = "font-size:11px;">
+            <tr style = "font-size:11px;" id = "items">
                 <td class = "text-center">{{$room->r_id}} </td>
                 <td class = "text-center">{{$room->room}} </td>
                 <td style = "width:13px;">{{ link_to_route('Room.edit', 'Edit',
