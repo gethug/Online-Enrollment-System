@@ -20,7 +20,7 @@
 
 <div class = "container-fluid" style = "padding: 0px;">
 		<div class="sidebar" id = "sidebar">
-			<h4 class = "sdehead" ><i class="fa fa-file-text"></i>&nbsp;&nbsp;File</h4>
+			<h4 class = "sdehead" ><i class="fa fa-files-o"></i>&nbsp;&nbsp;File</h4>
 			<ul class = "lsthead" id = "file">
 				<li id = "hsec"> <i class="fa fa-users icon"></i><a class = "subs" id = "hseca" href = "Section">  Section</a></li>
 				<li id = "hrm"> <i class="fa fa-sign-in icon"></i><a class = "subs" id = "hrma" href = "Room">&nbsp;&nbsp;Rooms</a></li>
@@ -34,7 +34,10 @@
 				<li id = "htuition"><i class="fa fa-rub icon"></i><a class = "subs" id = "htuitiona" href = "Tuition">&nbsp;&nbsp;Tuition fees</a></li>
 			</ul>
 
-			
+			<h4 class = "sdehead" ><i class="fa fa-file-text"></i>&nbsp;&nbsp;Transaction</h4>
+			<ul class = "lsthead" id = "file">
+				<li id = "hsched"> <i class="fa fa-list-ul icon"></i><a class = "subs" id = "hscheda" href = "Schedule">  Schedule</a></li>
+			</ul>
 			
 
 
@@ -48,5 +51,6 @@
 		@yield('teacher')
 		@yield('cashier')
 		@yield('tuition')
+		@yield('schedule')
 	</div>
 @stop
