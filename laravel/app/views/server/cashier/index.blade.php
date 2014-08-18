@@ -4,6 +4,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
          $( "#hcash" ).addClass("active1" );
+         $( "#hcash" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hcasha" ).addClass("active" );
           $( "#hcash i" ).addClass("active" );
 });

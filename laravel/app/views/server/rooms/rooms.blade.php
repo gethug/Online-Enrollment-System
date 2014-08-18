@@ -4,6 +4,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
          $( "#hrm" ).addClass("active1" );
+         $( "#hrm" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hrma" ).addClass("active" );
           $( "#hrm i" ).addClass("active" );
 });

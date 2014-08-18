@@ -4,6 +4,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
          $( "#hsubj" ).addClass("active1" );
+         $( "#hsubj" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hsubja" ).addClass("active" );
           $( "#hsubj i" ).addClass("active" );
 });
