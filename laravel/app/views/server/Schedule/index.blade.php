@@ -1,6 +1,6 @@
 @extends('server.dash')
 
-@section('teacher')
+@section('schedule')
 <script type="text/javascript">
     $(document).ready(function(){
          $( "#hsched" ).addClass("active1" );
@@ -12,7 +12,7 @@
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = "">Schedules&nbsp;/<a href = "Teacher/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
+<h2 id = "cat" style = "">Schedules&nbsp;/<a href = "Schedule/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
 <table class="table table-hover" id = "table">
   <thead>
         <tr style = "font-size:12px;">
@@ -36,13 +36,13 @@
                 <td class = "text-center">{{ $sched->time}}</td>
                 <td class = "text-center"> {{ $sched->day}}</td>
                 <td class = "text-center">{{ ucwords($sched->fname) . ' ' . ucwords($sched->mname) . ' ' . ucwords($sched->lname)}} </td>
-                <td class = "text-center"> {{ $section->room}}</td>
+                <td class = "text-center"> {{ $sched->room}}</td>
                 <td style = "width:13px;">{{ link_to_route('Schedule.edit', 'Edit',
-                     array($section->sec_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
+                     array($sched->sched_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>
                  <td  style = "width:13px;">
                         {{ Form::open(array('method' 
-                    => 'DELETE', 'route' => array('Schedule.destroy', $section->sec_id))) }}                       
+                    => 'DELETE', 'route' => array('Schedule.destroy', $sched->sched_id))) }}                       
                             {{ Form::submit('Delete', array('class'
                     => 'btn btn-danger', 'id' => 'btndel')) }}
                         {{ Form::close() }}
