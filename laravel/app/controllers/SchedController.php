@@ -16,12 +16,16 @@
 				 */
 				public function index()
 				{
-					$sections= Section::join('tbllevel', 'tblsections.lvl_id', '=', 'tbllevel.lvl_id')
-					->select('tblsections.sec_id', 'tblsections.section', 'tbllevel.level')
+					$scheds= Sched::join('tbllevel', 'tbllevel.lvl_id', '=', 'tblsched.lvl_id')
+					->join('tblsubject', 'tblsubject.s_id', '=', 'tblsched.s_id')
+					->join('tblrooms', 'tblrooms.r_id', '=', 'tblsched.r_id')
+					->join('tblsections', 'tblsections.sec_id', '=', 'tblsched.sec_id')
+					->join('tblteacher', 'tblteacher.t_id', '=', 'tblsched.t_id')
+					->select('tblsubject.subj_code', 'tblsubject.subj_name', 'tblsched.time', 'tblsched.day', 'tblteacher.fname', 'tblteacher.mname', 'tblteacher.lname', 'tblrooms.room', 'tblsections.section')
 					->get();
 
 					return View::make('server.Schedule.index')
-						->with('sections', $sections);
+						->with('scheds', $scheds);
 
 				}
 
