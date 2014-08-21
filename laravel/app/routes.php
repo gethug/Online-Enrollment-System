@@ -37,3 +37,4 @@ Route::resource('Teacher', 'TeacherController');
 Route::resource('Teacher/create', 'TeacherController@getCreate');
 
 Route::resource('Schedule', 'SchedController');
+Route::resource('Schedule/create', 'SchedController@getCreate');

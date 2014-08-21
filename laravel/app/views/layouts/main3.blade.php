@@ -64,5 +64,7 @@
 			@yield('cashedit')
 			@yield('tucreate')
 			@yield('tuedit')
+			@yield('schedcreate')
+			@yield('schededit')
 	</body>
 </html>

@@ -32,7 +32,7 @@
 
 				public function getCreate()
 				{
-					
+					return View::make('server.Schedule.create');
 				}
 
 
