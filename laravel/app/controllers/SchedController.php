@@ -21,7 +21,7 @@
 					->join('tblrooms', 'tblrooms.r_id', '=', 'tblsched.r_id')
 					->join('tblsections', 'tblsections.sec_id', '=', 'tblsched.sec_id')
 					->join('tblteacher', 'tblteacher.t_id', '=', 'tblsched.t_id')
-					->select('tblsubject.subj_code', 'tblsubject.subj_name', 'tblsched.time', 'tblsched.day', 'tblteacher.fname', 'tblteacher.mname', 'tblteacher.lname', 'tblrooms.room', 'tblsections.section', 'tbllevel.level')
+					->select('tblsubject.subj_code', 'tblsubject.subj_name', 'tblsched.start','tblsched.end', 'tblsched.day', 'tblteacher.fname', 'tblteacher.mname', 'tblteacher.lname', 'tblrooms.room', 'tblsections.section', 'tbllevel.level')
 					->get();
 
 					return View::make('server.Schedule.index')
