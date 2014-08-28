@@ -84,32 +84,16 @@
  	</div>
 
 <!-- div for prerequisite and cost////////////////////////////////////////////////////////////////////////////////////////////////////-->
- 	<div class="form-group div-filds">
+ 	<div class="form-group div-filds" style = "width:100%;">
 
- 		<div class = "div-text">
- 			<select class="form-control feilds" style = "width:359px;" name = "prerequisite">
+ 		<div class = "div-text" style = "width:100%;">
+ 			<select class="form-control feilds" style = "width:98%;" name = "prerequisite">
  				  <option value = "none">none</option>
 	 			@foreach($subjects as $subject)
 				  <option value = "{{$subject->subj_name}}">{{$subject->subj_name}}</option>
 				@endforeach
 				</select>
  		</div>
-
- 		<div class = "div-text cost">
- 			{{Form::text('cost', '', array('placeholder' => 'Cost', 'class' => 'form-control feilds', 'style' => 'width:177px;'))}}
- 		</div>
-
-
-		@if($errors->first('cost')) 
-			<div class = "validte" style = "float: right;">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".cost" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('cost')}}</h6>
-			</div>
-		@endif
 
  	</div>
 

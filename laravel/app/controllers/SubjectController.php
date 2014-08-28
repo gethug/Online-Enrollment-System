@@ -19,7 +19,7 @@
 					$subjects= Subject::join('tbllevel', 'tblsubject.lvl_id', '=', 'tbllevel.lvl_id')
 					->select('tblsubject.s_id', 'tblsubject.subj_code', 
 						'tblsubject.subj_name', 'tblsubject.unit',
-						'tblsubject.prerequisite','tbllevel.level', 'tblsubject.cost')
+						'tblsubject.prerequisite','tbllevel.level')
 					->get();
 
 					return View::make('server.subject.subject')->with('subjects',$subjects);
@@ -58,8 +58,7 @@
 					'id' => 'required|unique:tblsubject,s_id',
 					'subjectcode' => 'required|unique:tblsubject,subj_code',
 					'subjectname' => 'required|unique:tblsubject,subj_name',
-					'unit' => 'required|numeric',
-					'cost' => 'required|numeric'
+					'unit' => 'required|numeric'
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
@@ -78,7 +77,6 @@
 					$subjects->subj_name = Input::get('subjectname');
 					$subjects->unit = Input::get('unit');
 					$subjects->prerequisite = Input::get('prerequisite');
-					$subjects->cost = Input::get('cost');
 					$subjects->save();
 
 
@@ -129,8 +127,7 @@
 							'id' => 'required|unique:tblsubject,s_id,' . $id . ',s_id',
 							'subjectcode' => 'required|unique:tblsubject,subj_code,' . $id . ',s_id',
 							'subjectname' => 'required|unique:tblsubject,subj_name,' . $id . ',s_id',
-							'unit' => 'required|numeric',
-							'cost' => 'required|numeric'
+							'unit' => 'required|numeric'
 								);
 
 						$validator = Validator::make(Input::all(), $rules);
@@ -149,7 +146,6 @@
 							$subjects->subj_name = Input::get('subjectname');
 							$subjects->unit = Input::get('unit');
 							$subjects->prerequisite = Input::get('prerequisite');
-							$subjects->cost = Input::get('cost');
 							$subjects->save();
 
 

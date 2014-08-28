@@ -22,7 +22,6 @@
             <th class = "text-center">Unit</th>
             <th class = "text-center">Prerequisite</th>
             <th class = "text-center">Level</th>
-            <th class = "text-center">Cost</th>
         </tr>
     </thead>
     <tbody>
@@ -34,7 +33,6 @@
                 <td class = "text-center"> {{ $subject->unit}}</td>
                 <td class = "text-center"> {{ $subject->prerequisite}}</td>
                 <td class = "text-center"> {{ $subject->level}}</td>
-                <td class = "text-center"> {{ $subject->cost}}</td>
                 <td style = "width:13px;">{{ link_to_route('Subject.edit', 'Edit',
                      array($subject->s_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>
