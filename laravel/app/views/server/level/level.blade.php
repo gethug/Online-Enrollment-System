@@ -18,6 +18,8 @@
         <tr style = "font-size:12px;">
              <th class = "text-center sort-numeric">ID</th>
             <th class = "text-center sort-alpha">Level</th>
+            <th class = "no-sort"></th>
+            <th class = "no-sort"></th>
         </tr>
     </thead>
     <tbody>
@@ -65,8 +67,8 @@
             }
           });
 
-          // hide first column
-          oTable02.fnSetColumnVis(0, false);
+           // hide first column
+           oTable02.fnSetColumnVis(0, false);
 
           // append add row button to table
           var addRowLink = '<a href="#" id="addRow" class="btn btn-green btn-xs add-row">Print</a>'

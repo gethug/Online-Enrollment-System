@@ -7,24 +7,6 @@
 	</title>
 
 	<head>
-		{{ HTML::style('/assets/css/minimal.css') }}
-		{{ HTML::style('/assets/css/vendor/bootstrap/bootstrap.min.css') }}
-		{{ HTML::style('/assets/css/font-awesome.css') }}
-		{{ HTML::style('/assets/css/vendor/animate/animate.min.css') }}
-		{{ HTML::style('/assets/js/vendor/mmenu/css/jquery.mmenu.all.css') }}
-		{{ HTML::style('/assets/js/vendor/videobackground/css/jquery.videobackground.css') }}
-		{{ HTML::style('/assets/css/vendor/bootstrap-checkbox.css') }}
-
-		{{ HTML::style('/assets/js/vendor/rickshaw/css/rickshaw.min.css') }}
-		{{ HTML::style('/assets/js/vendor/morris/css/morris.css') }}
-		{{ HTML::style('/assets/js/vendor/summernote/css/summernote.css') }}
-		{{ HTML::style('/assets/js/vendor/summernote/css/summernote-bs3.css') }}
-		{{ HTML::style('/assets/js/vendor/chosen/css/chosen.min.css') }}
-		{{ HTML::style('/assets/js/vendor/chosen/css/chosen-bootstrap.css') }}
-		{{ HTML::style('/assets/js/vendor/tabdrop/css/tabdrop.css') }}
-		{{ HTML::style('/assets/js/vendor/datatables/css/dataTables.bootstrap.css') }}
-		{{ HTML::style('/assets/js/vendor/datatables/css/ColVis.css') }}
-		{{ HTML::style('/assets/js/vendor/datatables/css/TableTools.css') }}
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/font-awesome.css">
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/minimal.css">
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/style.css">
