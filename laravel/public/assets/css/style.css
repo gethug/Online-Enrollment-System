@@ -1,6 +1,6 @@
 @font-face { font-family: 'Open Sans Condensed', sans-serif; src: url(assets/fonts/OpenSans-CondLight.ttf) }
 #admin{
-	
+	overflow:scroll;
 }
 
 #con {
@@ -17,6 +17,10 @@
 	background-color:white;
 	border-bottom:1px solid #DADCDD;
 
+}
+
+#addRow{
+	display:none;
 }
 
 #des{
