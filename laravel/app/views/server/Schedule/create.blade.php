@@ -6,98 +6,9 @@
 
  	{{Form::open(array('route' => 'Schedule.store', 'class' => 'form-inline'))}}
 
-<!-- div for ID //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
- 	<div class="form-group div-filds" style = "width:98%;">
- 	<div class = "div-text ID" style = "width: 100%">
- 		{{Form::text('id', '', array('placeholder' => 'ID', 'class' => 'form-control feilds', 'style' => 'width:100%;'))}}
- 		</div>
- 		@if($errors->first('id')) 
-			<div class = "validte">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".ID" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('id')}}</h6>
-			</div>
-		@endif
- 	</div>
+<!-- div for day////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-
-<!-- div for name ////////////////////////////////////////////////////////////////////////////////////////////////////-->
- 	<div class="form-group div-filds">
- 	<div class = "div-text fname">
- 		{{Form::text('Firstname', '', array('placeholder' => 'First name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
- 		</div>
- 		{{Form::text('Mname', '', array('placeholder' => 'Middle name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
- 	<div class = "div-text lname">
- 		{{Form::text('Lastname', '', array('placeholder' => 'Last name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
- 		</div>
-
- 		@if($errors->first('Firstname')) 
-			<div class = "validte">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".fname" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('Firstname')}}</h6>
-			</div>
-		@endif
-
-
-			@if($errors->first('Lastname')) 
-			<div class = "validte" style = "float:right;">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".lname" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('Lastname')}}</h6>
-			</div>
-		@endif
-
- 	</div>
-
-<!-- div for degree and AGe ////////////////////////////////////////////////////////////////////////////////////////////////////-->
- 	<div class="form-group div-filds">
-
- 		<div class = "div-text deg">
- 			{{Form::text('degree', '', array('placeholder' => 'Degree', 'class' => 'form-control feilds', 'style' => 'width:359px;'))}}
- 		</div>
-
- 		<div class = "div-text age">
- 			{{Form::text('age', '', array('placeholder' => 'Age', 'class' => 'form-control feilds', 'style' => 'width:177px;'))}}
- 		</div>
-
-
- 		@if($errors->first('degree')) 
-			<div class = "validte">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".deg" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('degree')}}</h6>
-			</div>
-		@endif
-
-		@if($errors->first('age')) 
-			<div class = "validte" style = "float: right;">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".age" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('age')}}</h6>
-			</div>
-		@endif
-
- 	</div>
-
- 	<!-- div for Gender////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
- 	<div class="form-group div-filds" style = "margin-top: 12px; margin-bottom: 10px;">
+ 	<div class="form-group div-filds" style = "margin-top: -13px; margin-bottom: -17px;">
 
 					 <div class="checkbox" style = "margin-left:10px;">
 					  			<label id = "gender">
@@ -141,62 +52,78 @@
 
 	</div>
 
-<!-- div for contact ////////////////////////////////////////////////////////////////////////////////////////////////////-->
-			<div class="form-group div-filds" style = "width:98%;">
-			 	<div class = "div-text contc input-group" style = "width:100%;">
-			 	<div class="input-group-addon" style = "font-weight: bold; background-color: white;">+639</div>
-			 		{{Form::text('contact', '', array('placeholder' => 'Contact', 'class' => 'form-control feilds', 'style' => 'width:100%;'))}}
-			 		</div>
+<!-- div for time //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-			 		@if($errors->first('contact')) 
-						<div class = "validte">
-							<script type="text/javascript">
-								 $(document).ready(function(){
-			         				$( ".contc" ).addClass("has-error" );
-								 });
-							</script>
-							<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('contact')}}</h6>
-						</div>
-					@endif
-			 	</div>
+<script type="text/javascript">
 
-<!-- div for email and password ////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	$(document).ready(function(){
+	$('#time').timepicker({ 'timeFormat': 'h:i A' , 'step': 15});
+	$('#time').timepicker('option', { useSelect: true });
+		$('#timend').timepicker({ 'timeFormat': 'h:i A' , 'step': 15});
+	$('#timend').timepicker('option', { useSelect: true });
+});
 
-	<div class="form-group div-filds">
-
-		<div class = "div-text mail">
- 			{{Form::text('email', '', array('placeholder' => 'Email', 'class' => 'form-control feilds', 'id' => 'filds'))}}
+</script>
+ 	<div class="form-group div-filds" style = "width:98%;">
+ 	<div class = "div-text ID" style = "width: 100%">
+ 		<select id = "time" name = "start">
+				</select>
+				<span style = "font-size: 20px;"> - </span>
+			<select id = "timend" name = "end">
+				</select>
  		</div>
- 		<div class = "div-text password">
- 			{{Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control feilds', 'id' => 'filds'))}}
- 		</div>
-
- 		@if($errors->first('email')) 
-			<div class = "validte">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".mail" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('email')}}</h6>
-			</div>
-		@endif
-
-		@if($errors->first('password')) 
-			<div class = "validte" style = "float:right;">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".password" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('password')}}</h6>
-			</div>
-		@endif
+ 	</div>
 
 
-			
+
+
+<!-- div for teacher ////////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 	<div class="form-group div-filds" style = "width:100%;">
+ 	<select class="form-control feilds" style = "width:98%;" name = "teacher">
+ 				@foreach($teachers as $teacher)
+				  <option value = "{{$teacher->t_id}}">{{ ucwords($teacher->fname) . ' ' . ucwords($teacher->mname) . ' ' . ucwords($teacher->lname)}}</option>
+				@endforeach
+	 			
+				</select>
 
  	</div>
+
+<!-- div for subject and rooms ////////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 	<div class="form-group div-filds" style = "width:100%;">
+
+ 	<select class="form-control feilds" style = "width:50%;" name = "subject">
+	 			@foreach($subjects as $subject)
+				  <option value = "{{$subject->s_id}}">{{ $subject->subj_name }}</option>
+				@endforeach
+				</select>
+
+	<select class="form-control feilds" style = "width:48%;" name = "room">
+	 			@foreach($rooms as $room)
+				  <option value = "{{$room->r_id}}">{{ $room->room }}</option>
+				@endforeach
+				</select>
+
+ 	</div>
+
+ 	<!-- div for levels and section ////////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 	<div class="form-group div-filds" style = "width:100%;">
+
+ 	<select class="form-control feilds" style = "width:50%;" name = "subject">
+	 			@foreach($levels as $level)
+				  <option value = "{{$level->lvl_id}}">{{ $level->level }}</option>
+				@endforeach
+				</select>
+
+	<select class="form-control feilds" style = "width:48%;" name = "room">
+	 			@foreach($sections as $section)
+				  <option value = "{{$section->sec_id}}">{{ $section->section }}</option>
+				@endforeach
+				</select>
+
+ 	</div>
+
+ 	
+
 
 
  		{{ Form::submit('Save', array('class' => 'btn btn-info', 'id' => 'csubmit', 'style' => 'color:white;')) }}

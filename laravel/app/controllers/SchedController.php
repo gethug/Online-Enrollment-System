@@ -32,7 +32,17 @@
 
 				public function getCreate()
 				{
-					return View::make('server.Schedule.create');
+					$levels = Level::all();
+					$teachers = Teacher::all();
+					$subjects = Subject::all();
+					$rooms = Room::all();
+					$sections = Section::all();
+					return View::make('server.Schedule.create')
+					->with('teachers', $teachers)
+					->with('levels', $levels)
+					->with('rooms', $rooms)
+					->with('subjects', $subjects)
+					->with('sections', $sections);
 				}
 
 
@@ -54,7 +64,28 @@
 				public function store()
 				{
 
+					$id = Input::get('level');
+					$rules = array(
+					'section' => 'required|unique:tblsections,section,NULL,id,lvl_id,' . $id
+						);
 
+				$validator = Validator::make(Input::all(), $rules);
+
+				if ($validator->fails()){
+					return Redirect::to('Section/create')
+						->withErrors($validator)
+						->withInput();
+				} else{
+					
+					$sections = new Section;
+					$sections->lvl_id = Input::get('level');
+					$sections->section = Input::get('section');
+					$sections->save();
+
+
+					Session::flash('message','Successfully Saved!');
+					return Redirect::to('Section');
+				}
 
 		
 				}
