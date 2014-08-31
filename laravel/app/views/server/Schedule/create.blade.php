@@ -57,20 +57,31 @@
 <script type="text/javascript">
 
 	$(document).ready(function(){
-	$('#time').timepicker({ 'timeFormat': 'h:i A' , 'step': 15});
-	$('#time').timepicker('option', { useSelect: true });
-		$('#timend').timepicker({ 'timeFormat': 'h:i A' , 'step': 15});
-	$('#timend').timepicker('option', { useSelect: true });
+	 $('#timepicker1').timepicker({
+                minuteStep: 5,
+                showInputs: false,
+                disableFocus: true
+            });
+	 $('#timepicker2').timepicker({
+                minuteStep: 5,
+                showInputs: false,
+                disableFocus: true
+            });
 });
 
 </script>
  	<div class="form-group div-filds" style = "width:98%;">
  	<div class = "div-text ID" style = "width: 100%">
- 		<select id = "time" name = "start">
-				</select>
+
+ 		<div class="bootstrap-timepicker pull-left">
+            <input id="timepicker1" type="text" class="input-small">
+        </div>
 				<span style = "font-size: 20px;"> - </span>
-			<select id = "timend" name = "end">
-				</select>
+			
+		<div class="bootstrap-timepicker pull-left">
+            <input id="timepicker2" type="text" class="input-small">
+        </div>
+
  		</div>
  	</div>
 
@@ -108,13 +119,13 @@
  	<!-- div for levels and section ////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds" style = "width:100%;">
 
- 	<select class="form-control feilds" style = "width:50%;" name = "subject">
+ 	<select class="form-control feilds" style = "width:50%;" name = "level">
 	 			@foreach($levels as $level)
 				  <option value = "{{$level->lvl_id}}">{{ $level->level }}</option>
 				@endforeach
 				</select>
 
-	<select class="form-control feilds" style = "width:48%;" name = "room">
+	<select class="form-control feilds" style = "width:48%;" name = "section">
 	 			@foreach($sections as $section)
 				  <option value = "{{$section->sec_id}}">{{ $section->section }}</option>
 				@endforeach

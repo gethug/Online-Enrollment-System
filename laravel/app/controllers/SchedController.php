@@ -64,27 +64,32 @@
 				public function store()
 				{
 
-					$id = Input::get('level');
 					$rules = array(
-					'section' => 'required|unique:tblsections,section,NULL,id,lvl_id,' . $id
+					//'start' => 'required'
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
 
 				if ($validator->fails()){
-					return Redirect::to('Section/create')
+					return Redirect::to('Schedule/create')
 						->withErrors($validator)
 						->withInput();
 				} else{
 					
-					$sections = new Section;
-					$sections->lvl_id = Input::get('level');
-					$sections->section = Input::get('section');
-					$sections->save();
-
+					$scheds = new Sched;
+					$scheds->sched_id = Input::get('level');
+					$scheds->sec_id = Input::get('section');
+					$scheds->lvl_id = Input::get('level');
+					$scheds->s_id = Input::get('subject');
+					$scheds->start = Input::get('start');
+					$scheds->end = Input::get('end');
+					$scheds->day = Input::get('day');
+					$scheds->t_id = Input::get('teacher');
+					$scheds->r_id = Input::get('room');
+					$scheds->save();
 
 					Session::flash('message','Successfully Saved!');
-					return Redirect::to('Section');
+					return Redirect::to('Schedule');
 				}
 
 		
