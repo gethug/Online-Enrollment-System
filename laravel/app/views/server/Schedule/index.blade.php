@@ -16,6 +16,7 @@
 <table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;">
+           <th class = "text-center">ID</th>
             <th class = "text-center">Subject Code</th>
             <th class = "text-center">Subject Name</th>
             <th class = "text-center">Time</th>
@@ -31,6 +32,7 @@
     <tbody>
         @foreach($scheds as $sched)
             <tr style = "font-size:11px;" id = "items">
+              <td class = "text-center">{{ $sched->sched_id}}</td>
                 <td class = "text-center">{{ $sched->subj_code}}</td>
                 <td class = "text-center"> {{ $sched->subj_name}}</td>
                 <td class = "text-center">{{ ucwords($sched->start) . ' - ' . ucwords($sched->end)}}</td>
@@ -42,7 +44,7 @@
                 <td style = "width:13px;">{{ link_to_route('Schedule.edit', 'Edit',
                      array($sched->sched_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>
-                 <td  style = "width:13px;">
+                <td  style = "width:13px;">
                         {{ Form::open(array('method' 
                     => 'DELETE', 'route' => array('Schedule.destroy', $sched->sched_id))) }}                       
                             {{ Form::submit('Delete', array('class'
@@ -79,7 +81,7 @@
           });
 
            // hide first column
-          // oTable02.fnSetColumnVis(0, false);
+          oTable02.fnSetColumnVis(0, false);
 
           // append add row button to table
           var addRowLink = '<a href="#" id="addRow" class="btn btn-green btn-xs add-row">Print</a>'

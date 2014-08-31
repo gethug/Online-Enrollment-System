@@ -13,7 +13,7 @@
 					 <div class="checkbox" style = "margin-left:10px;">
 					  			<label id = "gender">
 
-					  			{{Form::checkbox('day', 'M', true)}}
+					  			{{Form::checkbox('day[]', 'M', true)}}
 					    		M
 
 					  			</label>
@@ -21,34 +21,56 @@
 
 					<div class="checkbox"  style = "margin-left:5px;">
 					  			<label id = "gender">
-					    			{{Form::checkbox('day', 'T')}}
+					    			{{Form::checkbox('day[]', 'T', true)}}
 					   					T
 					  			</label>
 						</div>
 						<div class="checkbox"  style = "margin-left:5px;">
 					  			<label id = "gender">
-					    			{{Form::checkbox('day', 'W')}}
+					    			{{Form::checkbox('day[]', 'W', true)}}
 					   					W
 					  			</label>
 						</div>
 						<div class="checkbox"  style = "margin-left:5px;">
 					  			<label id = "gender">
-					    			{{Form::checkbox('day', 'TH')}}
+					    			{{Form::checkbox('day[]', 'TH', true)}}
 					   					TH
 					  			</label>
 						</div>
 						<div class="checkbox"  style = "margin-left:5px;">
 					  			<label id = "gender">
-					    			{{Form::checkbox('day', 'F')}}
+					    			{{Form::checkbox('day[]', 'F', true)}}
 					   					F
 					  			</label>
 						</div>
 						<div class="checkbox"  style = "margin-left:5px;">
 					  			<label id = "gender">
-					    			{{Form::checkbox('day', 'S')}}
+					    			{{Form::checkbox('day[]', 'S', true)}}
 					   					S
 					  			</label>
 						</div>
+
+
+
+						<script type="text/javascript">
+							$(document).ready(function(){
+							var chkArray = [];
+							/* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+							$(".checkbox:checked").each(function() {
+								chkArray.push($(this).val());
+							});
+							
+							/* we join the array separated by the comma */
+							var selected;
+							selected = chkArray.join(',');
+							
+							/* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+							if(selected.length > 1){
+								alert("You have selected " + selected);	
+							}
+
+							});
+						</script>
 
 	</div>
 
@@ -70,16 +92,20 @@
 });
 
 </script>
+
+
  	<div class="form-group div-filds" style = "width:98%;">
  	<div class = "div-text ID" style = "width: 100%">
 
- 		<div class="bootstrap-timepicker pull-left">
-            <input id="timepicker1" type="text" class="input-small">
+ 		 <div class="input-append bootstrap-timepicker darbs">
+            <input id="timepicker1" type="text" class="input-small form-control " name = "start">
+            <span class="add-on ades" ><i class="fa fa-clock-o"></i></span>
         </div>
-				<span style = "font-size: 20px;"> - </span>
 			
-		<div class="bootstrap-timepicker pull-left">
-            <input id="timepicker2" type="text" class="input-small">
+			
+		<div class="input-append bootstrap-timepicker darbs">
+            <input id="timepicker2" type="text" class="input-small form-control " name = "end">
+            <span class="add-on ades"><i class="fa fa-clock-o"></i></span>
         </div>
 
  		</div>
