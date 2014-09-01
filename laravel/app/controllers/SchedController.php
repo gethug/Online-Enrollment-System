@@ -151,6 +151,14 @@
 					$scheds= Sched::find($id);
 					$scheds->delete();
 					return Redirect::to('Schedule');
+				}
+
+				public function getDrop()
+				{
+					$input = Input::get('option');
+					$level = Level::find($input);
+        			$sections = Level::sections($level->lvl_id);
+        			return Response::json($sections);
 				} 
 
 

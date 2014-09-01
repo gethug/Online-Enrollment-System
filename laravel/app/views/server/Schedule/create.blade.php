@@ -143,22 +143,44 @@
  	</div>
 
  	<!-- div for levels and section ////////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 	
+
+ 	<script type="text/javascript">
+			jQuery(document).ready(function($){
+			   $('#level').change(function(){
+                $.get("{{ url('api/dropdown')}}",
+                { option: $(this).val() },
+                function(data) {
+                var sec = $('#section');
+                sec.empty();
+                $.each(data, function(index,element) {
+                    sec.append("<option value="+ element.sec_id +">" + element.section + "</option>");
+                });
+                });
+            });
+				});
+	</script>
+
+ 		{{ Form::open() }}
  	<div class="form-group div-filds" style = "width:100%;">
 
- 	<select class="form-control feilds" style = "width:50%;" name = "level">
+ 	<select class="form-control feilds" style = "width:50%;" name = "level" id = "level">
 	 			@foreach($levels as $level)
 				  <option value = "{{$level->lvl_id}}">{{ $level->level }}</option>
 				@endforeach
 				</select>
 
-	<select class="form-control feilds" style = "width:48%;" name = "section">
+	<select class="form-control feilds" style = "width:48%;" name = "section" id = "section">
 	 			@foreach($sections as $section)
 				  <option value = "{{$section->sec_id}}">{{ $section->section }}</option>
 				@endforeach
 				</select>
 
- 	</div>
 
+	
+
+ 	</div>
+ 		{{ Form::close(); }}
  	
 
 

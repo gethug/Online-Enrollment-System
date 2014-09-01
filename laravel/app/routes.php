@@ -36,5 +36,7 @@ Route::resource('Subject/create', 'SubjectController@getCreate');
 Route::resource('Teacher', 'TeacherController');
 Route::resource('Teacher/create', 'TeacherController@getCreate');
 
+
+Route::get('api/dropdown','SchedController@getDrop');
 Route::resource('Schedule', 'SchedController');
 Route::resource('Schedule/create', 'SchedController@getCreate');
