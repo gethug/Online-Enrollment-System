@@ -6,7 +6,7 @@ class Level extends Eloquent{
 	
 	 public static function sections($id){
            return Section::Join('tbllevel', 'tbllevel.lvl_id', '=', 'tblsections.lvl_id')
-           ->where('tblsections.sec_id', '=', $id)
+           ->where('tblsections.lvl_id', '=', $id)
            ->get(['tblsections.*']);
           }
 }
