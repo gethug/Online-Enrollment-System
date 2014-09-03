@@ -9,5 +9,11 @@ class Level extends Eloquent{
            ->where('tblsections.lvl_id', '=', $id)
            ->get(['tblsections.*']);
           }
+
+      public static function subjects($id){
+           return Subject::Join('tbllevel', 'tbllevel.lvl_id', '=', 'tblsubject.lvl_id')
+           ->where('tblsubject.lvl_id', '=', $id)
+           ->get(['tblsubject.*']);
+          }
 }
 

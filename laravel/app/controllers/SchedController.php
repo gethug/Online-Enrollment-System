@@ -16,12 +16,21 @@
 				 */
 				public function index()
 				{
+						$syr = 0;
+						$sys = Schoolyear::all();
+						foreach($sys as $sy){
+							if($sy->Active == 1){
+								$syr = $sy->sy_id;
+							}
+						}
+
 					$scheds= Sched::join('tbllevel', 'tbllevel.lvl_id', '=', 'tblsched.lvl_id')
 					->join('tblsubject', 'tblsubject.s_id', '=', 'tblsched.s_id')
 					->join('tblrooms', 'tblrooms.r_id', '=', 'tblsched.r_id')
 					->join('tblsections', 'tblsections.sec_id', '=', 'tblsched.sec_id')
 					->join('tblteacher', 'tblteacher.t_id', '=', 'tblsched.t_id')
 					->select('tblsubject.subj_code', 'tblsched.sched_id', 'tblsubject.subj_name', 'tblsched.start','tblsched.end', 'tblsched.day', 'tblteacher.fname', 'tblteacher.mname', 'tblteacher.lname', 'tblrooms.room', 'tblsections.section', 'tbllevel.level')
+					->where('tblsched.sy_id', '=' , $syr)
 					->get();
 
 					return View::make('server.Schedule.index')
@@ -71,6 +80,7 @@
 					$secid = Input::get('section');
 					$start = Input::get('start');
 					$end = Input::get('end');
+
 
 					$tex = DB::table('tblteacher')
 							->where('t_id','=',$tid)
@@ -512,6 +522,13 @@
 					$level = Level::find($input);
         			$sections = Level::sections($level->lvl_id);
         			return Response::json($sections);
+				} 
+				public function getDrop2()
+				{
+					$input = Input::get('option');
+					$level = Level::find($input);
+        			$subjects = Level::subjects($level->lvl_id);
+        			return Response::json($subjects);
 				} 
 
 

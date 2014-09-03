@@ -116,34 +116,25 @@
 
 <!-- div for teacher ////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds" style = "width:100%;">
- 	<select class="form-control feilds" style = "width:98%;" name = "teacher">
+ 	<select class="form-control feilds teacher" style = "width:98%;" name = "teacher">
  				@foreach($teachers as $teacher)
 				  <option value = "{{$teacher->t_id}}">{{ ucwords($teacher->fname) . ' ' . ucwords($teacher->mname) . ' ' . ucwords($teacher->lname)}}</option>
 				@endforeach
 	 			
 				</select>
-
+				@if (Session::get('terror'))
+				<div class = "validte">
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".teacher" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px" class = "val-lbl">{{ Session::get('terror')}}</h6>
+							</div>
+				@endif
  	</div>
 
 <!-- div for subject and rooms ////////////////////////////////////////////////////////////////////////////////////////////////////-->
- 	<div class="form-group div-filds" style = "width:100%;">
-
- 	<select class="form-control feilds" style = "width:50%;" name = "subject">
-	 			@foreach($subjects as $subject)
-				  <option value = "{{$subject->s_id}}">{{ $subject->subj_name }}</option>
-				@endforeach
-				</select>
-
-	<select class="form-control feilds" style = "width:48%;" name = "room">
-	 			@foreach($rooms as $room)
-				  <option value = "{{$room->r_id}}">{{ $room->room }}</option>
-				@endforeach
-				</select>
-
- 	</div>
-
- 	<!-- div for levels and section ////////////////////////////////////////////////////////////////////////////////////////////////////-->
- 		
  	<div class="form-group div-filds" style = "width:100%;">
 
  	<select class="form-control feilds" style = "width:50%;" name = "level" id = "level">
@@ -166,8 +157,61 @@
                                         });
                                         });
                         });
+
+		$('#level').change(function(){
+                                $.get("{{ url('api/dropdownsub')}}", 
+                                        { option: $(this).val() }, 
+                                        function(data) {
+                                                var sub = $('#subject');
+                                                sub.empty();
+                                               
+                                                $(data).each( function(index, element) {
+                                            sub.append("<option value='"+ element.s_id +"''>" + element.subj_name + "</option>");
+                                        });
+                                        });
+                        });
 		     });
 	</script>
+
+	<select class="form-control feilds" style = "width:48%;" name = "room">
+	 			@foreach($rooms as $room)
+				  <option value = "{{$room->r_id}}">{{ $room->room }}</option>
+				@endforeach
+				</select>
+
+				@if (Session::get('rerror'))
+				<div class = "validte">
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".teacher" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px" class = "val-lbl">{{ Session::get('rerror')}}</h6>
+							</div>
+				@endif
+ 	</div>
+
+ 	<!-- div for levels and section ////////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 		
+ 	<div class="form-group div-filds" style = "width:100%;">
+
+ 	<select class="form-control feilds" style = "width:50%;" name = "subject" id ="subject">
+	 			@foreach($subjects as $subject)
+				  <option value = "{{$subject->s_id}}">{{ $subject->subj_name }}</option>
+				@endforeach
+				</select>
+
+				@if (Session::get('serror'))
+				<div class = "validte">
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".teacher" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px" class = "val-lbl">{{ Session::get('serror')}}</h6>
+							</div>
+				@endif
+
 
 	<select class="form-control feilds" style = "width:48%;" name = "section" id = "section">
 	 			@foreach($sections as $section)
@@ -175,6 +219,16 @@
 				@endforeach
 				</select>
 
+				@if (Session::get('secerror'))
+				<div class = "validte">
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".teacher" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px; float: right;" class = "val-lbl">{{ Session::get('secerror')}}</h6>
+							</div>
+				@endif
 
 	
 
