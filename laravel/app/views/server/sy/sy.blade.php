@@ -19,6 +19,7 @@
              <th class = "text-center">ID</th>
             <th class = "text-center">School Year</th>
             <th class = "no-sort"></th>
+             <th class = "no-sort"></th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,15 @@
             <tr style = "font-size:11px;" id = "items">
                 <td class = "text-center">{{$sy->sy_id}} </td>
                 <td class = "text-center">{{ ucwords($sy->start) . '-' . ucwords($sy->end)}} </td>
+                @if($sy->Active != 1)
+                <td style = "width:13px;">{{ link_to_route('SY.edit', 'Activate',
+                     array($sy->sy_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
+                </td>
+                @else
+                  <td style = "width:13px;">{{ link_to_route('SY.edit', 'Activate',
+                     array($sy->sy_id), array('class' => 'btn btn-lg btn-primary','disabled' => 'disabled', 'id' => 'btnedit')) }}
+                </td>
+                @endif
                  <td  style = "width:13px;">
                         {{ Form::open(array('method' 
                     => 'DELETE', 'route' => array('SY.destroy', $sy->sy_id))) }}                       

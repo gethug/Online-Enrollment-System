@@ -57,10 +57,11 @@
 						->withErrors($validator)
 						->withInput();
 				} else{
-					
+					$active = 0;
 					$schoolyears = new Schoolyear;
 					$schoolyears->start = Input::get('schoolyear');
 					$schoolyears->end = Input::get('end');
+					$schoolyears->Active = $active;
 					$schoolyears->save();
 
 
@@ -89,7 +90,19 @@
 				 */
 				public function edit($id)
 				{
-					//
+					$schoolyear = Schoolyear::find($id);
+					$sys = Schoolyear::all();
+					foreach($sys as $sy){
+
+						if ($sy->Active == 1){
+							$sy->Active = 0;
+							$sy->save();
+						}
+					}
+
+					$schoolyear->Active = 1;
+					$schoolyear->save();
+					return Redirect::to('SY');
 				}
 
 				/**
