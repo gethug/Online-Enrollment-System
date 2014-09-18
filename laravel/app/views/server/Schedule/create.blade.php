@@ -180,7 +180,7 @@
 				</select>
 
 				@if (Session::get('rerror'))
-				<div class = "validte">
+				<div class = "validte" style = "float:right;">
 								<script type="text/javascript">
 									 $(document).ready(function(){
 				         				$( ".teacher" ).addClass("has-error" );
@@ -193,9 +193,9 @@
 
  	<!-- div for levels and section ////////////////////////////////////////////////////////////////////////////////////////////////////-->
  		
- 	<div class="form-group div-filds" style = "width:100%;">
+ 	<div class="form-group div-filds" style = "width:50%;">
 
- 	<select class="form-control feilds" style = "width:50%;" name = "subject" id ="subject">
+ 	<select class="form-control feilds" style = "width:100%;" name = "subject" id ="subject">
 	 			@foreach($subjects as $subject)
 				  <option value = "{{$subject->s_id}}">{{ $subject->subj_name }}</option>
 				@endforeach
@@ -211,9 +211,14 @@
 								<h6 style = "margin: 5px" class = "val-lbl">{{ Session::get('serror')}}</h6>
 							</div>
 				@endif
+	
+
+ 	</div>
 
 
-	<select class="form-control feilds" style = "width:48%;" name = "section" id = "section">
+ 	<div class="form-group div-filds" style = "width:48%;">
+
+	<select class="form-control feilds" style = "width:100%;" name = "section" id = "section">
 	 			@foreach($sections as $section)
 				  <option value = "{{$section->sec_id}}">{{ $section->section }}</option>
 				@endforeach

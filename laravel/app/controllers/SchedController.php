@@ -147,279 +147,77 @@
 						{
 							if($sched->t_id == $tid)
 							{
-								// return strtotime($start) . ' - ' . strtotime($sched->start) . ' = ' . strtotime($end) . ' - ' . strtotime($sched->end);
 								if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
 							{
-								return Redirect::to('/Schedule/create')->with('terror', 'Teacher is not available!');
+								return Redirect::to('/Schedule/create')->with('terror', 'Teacher is not available!')->withInput();
 							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('terror', 'Teacher is not available!');
+								return Redirect::to('/Schedule/create')->with('terror', 'Teacher is not available!')->withInput();
 							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('terror', 'Teacher is not available!');
+								return Redirect::to('/Schedule/create')->with('terror', 'Teacher is not available!')->withInput();
 							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('terror', 'Teacher is not available!');
-							}else{
-								if($rex != 0)
-								{
-									if($sched->r_id == $rid)
-									{
-												if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!');
-									}else{
-										if($sex != 0)
-										{
-											if($sched->s_id == $sid)
-											{
-																if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-											}else{
-												if($secex != 0)
-												{
-													if($sched->sec_id == $secid)
-													{
-																if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('seerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-													}
-													}
-												}
-											}
-											}
-										}
-										else
-										{
-									//subject else------------------------------------------------------------------------------
-										if($secex != 0)
-												{
-													if($sched->sec_id == $secid)
-													{
-																				if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-													}
-													}
-												}
-										}
-									}
-									}
-								}
-								else
-								{
-									//room else----------------------------------------------------------------------------------
-								if($sex != 0)
-										{
-											if($sched->s_id == $sid)
-											{
-																if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-											}else{
-												if($secex != 0)
-												{
-													if($sched->sec_id == $secid)
-													{
-																				if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-													}
-													}
-												}
-											}
-											}
-										}
-										else
-										{
-									//subject else------------------------------------------------------------------------------
-										if($secex != 0)
-												{
-													if($sched->sec_id == $secid)
-													{
-																				if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-													}
-													}
-												}
-										}
-								}
+								return Redirect::to('/Schedule/create')->with('terror', 'Teacher is not available!')->withInput();
 							}
 							}
 						}
-						else
+
+						//Rooms------------------------------------------------------------------------------------------------------
+						if($rex != 0)
 						{
-							//Teacher else--------------------------------------------------------------------------------------
-							if($rex != 0)
-								{
-									if($sched->r_id == $rid)
-									{
-												if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
+							if($sched->r_id == $rid)
 							{
-								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!');
-									}else{
-										if($sex != 0)
-										{
-											if($sched->s_id == $sid)
-											{
-																if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
+								if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
 							{
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
+								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!')->withInput();
 							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
+								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!')->withInput();
 							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
+								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!')->withInput();
 							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-											}else{
-												if($secex != 0)
-												{
-													if($sched->sec_id == $secid)
-													{
-																				if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-													}
-													}
-												}
-											}
-											}
-										}
-										else
-										{
-									//subject else------------------------------------------------------------------------------
-										if($secex != 0)
-												{
-													if($sched->sec_id == $secid)
-													{
-																				if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-													}
-													}
-												}
-										}
+								return Redirect::to('/Schedule/create')->with('rerror', 'Room is not available!')->withInput();
 									}
-									}
-								}
-								else
-								{
-									//room else----------------------------------------------------------------------------------
-								if($sex != 0)
-										{
-											if($sched->s_id == $sid)
-											{
-																if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!');
-											}else{
-												if($secex != 0)
-												{
-													if($sched->sec_id == $secid)
-													{
-																				if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-													}
-													}
-												}
-											}
-											}
-										}
-										else
-										{
-									//subject else------------------------------------------------------------------------------
-										if($secex != 0)
-												{
-													if($sched->sec_id == $secid)
-													{
-																				if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
-							{
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
-								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!');
-													}
-													}
-												}
-												
-										}
-								}
+							}
 						}
+
+
+						//Subjects------------------------------------------------------------------------------------------------------
+						if($sex != 0)
+						{
+							if($sched->s_id == $sid)
+							{
+								if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
+							{
+								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!')->withInput();
+							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
+								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!')->withInput();
+							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
+								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!')->withInput();
+							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
+								return Redirect::to('/Schedule/create')->with('serror', 'Subject is not available!')->withInput();
+											}
+							}
+						}
+
+
+						//Sections------------------------------------------------------------------------------------------------------
+						if($secex != 0)
+						{
+							if($sched->sec_id == $secid)
+							{
+								if(strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->start))
+							{
+								return Redirect::to('/Schedule/create')->with('seerror', 'Section is not available!')->withInput();
+							}elseif (strtotime($start) < strtotime($sched->end) && strtotime($end) > strtotime($sched->end)) {
+								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!')->withInput();
+							}elseif (strtotime($start) < strtotime($sched->start) && strtotime($end) > strtotime($sched->end)) {
+								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!')->withInput();
+							}elseif (strtotime($start) >= strtotime($sched->start) && strtotime($end) <= strtotime($sched->end)) {
+								return Redirect::to('/Schedule/create')->with('secerror', 'Section is not available!')->withInput();
+													}
+							}
+						}
+
+								}
+						
 
 
 
@@ -429,7 +227,7 @@
 
 						
 						$love = 'true';
-					}
+					
 
 					if($love == 'true')
 					{				
@@ -467,6 +265,39 @@
 							return Redirect::to('Schedule');
 					}
 				}
+
+				$selected = "";
+							$days =  Input::get('day');
+		                                if(isset($days)){
+		                                	 if(is_array($days))
+		                							{
+								                        foreach($days as $day){
+								                                 	$selected = $selected . $day . ',';
+								                                 } 
+		                							}
+		                                 
+		                                }
+							$syr = 0;
+							$sys = Schoolyear::all();
+							foreach($sys as $sy){
+								if($sy->Active == 1){
+									$syr = $sy->sy_id;
+								}
+							}
+							$scheds = new Sched;
+							$scheds->sec_id = Input::get('section');
+							$scheds->lvl_id = Input::get('level');
+							$scheds->s_id = Input::get('subject');
+							$scheds->start = Input::get('start');
+							$scheds->end = Input::get('end');
+							$scheds->day = $selected;
+							$scheds->t_id = Input::get('teacher');
+							$scheds->r_id = Input::get('room');
+							$scheds->sy_id = $syr;
+							$scheds->save();
+
+							Session::flash('message','Successfully Saved!');
+							return Redirect::to('Schedule');
 				}
 
 				/**
