@@ -20,8 +20,21 @@
 
 <div class = "container-fluid" style = "padding: 0px;">
 		<div class="sidebar" id = "sidebar">
-			<h4 class = "sdehead" ><i class="fa fa-files-o"></i>&nbsp;&nbsp;File</h4>
-			<ul class = "lsthead" id = "file">
+		
+			
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default"  id = "accrdn">
+    <div class="panel-heading" id = "colps">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          <i class="fa fa-files-o"></i>&nbsp;&nbsp;File
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+     <ul class = "lsthead" id = "file">
+				<li id = "hen"> <i class="fa fa-users icon"></i><a class = "subs" id = "hena" href = "Enrolee">&nbsp;Enrolee</a></li>
 				<li id = "hsec"> <i class="fa fa-users icon"></i><a class = "subs" id = "hseca" href = "Section">  Section</a></li>
 				<li id = "hrm"> <i class="fa fa-sign-in icon"></i><a class = "subs" id = "hrma" href = "Room">&nbsp;&nbsp;Rooms</a></li>
 				<li id = "hsubj"><i class="fa fa-book icon"></i><a class = "subs" id = "hsubja" href = "Subject">&nbsp;&nbsp;Subjects</a></li>
@@ -34,10 +47,43 @@
 				<li id = "htuition"><i class="fa fa-rub icon"></i><a class = "subs" id = "htuitiona" href = "Tuition">&nbsp;&nbsp;Tuition fees</a></li>
 			</ul>
 
-			<h4 class = "sdehead" ><i class="fa fa-file-text"></i>&nbsp;&nbsp;Transaction</h4>
-			<ul class = "lsthead" id = "file">
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default" id = "accrdn">
+    <div class="panel-heading" id = "colps">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          <i class="fa fa-file-text"></i>&nbsp;&nbsp;Transaction
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+       <ul class = "lsthead" id = "file">
 				<li id = "hsched"> <i class="fa fa-list-ul icon"></i><a class = "subs" id = "hscheda" href = "Schedule">  Schedule</a></li>
+				<li id = "hcash"> <i class="fa fa-money icon"></i><a class = "subs" id = "hcasha" href = "Cashering">  Cashering</a></li>
 			</ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+			
 			
 
 
@@ -52,5 +98,9 @@
 		@yield('cashier')
 		@yield('tuition')
 		@yield('schedule')
+		@yield('Enrolee')
 	</div>
 @stop
+
+
+

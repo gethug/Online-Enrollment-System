@@ -34,3 +34,10 @@ body.no-bg {
 .candidate-selected {
 	opacity: 0.5;
 }
+
+#awts{
+	top: 17px;
+	color: white;
+	left: 3px;
+	position: relative;
+}

@@ -4,7 +4,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
          $( "#hsy" ).addClass("active1" );
-         $( "#hsy" ).animate({ "margin-left": "-=209px" }, "fast" );
+         $( "#hsy" ).animate({ "margin-left": "-=224px" }, "fast" );
           $( "#hsya" ).addClass("active" );
           $( "#hsy i" ).addClass("active" );
 });

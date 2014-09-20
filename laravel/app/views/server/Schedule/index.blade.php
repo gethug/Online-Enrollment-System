@@ -4,7 +4,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
          $( "#hsched" ).addClass("active1" );
-         $( "#hsched" ).animate({ "margin-left": "-=209px" }, "fast" );
+         $( "#hsched" ).animate({ "margin-left": "-=224px" }, "fast" );
           $( "#hscheda" ).addClass("active" );
           $( "#hsched i" ).addClass("active" );
 });

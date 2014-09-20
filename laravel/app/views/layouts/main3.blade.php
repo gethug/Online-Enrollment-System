@@ -69,5 +69,7 @@
 			@yield('tuedit')
 			@yield('schedcreate')
 			@yield('schededit')
+			@yield('Encreate')
+			@yield('Enedit')
 	</body>
 </html>

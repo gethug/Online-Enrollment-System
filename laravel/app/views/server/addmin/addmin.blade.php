@@ -4,7 +4,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
          $( "#hadmin" ).addClass("active1" );
-         $( "#hadmin" ).animate({ "margin-left": "-=209px" }, "fast" );
+         $( "#hadmin" ).animate({ "margin-left": "-=224px" }, "fast" );
           $( "#hadmina" ).addClass("active" );
           $( "#hadmin i" ).addClass("active" );
 });

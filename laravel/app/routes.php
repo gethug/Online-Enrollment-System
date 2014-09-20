@@ -16,7 +16,8 @@ Route::resource('/', 'HomeController');
 Route::resource('login', 'LoginController');
 Route::resource('admin', 'DashController');
 
-
+Route::resource('Enrolee', 'EnroleeController');
+Route::resource('Enrolee/create', 'EnroleeController@getCreate');
 Route::resource('Tuition', 'TuitionController');
 Route::resource('Tuition/create', 'TuitionController@getCreate');
 Route::resource('Cashier', 'CashierController');
