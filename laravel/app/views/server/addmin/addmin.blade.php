@@ -4,7 +4,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
          $( "#hadmin" ).addClass("active1" );
-         $( "#hadmin" ).animate({ "margin-left": "-=224px" }, "fast" );
+         $( "#hadmin" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hadmina" ).addClass("active" );
           $( "#hadmin i" ).addClass("active" );
 });
@@ -12,7 +12,7 @@
 
 <div class = "table-responsive" id = "tablet"  >
 <h2 id = "cat" style = "">List of Administrator&nbsp;/<a href = "administrator/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
-<table class="table table-hover" id = "inlineEditDataTable">
+<table class="table table-hover" id = "inlineEditDataTable" >
   <thead>
         <tr style = "font-size:12px;">
              <th class = "text-center">ID</th>

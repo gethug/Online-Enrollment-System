@@ -4,7 +4,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
          $( "#htuition" ).addClass("active1" );
-         $( "#htuition" ).animate({ "margin-left": "-=224px" }, "fast" );
+         $( "#htuition" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#htuitiona" ).addClass("active" );
           $( "#htuition i" ).addClass("active" );
 });

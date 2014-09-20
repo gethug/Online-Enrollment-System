@@ -188,6 +188,7 @@ margin-left: -4px;
 }
 #dirc li{
 	font-size: 14px;
+
 }
 #dirc li a {
 	color:#008DA5;
@@ -209,11 +210,16 @@ margin-left: -4px;
 	color:#ABD5F1;
 }
 .lsthead li{
-	padding:9px 0;
+	padding:9px 15px;
+}
+
+.lsthead li:hover{
+	background-color: #67809F;
+	cursor: pointer;
 }
 .subs:hover{
 	text-decoration: none;
-	color:white;
+	color:#ABD5F1;
 
 }
 
@@ -233,7 +239,7 @@ margin-left: -4px;
 	display:inline-block;
 	float:left;
 	background-color:#34495e;
-	height: 730px;
+	height: 100%;
 }
 
 #tablet{
@@ -255,18 +261,19 @@ margin-left: -4px;
 .active1{
 	margin-left:209px;
 	color: #14b9d5;
-	border-left:3px solid #14b9d5;
-	background-color:white;
+	border-left:3px solid #19B5FE;
+	background-color:#67809F;
 }
 
 .active{
-	color:#454545;
+	
+	color:#6BB9F0;
 	font-weight: bold;
 
 }
 
 .active:hover{
-	color:#454545;
+	color:#6BB9F0;
 }
 
 
@@ -384,4 +391,5 @@ margin-left: -4px;
 	border-radius: 0px;
 	color:white;
 }
+
 

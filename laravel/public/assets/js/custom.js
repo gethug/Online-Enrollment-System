@@ -12,6 +12,10 @@ $(document).ready(function(){
 		  $("#error3").hide();
 	});
 
+	$( ".lsthead li" ).click(function() {
+		 var myClass = $(this).attr("class");
+ 			  window.location = myClass;
+		});
 	
 });
 
