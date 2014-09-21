@@ -29,21 +29,22 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($enrolees as $teacher)
+        @foreach($enrolees as $enrolee)
             <tr style = "font-size:11px;" id = "items">
-                <td class = "text-center"> {{ $teacher->t_id}}</td>
-                <td class = "text-center">{{ ucwords($teacher->fname) . ' ' . ucwords($teacher->mname) . ' ' . ucwords($teacher->lname)}} </td>
-                <td class = "text-center"> {{ $teacher->age}}</td>
-                <td class = "text-center"> {{ $teacher->gender}}</td>
-                <td class = "text-center"> {{ $teacher->degree}}</td>
-                <td class = "text-center"> {{ $teacher->email}}</td>
-                <td class = "text-center"> {{ $teacher->contact}}</td>
-                <td style = "width:13px;">{{ link_to_route('Teacher.edit', 'Edit',
-                     array($teacher->t_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
+                <td class = "text-center"> {{ $enrolee->en_id}}</td>
+                <td class = "text-center"> {{ $enrolee->level}}</td>
+                 <td class = "text-center"> {{ $enrolee->type}}</td>
+                <td class = "text-center">{{ ucwords($enrolee->fname) . ' ' . ucwords($enrolee->mname) . ' ' . ucwords($enrolee->lname)}} </td>
+                <td class = "text-center"> {{ $enrolee->gender}}</td>
+                <td class = "text-center"> {{ $enrolee->h_addres}}</td>
+                <td class = "text-center"> {{ ucwords($enrolee->f_name) . ' ' . ucwords($enrolee->m_name) . ' ' . ucwords($enrolee->l_name)}}</td>
+                <td class = "text-center"> {{ $enrolee->cell_no}}</td>
+                <td style = "width:13px;">{{ link_to_route('Enrolee.edit', 'Edit',
+                     array($enrolee->en_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>
                  <td  style = "width:13px;">
                         {{ Form::open(array('method' 
-                    => 'DELETE', 'route' => array('Teacher.destroy', $teacher->t_id))) }}                       
+                    => 'DELETE', 'route' => array('Enrolee.destroy', $enrolee->en_id))) }}                       
                             {{ Form::submit('Delete', array('class'
                     => 'btn btn-danger', 'id' => 'btndel')) }}
                         {{ Form::close() }}

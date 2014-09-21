@@ -15,6 +15,7 @@
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/vendor/bootstrap/bootstrap.min.css">
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/bootstrap-timepicker.css">
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/bootstrap-responsive.css">
+		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/jquery.datetimepicker.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700|Oswald' rel='stylesheet' type='text/css'>
 		<script src="/assets/js/jquery.js"></script>
@@ -29,6 +30,7 @@
 	     <script type="text/javascript" src="/assets/js/angular-1.3.0-beta.17/angular.js"></script>
 		 <script type="text/javascript" src="/assets/js/angular-1.3.0-beta.17/angular-route.js"></script>
 		 <script type="text/javascript" src="/assets/js/jquery.cookie.js"></script>
+		  <script type="text/javascript" src="/assets/js/jquery.datetimepicker.js"></script>
 
 	    <script src="/assets/js/vendor/datatables/jquery.dataTables.min.js"></script>
 	    <script src="/assets/js/vendor/datatables/ColReorderWithResize.js"></script>
@@ -47,7 +49,7 @@
 	   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	</head>
 
-	<body style = "background-color: #ecf0f1;">
+	<body style = "background-color: #ecf0f1;overflow:scroll;">
 
 			@yield('admincreate')
 			@yield('adminedit')
