@@ -150,7 +150,7 @@
 					return View::make('server.Enrolee.edit')
 						->with('enrolees', $enrolees)
 						->with('parents', $parents)
-						->with('levels', $levels);
+						->with('levels',$levels);
 				}
 
 				/**

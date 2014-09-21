@@ -318,7 +318,7 @@
 <!-- div for name ////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds">
  	<div class = "div-text pfname">
- 		{{Form::text('ParentFirstname', $parents->f_name, array('placeholder' => 'First name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
+ 		{{Form::text('ParentFirstname', '', array('placeholder' => 'First name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
  		</div>
  		{{Form::text('ParentMname', '', array('placeholder' => 'Middle name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
  	<div class = "div-text plname">
