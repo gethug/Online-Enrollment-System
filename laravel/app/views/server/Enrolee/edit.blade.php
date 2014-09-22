@@ -318,11 +318,11 @@
 <!-- div for name ////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds">
  	<div class = "div-text pfname">
- 		{{Form::text('ParentFirstname', '', array('placeholder' => 'First name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
+ 		{{Form::text('ParentFirstname', $parents->f_name, array('placeholder' => 'First name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
  		</div>
- 		{{Form::text('ParentMname', '', array('placeholder' => 'Middle name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
+ 		{{Form::text('ParentMname', $parents->m_name, array('placeholder' => 'Middle name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
  	<div class = "div-text plname">
- 		{{Form::text('ParentLastname', '', array('placeholder' => 'Last name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
+ 		{{Form::text('ParentLastname', $parents->l_name, array('placeholder' => 'Last name', 'class' => 'form-control feilds', 'id' => 'n-filds'))}}
  		</div>
 
  		@if($errors->first('ParentFirstname')) 
@@ -353,12 +353,12 @@
  <!-- div for nationality and religion////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds" style = "width:100%;">
  	<div class = "div-text age" style = "width: 13%;">
- 		{{Form::text('Age', '', array('placeholder' => 'Age', 'class' => 'form-control feilds', 'id' => 'n-filds', 'style' => 'width: 100%;'))}}
+ 		{{Form::text('Age', $parents->age, array('placeholder' => 'Age', 'class' => 'form-control feilds', 'id' => 'n-filds', 'style' => 'width: 100%;'))}}
  		</div>
 
  		
  	<div class = "div-text hea" style = "width: 84%;">
- 		{{Form::text('HEA', '', array('placeholder' => 'Highest Education Attainment', 'class' => 'form-control feilds', 'id' => 'n-filds', 'style' => 'width: 100%;'))}}
+ 		{{Form::text('HEA', $parents->heda, array('placeholder' => 'Highest Education Attainment', 'class' => 'form-control feilds', 'id' => 'n-filds', 'style' => 'width: 100%;'))}}
  		</div>
 
 	@if($errors->first('Age')) 
@@ -388,7 +388,7 @@
 	<div class="form-group div-filds" style = "width:100%">
 
 		<div class = "div-text occ" style = "width:100%">
- 			{{Form::text('Occupation', '', array('placeholder' => 'Occupation', 'class' => 'form-control feilds', 'id' => 'filds', 'style' => 'width:98%;'))}}
+ 			{{Form::text('Occupation', $parents->occp, array('placeholder' => 'Occupation', 'class' => 'form-control feilds', 'id' => 'filds', 'style' => 'width:98%;'))}}
  		</div>
 
  		@if($errors->first('Occupation')) 
@@ -406,10 +406,10 @@
  	<!-- div for nationality and religion////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds" style = "width:100%;">
  	<div class = "div-text pnat" style = "width: 47%;">
- 		{{Form::text('ParentNationality', '', array('placeholder' => 'Nationality', 'class' => 'form-control feilds', 'id' => 'n-filds', 'style' => 'width: 100%;'))}}
+ 		{{Form::text('ParentNationality', $parents->nationality, array('placeholder' => 'Nationality', 'class' => 'form-control feilds', 'id' => 'n-filds', 'style' => 'width: 100%;'))}}
  		</div>
  	<div class = "div-text prel" style = "width: 50%;">
- 		{{Form::text('ParentReligion', '', array('placeholder' => 'Religion', 'class' => 'form-control feilds', 'id' => 'n-filds', 'style' => 'width: 100%;'))}}
+ 		{{Form::text('ParentReligion', $parents->religion, array('placeholder' => 'Religion', 'class' => 'form-control feilds', 'id' => 'n-filds', 'style' => 'width: 100%;'))}}
  		</div>
  		@if($errors->first('ParentNationality')) 
 			<div class = "validte">
@@ -440,7 +440,7 @@
 	<div class="form-group div-filds" style = "width:100%">
 
 		<div class = "div-text mnum" style = "width:100%">
- 			{{Form::text('MobileNumber', '', array('placeholder' => 'Mobile Number', 'class' => 'form-control feilds', 'id' => 'filds', 'style' => 'width:98%;'))}}
+ 			{{Form::text('MobileNumber', $parents->cell_no, array('placeholder' => 'Mobile Number', 'class' => 'form-control feilds', 'id' => 'filds', 'style' => 'width:98%;'))}}
  		</div>
 
  		@if($errors->first('MobileNumber')) 
@@ -457,7 +457,7 @@
 
 
 
- 		{{ Form::submit('Save', array('class' => 'btn btn-info', 'id' => 'csubmit', 'style' => 'color:white;')) }}
+ 		{{ Form::submit('Update', array('class' => 'btn btn-info', 'id' => 'csubmit', 'style' => 'color:white;')) }}
  	{{Form::close()}}
 </div>
 </div>

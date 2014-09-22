@@ -144,9 +144,12 @@
 				{
 					$levels = Level::all();
 					$enrolees = Enrolee::find($id);
+
 					$parents = DB::table('tblparent')
-					->where('en_id','=',$id)
-					->get();
+					->where('en_id', $id)
+					->first();
+
+
 					return View::make('server.Enrolee.edit')
 						->with('enrolees', $enrolees)
 						->with('parents', $parents)
@@ -161,7 +164,78 @@
 				 */
 				public function update($id)
 				{
-					//
+					$rules = array(
+					'ID' => 'required',
+					'Firstname' => 'required',
+					'Lastname' => 'required',
+					'HomeAddress' => 'required',
+					'CityAddress' => 'required',
+					'Birthplace' => 'required',
+					'datebirth' => 'required',
+					'Nationality' => 'required',
+					'Religion' => 'required',
+					'PreviousSchool' => 'required',
+					'Schoolyear' => 'required',
+					'mailaddress' => 'required',
+					'ParentFirstname' => 'required',
+					'ParentLastname' => 'required',
+					'Age' => 'required|numeric',
+					'HEA' => 'required',
+					'Occupation' => 'required',
+					'ParentNationality' => 'required',
+					'ParentReligion' => 'required',
+					'MobileNumber' => 'required|numeric'
+						);
+
+				$validator = Validator::make(Input::all(), $rules);
+
+				if ($validator->fails()){
+					return Redirect::to('Enrolee/' . $id . '/edit')
+						->withErrors($validator)
+						->withInput();
+				} else{
+
+					
+					$enrolees = Enrolee::find($id);
+					$enrolees->en_id = Input::get('ID');
+					$enrolees->fname = Input::get('Firstname');
+					$enrolees->mname = Input::get('Mname');
+					$enrolees->lname = Input::get('Lastname');
+					$enrolees->type = Input::get('type');
+					$enrolees->lvl_id = Input::get('level');
+					$enrolees->gender = Input::get('gender');
+					$enrolees->h_addres = Input::get('HomeAddress');
+					$enrolees->c_addres = Input::get('CityAddress');
+					$enrolees->b_place = Input::get('Birthplace');
+					$enrolees->b_date = Input::get('datebirth');
+					$enrolees->nationality = Input::get('Nationality');
+					$enrolees->religion = Input::get('Religion');
+					$enrolees->prev_school = Input::get('PreviousSchool');
+					$enrolees->schoolyear = Input::get('Schoolyear');
+					$enrolees->mail_add = Input::get('mailaddress');
+					$enrolees->save();
+
+					$par = DB::table('tblparent')
+					->where('en_id', $id)
+					->first();
+
+					$parents = Parentss::find($par->p_id);
+					$parents->f_name = Input::get("ParentFirstname");
+					$parents->m_name = Input::get("ParentMname");
+					$parents->l_name = Input::get("ParentLastname");
+					$parents->en_id = Input::get("ID");
+					$parents->age = Input::get("Age");
+					$parents->heda = Input::get("HEA");
+					$parents->occp = Input::get("Occupation");
+					$parents->religion = Input::get("ParentReligion");
+					$parents->nationality = Input::get("ParentNationality");
+					$parents->cell_no = Input::get("MobileNumber");
+					$parents->save();
+
+
+					Session::flash('message','Successfully Updated!');
+					return Redirect::to('Enrolee');
+				}
 				}
 
 				/**
