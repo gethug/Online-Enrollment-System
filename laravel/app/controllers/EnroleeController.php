@@ -82,7 +82,11 @@
 						->withInput();
 				} else{
 
-					
+					$regs = new Reg;
+					$regs->en_id = Input::get('ID');
+					$regs->reg = '0';
+					$regs->save();
+
 					$enrolees = new Enrolee;
 					$enrolees->en_id = Input::get('ID');
 					$enrolees->fname = Input::get('Firstname');
@@ -249,6 +253,8 @@
 					$enrolees = Enrolee::find($id);
 					$enrolees->delete();
 					$parents = Parentss::where('en_id','=', $id)->delete();
+					$regs = Reg::find($id);
+					$regs->delete();
 					return Redirect::to('Enrolee');
 				} 
 

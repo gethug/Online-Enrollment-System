@@ -2,9 +2,9 @@
 @section('tcreate')
 <div class="container crud">
   <div class="jumbotron" id = "crud-con">
-  <h2 class = "crud-head">Add teacher</h2>
+  <h2 class = "crud-head">Add System User</h2>
 
- 	{{Form::open(array('route' => 'Teacher.store', 'class' => 'form-inline'))}}
+ 	{{Form::open(array('route' => 'Systemuser.store', 'class' => 'form-inline'))}}
 
 <!-- div for ID //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds" style = "width:98%;">
@@ -22,6 +22,18 @@
 			</div>
 		@endif
  	</div>
+
+
+<!-- div for levels //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 	<div class="form-group div-filds" style = "width:100%">
+			<div class = "div-text" style = "width:100%">
+	 			<select class="form-control feilds" style = "width:98%;" name = "type">
+	 			@foreach($users as $user)
+				  <option value = "{{$user->type_id}}">{{$user->type}}</option>
+				  @endforeach
+				</select>
+	 		</div>
+	</div>
 
 
 <!-- div for name ////////////////////////////////////////////////////////////////////////////////////////////////////-->

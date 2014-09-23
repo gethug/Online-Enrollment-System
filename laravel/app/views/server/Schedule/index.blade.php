@@ -6,13 +6,14 @@
          $( "#hsched" ).addClass("active1" );
          $( "#hsched" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hscheda" ).addClass("active" );
-          $( "#hsched i" ).addClass("active" );
+          $( "#trisc" ).addClass("tri" );
+            $("#trisc").css("margin-left","85px");
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = "">Schedules&nbsp;/<a href = "Schedule/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
+<h2 id = "cat" style = ""><i class="fa fa-clock-o" style = "margin-right: 10px;"></i>Schedules&nbsp;<a href = "Schedule/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a><br> <small>List of Schedule</small></h2>
 <table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;">

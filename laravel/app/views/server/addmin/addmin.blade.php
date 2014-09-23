@@ -6,12 +6,13 @@
          $( "#hadmin" ).addClass("active1" );
          $( "#hadmin" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hadmina" ).addClass("active" );
-          $( "#hadmin i" ).addClass("active" );
+          $( "#tria" ).addClass("tri" );
+            $("#tria").css("margin-left","58px");
 });
 </script>
 
 <div class = "table-responsive" id = "tablet"  >
-<h2 id = "cat" style = "">List of Administrator&nbsp;/<a href = "administrator/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
+<h2 id = "cat" style = ""><i class="fa fa-user" style = "margin-right: 10px;"></i>Administrator&nbsp;<a href = "administrator/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a><br> <small>List of administrator</small></h2>
 <table class="table table-hover" id = "inlineEditDataTable" >
   <thead>
         <tr style = "font-size:12px;">

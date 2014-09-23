@@ -6,14 +6,14 @@
           $( "#hsec" ).addClass("active1" );
            $( "#hsec" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hseca" ).addClass("active" );
-          $( "#hsec i" ).addClass("active" );
-
+          $( "#trisec" ).addClass("tri" );
+          $("#trisec").css("margin-left","93px");
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = "">List of Sections&nbsp;/<a href = "Section/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
+<h2 id = "cat" style = ""><i class="fa fa-sitemap" style = "margin-right: 10px;"></i> Sections&nbsp;<a href = "Section/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a> <br> <small>List of Section</small></h2>
 <table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;" >

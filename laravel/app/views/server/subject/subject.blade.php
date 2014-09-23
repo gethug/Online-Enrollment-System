@@ -6,13 +6,14 @@
          $( "#hsubj" ).addClass("active1" );
          $( "#hsubj" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hsubja" ).addClass("active" );
-          $( "#hsubj i" ).addClass("active" );
+          $( "#tris" ).addClass("tri" );
+          $("#tris").css("margin-left","84px");
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = "">List of Subjects&nbsp;/<a href = "Subject/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
+<h2 id = "cat" style = ""><i class="fa fa-book" style = "margin-right: 10px;"></i>Subjects&nbsp;<a href = "Subject/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a> <br> <small>List of Subject</small></h2>
 <table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;">

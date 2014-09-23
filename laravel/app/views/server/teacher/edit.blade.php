@@ -4,7 +4,7 @@
   <div class="jumbotron" id = "crud-con">
   <h2 class = "crud-head">Edit teacher</h2>
 
- 	{{Form::open(array('route' => array('Teacher.update', $teachers->t_id), 'class' => 'form-inline', 'method' => 'PUT'))}}
+ 	{{Form::open(array('route' => array('Systemuser.update', $teachers->t_id), 'class' => 'form-inline', 'method' => 'PUT'))}}
 
 <!-- div for ID //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds" style = "width:98%;">
@@ -23,6 +23,23 @@
 		@endif
  	</div>
 
+<!-- div for ID //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<script type="text/javascript">
+			    $(document).ready(function(){
+			        $("#level option[value= {{$teachers->type_id}}]").attr("selected", "selected");
+				});
+			</script>
+
+
+	<div class="form-group div-filds" style = "width:100%">
+			<div class = "div-text" style = "width:100%">
+	 			<select class="form-control feilds" style = "width:96%;" name = "type" id = "level">
+	 			@foreach($users as $user)
+				  <option value = "{{$user->type_id}}">{{$user->type}}</option>
+				@endforeach
+				</select>
+	 		</div>
+	</div>
 
 <!-- div for name ////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds">

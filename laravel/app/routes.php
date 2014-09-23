@@ -20,8 +20,8 @@ Route::resource('Enrolee', 'EnroleeController');
 Route::resource('Enrolee/create', 'EnroleeController@getCreate');
 Route::resource('Tuition', 'TuitionController');
 Route::resource('Tuition/create', 'TuitionController@getCreate');
-Route::resource('Cashier', 'CashierController');
-Route::resource('Cashier/create', 'CashierController@getCreate');
+Route::resource('Usertype', 'UserController');
+Route::resource('Usertype/create', 'UserController@getCreate');
 Route::resource('administrator', 'AdminController');
 Route::resource('administrator/create', 'AdminController@getCreate');
 Route::resource('Room', 'RoomController');
@@ -34,9 +34,12 @@ Route::resource('Level', 'LevelController');
 Route::resource('Level/create', 'LevelController@getCreate');
 Route::resource('Subject', 'SubjectController');
 Route::resource('Subject/create', 'SubjectController@getCreate');
-Route::resource('Teacher', 'TeacherController');
-Route::resource('Teacher/create', 'TeacherController@getCreate');
-
+Route::resource('Systemuser', 'TeacherController');
+Route::resource('Systemuser/create', 'TeacherController@getCreate');
+Route::resource('Miscellaneous','MiscController');
+Route::resource('Miscellaneous/create','MiscController@getCreate');
+Route::resource('Discount', 'DiscountController');
+Route::resource('Discount/create', 'DiscountController@getCreate');
 
 Route::get('api/dropdown','SchedController@getDrop');
 Route::get('api/dropdownsub','SchedController@getDrop2');

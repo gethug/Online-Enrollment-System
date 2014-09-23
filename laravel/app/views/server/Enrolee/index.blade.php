@@ -6,13 +6,13 @@
          $( "#hen" ).addClass("active1" );
          $( "#hen" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hena" ).addClass("active" );
-          $( "#hen i" ).addClass("active" );
+          $( "#trie" ).addClass("tri" );
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = "">List of Enrolee&nbsp;/<a href = "Enrolee/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
+<h2 id = "cat" style = ""><i class="fa fa-users" style = "margin-right: 10px;"></i>Enrolee&nbsp;<a href = "Enrolee/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a> <br> <small>List of Enrolee</small></h2>
 <table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;">

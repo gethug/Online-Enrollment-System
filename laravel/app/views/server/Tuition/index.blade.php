@@ -6,13 +6,14 @@
          $( "#htuition" ).addClass("active1" );
          $( "#htuition" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#htuitiona" ).addClass("active" );
-          $( "#htuition i" ).addClass("active" );
+          $( "#tritu" ).addClass("tri" );
+            $("#tritu").css("margin-left","68px");
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = "">List of Level with Tuition Fee&nbsp;/<a href = "Tuition/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
+<h2 id = "cat" style = ""><i class="fa fa-money" style = "margin-right: 10px;"></i>Tuition Fee&nbsp;<a href = "Tuition/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a><br> <small>List of Level with Tuition fees</small></h2>
 <table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;">

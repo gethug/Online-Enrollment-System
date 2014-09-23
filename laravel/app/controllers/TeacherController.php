@@ -16,7 +16,9 @@
 				 */
 				public function index()
 				{
-					$teachers = Teacher::all();
+					$teachers = Teacher::join('tbltype', 'tblteacher.type_id', '=', 'tbltype.type_id')
+					->select('tblteacher.t_id', 'tbltype.type','tblteacher.fname', 'tblteacher.mname', 'tblteacher.lname','tblteacher.degree','tblteacher.age','tblteacher.gender','tblteacher.contact','tblteacher.contact', 'tblteacher.email')
+					->get();
 					return View::make('server.teacher.teacher')->with('teachers', $teachers);
 
 				}
@@ -24,8 +26,9 @@
 
 				public function getCreate()
 				{
-
-					return View::make('server.teacher.create');
+					$users = Usertype::all();
+					return View::make('server.teacher.create')
+					->with('users', $users);
 					
 				}
 
@@ -63,7 +66,7 @@
 				$validator = Validator::make(Input::all(), $rules);
 
 				if ($validator->fails()){
-					return Redirect::to('Teacher/create')
+					return Redirect::to('Systemuser/create')
 						->withErrors($validator)
 						->withInput(Input::except('password'));
 				} else{
@@ -71,6 +74,7 @@
 					
 					$teachers = new Teacher;
 					$teachers->t_id = Input::get('id');
+					$teachers->type_id = Input::get('type');
 					$teachers->fname = Input::get('Firstname');
 					$teachers->mname = Input::get('Mname');
 					$teachers->lname = Input::get('Lastname');
@@ -84,7 +88,7 @@
 
 
 					Session::flash('message','Successfully Saved!');
-					return Redirect::to('Teacher');
+					return Redirect::to('Systemuser');
 				}
 
 		
@@ -110,9 +114,11 @@
 				public function edit($id)
 				{
 					$teachers = Teacher::find($id);
+					$users = Usertype::all();
 
 					return View::make('server.teacher.edit')
-						->with('teachers', $teachers);
+						->with('teachers', $teachers)
+						->with('users', $users);
 				}
 
 				/**
@@ -136,13 +142,14 @@
 				$validator = Validator::make(Input::all(), $rules);
 
 				if ($validator->fails()){
-					return Redirect::to('Teacher/' . $id . '/edit')
+					return Redirect::to('Systemuser/' . $id . '/edit')
 						->withErrors($validator)
 						->withInput();
 				} else{
 					
 					$teachers = Teacher::find($id);
 					$teachers->t_id = Input::get('id');
+					$teachers->type_id = Input::get('type');
 					$teachers->fname = Input::get('Firstname');
 					$teachers->mname = Input::get('Mname');
 					$teachers->lname = Input::get('Lastname');
@@ -155,7 +162,7 @@
 
 
 					Session::flash('message','Successfully Updated!');
-					return Redirect::to('Teacher');
+					return Redirect::to('Systemuser');
 				}
 				}
 
@@ -169,7 +176,7 @@
 				{
 					$teachers= Teacher::find($id);
 					$teachers->delete();
-					return Redirect::to('Teacher');
+					return Redirect::to('Systemuser');
 				} 
 
 

@@ -6,13 +6,14 @@
          $( "#hsy" ).addClass("active1" );
          $( "#hsy" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hsya" ).addClass("active" );
-          $( "#hsy i" ).addClass("active" );
+          $( "#trisy" ).addClass("tri" );
+          $("#trisy").css("margin-left","66px");
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = "">List of School Year&nbsp;/<a href = "SY/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a></h2>
+<h2 id = "cat" style = ""><i class="fa fa-calendar" style = "margin-right: 10px;"></i>School Year&nbsp;<a href = "SY/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a> <br> <small>List of School year</small></h2>
 <table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;">

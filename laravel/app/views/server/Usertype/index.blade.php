@@ -1,39 +1,39 @@
 @extends('server.dash')
 
-@section('level')
+@section('cashier')
 <script type="text/javascript">
     $(document).ready(function(){
-         $( "#hlvl" ).addClass("active1" );
-         $( "#hlvl" ).animate({ "margin-left": "-=209px" }, "fast" );
-          $( "#hlvla" ).addClass("active" );
-          $( "#tril" ).addClass("tri" );
-            $("#tril").css("margin-left","99px");
+         $( "#hcash" ).addClass("active1" );
+         $( "#hcash" ).animate({ "margin-left": "-=209px" }, "fast" );
+          $( "#hcasha" ).addClass("active" );
+          $( "#tric" ).addClass("tri" );
+           $("#tric").css("margin-left","71px");
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = ""><i class="fa fa-level-up" style = "margin-right: 10px;"></i>Levels&nbsp;<a href = "Level/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a><br> <small>List of Level</small></h2>
-<table class="table table-hover table-datatable " id = "inlineEditDataTable">
+<h2 id = "cat" style = ""><i class="fa fa-male" style = "margin-right: 10px;"></i>User type&nbsp;/<a href = "Usertype/create" style = "text-decoration: none;">&nbsp;+<small style = "color: #428bca;">New</small></a><br> <small>List of Usertype</small></h2>
+<table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;">
-             <th class = "text-center sort-numeric">ID</th>
-            <th class = "text-center sort-alpha">Level</th>
+            <th class = "text-center">ID</th>
+            <th class = "text-center">User type</th>
             <th class = "no-sort"></th>
             <th class = "no-sort"></th>
         </tr>
     </thead>
     <tbody>
-        @foreach($levels as $level)
+        @foreach($users as $user)
             <tr style = "font-size:11px;" id = "items">
-                <td class = "text-center">{{$level->lvl_id}} </td>
-                <td class = "text-center">{{$level->level}} </td>
-                <td style = "width:13px;">{{ link_to_route('Level.edit', 'Edit',
-                     array($level->lvl_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
+                <td class = "text-center"> {{ $user->type_id}}</td>
+                <td class = "text-center"> {{ $user->type}}</td>
+                <td style = "width:13px;">{{ link_to_route('Usertype.edit', 'Edit',
+                     array($user->type_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>
                  <td  style = "width:13px;">
                         {{ Form::open(array('method' 
-                    => 'DELETE', 'route' => array('Level.destroy', $level->lvl_id))) }}                       
+                    => 'DELETE', 'route' => array('Usertype.destroy', $user->type_id))) }}                       
                             {{ Form::submit('Delete', array('class'
                     => 'btn btn-danger', 'id' => 'btndel')) }}
                         {{ Form::close() }}
@@ -43,8 +43,6 @@
 
     </tbody>
 </table>
-
-
 <script>
     $(function() {
       // Add custom class to pagination div
@@ -94,4 +92,3 @@
 </div>
 
 @stop
-
