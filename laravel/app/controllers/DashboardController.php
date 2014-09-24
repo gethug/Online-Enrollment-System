@@ -1,6 +1,6 @@
 <?php
 
-	class DashController extends BaseController {
+	class DashboardController extends BaseController {
 
 		
 				public function __construct() {
@@ -17,7 +17,7 @@
 				public function index()
 				{
 
-					return View::make('server.dash');
+					return View::make('server.dashboard');
 
 				}
 

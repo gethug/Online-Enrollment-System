@@ -14,7 +14,7 @@
 
 Route::resource('/', 'HomeController');
 Route::resource('login', 'LoginController');
-Route::resource('admin', 'DashController');
+Route::resource('admin', 'DashboardController');
 
 Route::resource('Enrolee', 'EnroleeController');
 Route::resource('Enrolee/create', 'EnroleeController@getCreate');
