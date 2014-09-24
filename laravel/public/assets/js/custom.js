@@ -16,6 +16,20 @@ $(document).ready(function(){
 		 var myClass = $(this).attr("class");
  			  window.location = myClass;
 		});
+
+	$(function() {
+						  enable_cb();
+						  $("#chck").click(enable_cb);
+						});
+
+						function enable_cb() {
+						  if (this.checked) {
+						  	 $("#lvl").attr("disabled", true);
+						   
+						  } else {
+						    $("#lvl").removeAttr("disabled");
+						  }
+						}
 	
 });
 

@@ -134,6 +134,8 @@
 		@yield('tuition')
 		@yield('schedule')
 		@yield('Enrolee')
+		@yield('misc')
+		@yield('dis')
 	</div>
 @stop
 

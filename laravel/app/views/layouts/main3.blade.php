@@ -73,5 +73,9 @@
 			@yield('schededit')
 			@yield('Encreate')
 			@yield('Enedit')
+			@yield('mcreate')
+			@yield('medit')
+			@yield('dcreate')
+			@yield('dedit')
 	</body>
 </html>
