@@ -34,13 +34,9 @@
       <div class="panel-body" style = "padding:0px;">
      <ul class = "lsthead" id = "file">
 
-				<li class = "Enrolee" id = "hen" style = "margin-top: 15px;"> 
-					<i class="fa fa-users icon"></i><a class = "subs" id = "hena" href = "Enrolee">&nbsp;Enrolee</a>
-					<div id = "trie" class = "gide">
-					</div>
-				</li>
+				
 
-				<li class = "Section" id = "hsec">
+				<li class = "Section" id = "hsec" style = "margin-top:10px;">
 					<i class="fa fa-sitemap icon"></i><a class = "subs" id = "hseca" href = "Section">  Section</a>
 					<div id = "trisec" class = "gide">
 				</li>
@@ -94,33 +90,44 @@
 					<div id = "tridis" class = "gide">
 				</li>
 
-				<li class = "Schedule" id = "hsched"> 
-					<i class="fa fa-clock-o icon"></i><a class = "subs" id = "hscheda" href = "Schedule">  Schedule</a>
-					<div id = "trisc" class = "gide">
-				</li>
+				
 			</ul>
 
       </div>
     </div>
   </div>
+
+  <div class="panel panel-default"  id = "accrdn">
+    <div class="panel-heading" id = "colps">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          <i class="fa fa-files-o"></i>&nbsp;&nbsp;Transaction
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body" style = "padding:0px;">
+      	 <ul class = "lsthead" id = "file">
+
+
+				<li class = "Enrolee" id = "hen" style = "margin-top: 15px;"> 
+					<i class="fa fa-users icon"></i><a class = "subs" id = "hena" href = "Enrolee">&nbsp;Enrolee</a>
+					<div id = "trie" class = "gide">
+					</div>
+				</li>
+
+      	 	<li class = "Schedule" id = "hsched"> 
+					<i class="fa fa-clock-o icon"></i><a class = "subs" id = "hscheda" href = "Schedule">  Schedule</a>
+					<div id = "trisc" class = "gide">
+				</li>
+
+
+      	 </ul>
+
+     </div>
+    </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-			
-			
-
 
 		</div>
 		@yield('add')

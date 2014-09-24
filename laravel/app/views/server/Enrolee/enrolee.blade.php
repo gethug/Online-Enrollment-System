@@ -1,53 +1,54 @@
 @extends('server.dash')
 
-@section('schedule')
+@section('Enrolee')
 <script type="text/javascript">
     $(document).ready(function(){
-         $( "#hsched" ).addClass("active1" );
-         $( "#hsched" ).animate({ "margin-left": "-=209px" }, "fast" );
-          $( "#hscheda" ).addClass("active" );
-          $( "#trisc" ).addClass("tri" );
-            $("#trisc").css("margin-left","85px");
+         $( "#hen" ).addClass("active1" );
+         $( "#hen" ).animate({ "margin-left": "-=209px" }, "fast" );
+          $( "#hena" ).addClass("active" );
+          $( "#trie" ).addClass("tri" );
+          $('#collapseTwo').collapse();
+           $('#collapseOne').collapse();
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = ""><i class="fa fa-clock-o" style = "margin-right: 10px;"></i>Schedules&nbsp;<a href = "Schedule/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a><br> <small>List of Schedule</small></h2>
+<h2 id = "cat" style = ""><i class="fa fa-users" style = "margin-right: 10px;"></i>Enrolee&nbsp;<a href = "Enrolee/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a> <br> <small>List of Enrolee</small></h2>
+<div class="panel panel-default">
+  <div class="panel-body">
 <table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;">
-           <th class = "text-center">ID</th>
-            <th class = "text-center">Subject Code</th>
-            <th class = "text-center">Subject Name</th>
-            <th class = "text-center">Time</th>
-            <th class = "text-center">Day</th>
-            <th class = "text-center">Teacher</th>
-            <th class = "text-center">Room</th>
-            <th class = "text-center">Section</th>
-             <th class = "text-center">Level</th>
-             <th class = "no-sort"></th>
-             <th class = "no-sort"></th>
+            <th class = "text-center">ID</th>
+            <th class = "text-center">Level</th>
+            <th class = "text-center">Type</th>
+            <th class = "text-center">Name</th>
+            <th class = "text-center">Gender</th>
+            <th class = "text-center">Home Address</th>
+            <th class = "text-center">Parents/Guardian</th>
+            <th class = "text-center">Cell No.</th>
+            <th class = "no-sort"></th>
+            <th class = "no-sort"></th>
         </tr>
     </thead>
     <tbody>
-        @foreach($scheds as $sched)
+        @foreach($enrolees as $enrolee)
             <tr style = "font-size:11px;" id = "items">
-              <td class = "text-center">{{ $sched->sched_id}}</td>
-                <td class = "text-center">{{ $sched->subj_code}}</td>
-                <td class = "text-center"> {{ $sched->subj_name}}</td>
-                <td class = "text-center">{{ ucwords($sched->start) . ' - ' . ucwords($sched->end)}}</td>
-                <td class = "text-center"> {{ $sched->day}}</td>
-                <td class = "text-center">{{ ucwords($sched->fname) . ' ' . ucwords($sched->mname) . ' ' . ucwords($sched->lname)}} </td>
-                <td class = "text-center"> {{ $sched->room}}</td>
-                <td class = "text-center">{{ $sched->section}}</td>
-                <td class = "text-center"> {{ $sched->level}}</td>
-                <td style = "width:13px;">{{ link_to_route('Schedule.edit', 'Edit',
-                     array($sched->sched_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
+                <td class = "text-center"> {{ $enrolee->en_id}}</td>
+                <td class = "text-center"> {{ $enrolee->level}}</td>
+                 <td class = "text-center"> {{ $enrolee->type}}</td>
+                <td class = "text-center">{{ ucwords($enrolee->fname) . ' ' . ucwords($enrolee->mname) . ' ' . ucwords($enrolee->lname)}} </td>
+                <td class = "text-center"> {{ $enrolee->gender}}</td>
+                <td class = "text-center"> {{ $enrolee->h_addres}}</td>
+                <td class = "text-center"> {{ ucwords($enrolee->f_name) . ' ' . ucwords($enrolee->m_name) . ' ' . ucwords($enrolee->l_name)}}</td>
+                <td class = "text-center"> {{ $enrolee->cell_no}}</td>
+                <td style = "width:13px;">{{ link_to_route('Enrolee.edit', 'Edit',
+                     array($enrolee->en_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>
-                <td  style = "width:13px;">
+                 <td  style = "width:13px;">
                         {{ Form::open(array('method' 
-                    => 'DELETE', 'route' => array('Schedule.destroy', $sched->sched_id))) }}                       
+                    => 'DELETE', 'route' => array('Enrolee.destroy', $enrolee->en_id))) }}                       
                             {{ Form::submit('Delete', array('class'
                     => 'btn btn-danger', 'id' => 'btndel')) }}
                         {{ Form::close() }}
@@ -57,6 +58,9 @@
 
     </tbody>
 </table>
+</div>
+</div>
+
 <script>
     $(function() {
       // Add custom class to pagination div
@@ -82,7 +86,7 @@
           });
 
            // hide first column
-          oTable02.fnSetColumnVis(0, false);
+           oTable02.fnSetColumnVis(0, false);
 
           // append add row button to table
           var addRowLink = '<a href="#" id="addRow" class="btn btn-green btn-xs add-row">Print</a>'
@@ -102,7 +106,6 @@
           $('.dataTables_length select').chosen({disable_search_threshold: 10});
     })
   </script>
-
 </div>
 
 @stop

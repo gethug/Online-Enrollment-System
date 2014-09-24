@@ -33,7 +33,7 @@
 					->where('tblsched.sy_id', '=' , $syr)
 					->get();
 
-					return View::make('server.Schedule.index')
+					return View::make('server.Schedule.sched')
 						->with('scheds', $scheds);
 
 				}

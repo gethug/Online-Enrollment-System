@@ -14,6 +14,8 @@
 
 <div class = "table-responsive" id = "tablet" >
 <h2 id = "cat" style = ""><i class="fa fa-rub" style = "margin-right: 10px;"></i> Miscellaneous Fee&nbsp;<a href = "Miscellaneous/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a> <br> <small>List of Fee</small></h2>
+<div class="panel panel-default">
+  <div class="panel-body">
 <table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;" >
@@ -47,6 +49,8 @@
 
     </tbody>
 </table>
+</div>
+</div>
 <script>
     $(function() {
       // Add custom class to pagination div

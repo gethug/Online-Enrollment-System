@@ -145,6 +145,7 @@ margin-left: -4px;
 }
 
 #csubmit{
+	font-weight: bold;
 	margin-top:30px;
 	width:80px;
 	height: 38px;
@@ -298,7 +299,7 @@ margin-left: -4px;
 	font-family: 'Open Sans Condensed', sans-serif;
 	color: #454545; 
 	font-weight: bold;
-	margin-bottom: 38px;
+	margin-bottom: 5px;
 	margin-top: 27px;
 	margin-left: 34px;
 }
@@ -308,6 +309,7 @@ margin-left: -4px;
 }
 
 #crud-con{
+	font-family: 'Open Sans Condensed', sans-serif;
 	background-color: white;
 	width:59%;
 	margin:0px auto;

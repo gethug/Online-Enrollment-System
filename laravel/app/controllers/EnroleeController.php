@@ -21,7 +21,7 @@
 					->select('tblenrolee.en_id','tblenrolee.type', 'tblenrolee.lvl_id', 'tblenrolee.fname', 'tblenrolee.mname', 'tblenrolee.lname', 'tblenrolee.gender', 'tblenrolee.h_addres', 'tblparent.f_name', 'tblparent.m_name', 'tblparent.l_name', 'tblparent.cell_no', 'tbllevel.level')
 					->get();
 
-					return View::make('server.Enrolee.index')
+					return View::make('server.Enrolee.enrolee')
 					->with('enrolees', $enrolees);
 
 				}

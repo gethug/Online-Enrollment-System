@@ -6,6 +6,8 @@
 
  	{{Form::open(array('route' => 'Enrolee.store', 'class' => 'form-inline'))}}
 
+
+
 <!-- div for levels //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds" style = "width:100%">
 			<div class = "div-text" style = "width:100%">

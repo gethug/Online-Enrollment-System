@@ -1,41 +1,57 @@
 @extends('server.dash')
 
-@section('rooms')
+@section('schedule')
 <script type="text/javascript">
     $(document).ready(function(){
-         $( "#hrm" ).addClass("active1" );
-         $( "#hrm" ).animate({ "margin-left": "-=209px" }, "fast" );
-          $( "#hrma" ).addClass("active" );
-          $( "#trir" ).addClass("tri" );
-          $("#trir").css("margin-left","95px");
+         $( "#hsched" ).addClass("active1" );
+         $( "#hsched" ).animate({ "margin-left": "-=209px" }, "fast" );
+          $( "#hscheda" ).addClass("active" );
+          $( "#trisc" ).addClass("tri" );
+            $("#trisc").css("margin-left","85px");
+             $('#collapseTwo').collapse();
+              $('#collapseOne').collapse();
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = ""><i class="fa fa-sign-in" style = "margin-right: 10px;"></i>Rooms&nbsp;<a href = "Room/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a> <br> <small>List of Room</small></h2>
+<h2 id = "cat" style = ""><i class="fa fa-clock-o" style = "margin-right: 10px;"></i>Schedules&nbsp;<a href = "Schedule/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a><br> <small>List of Schedule</small></h2>
 <div class="panel panel-default">
   <div class="panel-body">
 <table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;">
-             <th class = "text-center">ID</th>
-            <th class = "text-center">Rooms</th>
-            <th class = "no-sort"></th>
-            <th class = "no-sort"></th>
+           <th class = "text-center">ID</th>
+            <th class = "text-center">Subject Code</th>
+            <th class = "text-center">Subject Name</th>
+            <th class = "text-center">Time</th>
+            <th class = "text-center">Day</th>
+            <th class = "text-center">Teacher</th>
+            <th class = "text-center">Room</th>
+            <th class = "text-center">Section</th>
+             <th class = "text-center">Level</th>
+             <th class = "no-sort"></th>
+             <th class = "no-sort"></th>
         </tr>
     </thead>
     <tbody>
-        @foreach($rooms as $room)
+        @foreach($scheds as $sched)
             <tr style = "font-size:11px;" id = "items">
-                <td class = "text-center">{{$room->r_id}} </td>
-                <td class = "text-center">{{$room->room}} </td>
-                <td style = "width:13px;">{{ link_to_route('Room.edit', 'Edit',
-                     array($room->r_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
+              <td class = "text-center">{{ $sched->sched_id}}</td>
+                <td class = "text-center">{{ $sched->subj_code}}</td>
+                <td class = "text-center"> {{ $sched->subj_name}}</td>
+                <td class = "text-center">{{ ucwords($sched->start) . ' - ' . ucwords($sched->end)}}</td>
+                <td class = "text-center"> {{ $sched->day}}</td>
+                <td class = "text-center">{{ ucwords($sched->fname) . ' ' . ucwords($sched->mname) . ' ' . ucwords($sched->lname)}} </td>
+                <td class = "text-center"> {{ $sched->room}}</td>
+                <td class = "text-center">{{ $sched->section}}</td>
+                <td class = "text-center"> {{ $sched->level}}</td>
+                <td style = "width:13px;">{{ link_to_route('Schedule.edit', 'Edit',
+                     array($sched->sched_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>
-                 <td  style = "width:13px;">
+                <td  style = "width:13px;">
                         {{ Form::open(array('method' 
-                    => 'DELETE', 'route' => array('Room.destroy', $room->r_id))) }}                       
+                    => 'DELETE', 'route' => array('Schedule.destroy', $sched->sched_id))) }}                       
                             {{ Form::submit('Delete', array('class'
                     => 'btn btn-danger', 'id' => 'btndel')) }}
                         {{ Form::close() }}
@@ -72,7 +88,7 @@
           });
 
            // hide first column
-           oTable02.fnSetColumnVis(0, false);
+          oTable02.fnSetColumnVis(0, false);
 
           // append add row button to table
           var addRowLink = '<a href="#" id="addRow" class="btn btn-green btn-xs add-row">Print</a>'
