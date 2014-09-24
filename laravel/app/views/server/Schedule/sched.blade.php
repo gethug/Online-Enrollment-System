@@ -1,4 +1,4 @@
-@extends('server.dash')
+@extends('server.dashboard')
 
 @section('schedule')
 <script type="text/javascript">

@@ -1,4 +1,4 @@
-@extends('server.dash')
+@extends('server.dashboard')
 
 @section('teacher')
 <script type="text/javascript">
