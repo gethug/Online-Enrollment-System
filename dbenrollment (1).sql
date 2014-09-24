@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2014 at 09:53 AM
+-- Generation Time: Sep 25, 2014 at 01:08 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -51,31 +51,17 @@ INSERT INTO `tbladmin` (`a_id`, `Fname`, `Mname`, `Lname`, `user`, `password`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblcashier`
+-- Table structure for table `tbldiscount`
 --
 
-CREATE TABLE IF NOT EXISTS `tblcashier` (
-  `c_id` varchar(255) NOT NULL,
-  `fname` varchar(255) NOT NULL,
-  `mname` varchar(255) NOT NULL,
-  `lname` varchar(255) NOT NULL,
-  `degree` varchar(255) NOT NULL,
-  `age` int(10) NOT NULL,
-  `gender` varchar(255) NOT NULL,
-  `contact` bigint(12) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbldiscount` (
+  `d_id` int(10) NOT NULL AUTO_INCREMENT,
+  `d_name` varchar(255) NOT NULL,
+  `d_per` double NOT NULL,
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL,
-  PRIMARY KEY (`c_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblcashier`
---
-
-INSERT INTO `tblcashier` (`c_id`, `fname`, `mname`, `lname`, `degree`, `age`, `gender`, `contact`, `email`, `password`, `updated_at`, `created_at`) VALUES
-('C001', 'Jess', 'Navaja', 'Hermosa', 'Information Technology', 19, 'male', 92609523, 'devz_1011@yahoo.com', '$2y$10$r8S4/DFLgeRj5Qe0KHHVw.rLIRW4ewnqvYX4ARRCLrwnSMQZYChKW', '2014-08-29', '2014-08-29');
+  PRIMARY KEY (`d_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -105,14 +91,6 @@ CREATE TABLE IF NOT EXISTS `tblenrolee` (
   PRIMARY KEY (`en_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tblenrolee`
---
-
-INSERT INTO `tblenrolee` (`en_id`, `type`, `lvl_id`, `fname`, `mname`, `lname`, `gender`, `h_addres`, `c_addres`, `b_place`, `b_date`, `nationality`, `religion`, `prev_school`, `schoolyear`, `mail_add`, `updated_at`, `created_at`) VALUES
-('001', 'Old', 2, 'jess', '', 'hermosa', 'male', 'Sagbayan, Bohol', 'Tagbilaran City', 'Cebu City', '14.11.1994', 'Filipino', 'Roman Catholic', 'Saint Augustine Institute', '2011-2012', 'Pob. Sagbayan, Bohol', '2014-09-21', '2014-09-21'),
-('43565876', 'New', 1, 'jyggbhj', 'fcfvy', 'fuyvhjgj', 'male', 'Talibon, Bohol', 'Tagbilaran', 'Bohol', '10.05.2014', 'Filipino', 'Roman Catholic', 'ANS', '2008-2009', 'TAgbilaran', '2014-09-21', '2014-09-21');
-
 -- --------------------------------------------------------
 
 --
@@ -138,6 +116,30 @@ INSERT INTO `tbllevel` (`lvl_id`, `level`, `updated_at`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblmisc`
+--
+
+CREATE TABLE IF NOT EXISTS `tblmisc` (
+  `m_id` int(10) NOT NULL AUTO_INCREMENT,
+  `m_name` varchar(255) NOT NULL,
+  `m_fee` double NOT NULL,
+  `mandatory` int(10) NOT NULL,
+  `lvl_id` int(10) NOT NULL,
+  `updated_at` date NOT NULL,
+  `created_at` date NOT NULL,
+  PRIMARY KEY (`m_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `tblmisc`
+--
+
+INSERT INTO `tblmisc` (`m_id`, `m_name`, `m_fee`, `mandatory`, `lvl_id`, `updated_at`, `created_at`) VALUES
+(2, 'Thesis', 4000, 1, 2, '2014-09-23', '2014-09-23');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblparent`
 --
 
@@ -156,15 +158,21 @@ CREATE TABLE IF NOT EXISTS `tblparent` (
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL,
   PRIMARY KEY (`p_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `tblparent`
+-- Table structure for table `tblreg`
 --
 
-INSERT INTO `tblparent` (`p_id`, `en_id`, `f_name`, `m_name`, `l_name`, `age`, `heda`, `occp`, `religion`, `nationality`, `cell_no`, `updated_at`, `created_at`) VALUES
-(4, '43565876', 'Celsa', 'evardo', 'Lasutan', 21, 'High School', 'sewer', 'roman catholic', 'filipino', 9489956294, '2014-09-21', '2014-09-21'),
-(5, '001', 'Lito', 'Vitorillo', 'Hermosa', 52, 'College Graduate', 'Post man', 'Roman Catholic', 'Filipino', 9092609523, '2014-09-21', '2014-09-21');
+CREATE TABLE IF NOT EXISTS `tblreg` (
+  `en_id` varchar(255) NOT NULL,
+  `reg` int(10) NOT NULL,
+  `updated_at` date NOT NULL,
+  `created_at` date NOT NULL,
+  PRIMARY KEY (`en_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -208,15 +216,7 @@ CREATE TABLE IF NOT EXISTS `tblsched` (
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL,
   PRIMARY KEY (`sched_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
-
---
--- Dumping data for table `tblsched`
---
-
-INSERT INTO `tblsched` (`sched_id`, `sec_id`, `lvl_id`, `s_id`, `start`, `end`, `day`, `t_id`, `r_id`, `sy_id`, `updated_at`, `created_at`) VALUES
-(32, 1, 1, 'S001', '3:00 PM', '4:00 PM', 'M,T,W,TH,F,S,', 'T001', 1, 4, '2014-09-03', '2014-09-03'),
-(42, 1, 1, 'S001', '11:30 AM', '12:30 PM', 'M,T,W,TH,F,S,', 'T001', 1, 4, '2014-09-15', '2014-09-15');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -304,6 +304,7 @@ INSERT INTO `tblsubject` (`s_id`, `lvl_id`, `subj_code`, `subj_name`, `unit`, `p
 
 CREATE TABLE IF NOT EXISTS `tblteacher` (
   `t_id` varchar(255) NOT NULL,
+  `type_id` int(10) NOT NULL,
   `fname` varchar(255) NOT NULL,
   `mname` varchar(255) NOT NULL,
   `lname` varchar(255) NOT NULL,
@@ -322,9 +323,9 @@ CREATE TABLE IF NOT EXISTS `tblteacher` (
 -- Dumping data for table `tblteacher`
 --
 
-INSERT INTO `tblteacher` (`t_id`, `fname`, `mname`, `lname`, `degree`, `age`, `gender`, `contact`, `email`, `password`, `updated_at`, `created_at`) VALUES
-('asweqwe', 'maricar', 'e', 'budiongan', 'BSIT', 18, 'female', 333, 'sdsd@yahoo.com', '$2y$10$6Ow1NBNIbeKlhf/9MU7DwOcVNr5s.1GGhdvjEpiveOGCts6RTJnWO', '2014-08-20', '2014-08-20'),
-('T001', 'Marco', '', 'Budiongan', 'Information Technology', 18, 'male', 92609523, 'hermosagen@yahoo.com', '$2y$10$RPPQ784MH7URlM8PweMeD.hGlCPYi9adZuiF/FJkTCJem2nEtB9.a', '2014-08-20', '2014-08-20');
+INSERT INTO `tblteacher` (`t_id`, `type_id`, `fname`, `mname`, `lname`, `degree`, `age`, `gender`, `contact`, `email`, `password`, `updated_at`, `created_at`) VALUES
+('S001', 1, 'charmy', '', 'pantyliner', 'aw', 23, 'female', 8054215, 'sdfsdf@asd.com', '$2y$10$XyQyy90p87pTfmIaG9TPCeJGodQ5o77uItLb7/V5IIE2gkvOiOLTu', '2014-09-23', '2014-09-23'),
+('T001', 2, 'Jay Mar', '', 'Masibay', 'Computer Science', 25, 'male', 92609524, 'hermosagen@yahoo.com', '$2y$10$Sn56pc/LBi2gqLeLJ9yEq.YxlgUPZ4Ja8sb4PggSgp7DRMXoCrRU.', '2014-09-23', '2014-09-23');
 
 -- --------------------------------------------------------
 
@@ -347,6 +348,28 @@ CREATE TABLE IF NOT EXISTS `tbltuition` (
 
 INSERT INTO `tbltuition` (`tu_id`, `lvl_id`, `tuition`, `updated_at`, `created_at`) VALUES
 (1, 1, 5000, '2014-08-22', '2014-08-22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbltype`
+--
+
+CREATE TABLE IF NOT EXISTS `tbltype` (
+  `type_id` int(10) NOT NULL AUTO_INCREMENT,
+  `type` varchar(255) NOT NULL,
+  `updated_at` date NOT NULL,
+  `created_at` date NOT NULL,
+  PRIMARY KEY (`type_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `tbltype`
+--
+
+INSERT INTO `tbltype` (`type_id`, `type`, `updated_at`, `created_at`) VALUES
+(1, 'Teacher', '2014-09-23', '2014-09-23'),
+(2, 'Cashier', '2014-09-23', '2014-09-23');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
