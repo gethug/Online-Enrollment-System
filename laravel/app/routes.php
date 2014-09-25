@@ -16,6 +16,7 @@ Route::resource('/', 'HomeController');
 Route::resource('login', 'LoginController');
 Route::resource('admin', 'DashboardController');
 
+Route::resource('Cashiering', 'CashieringController');
 Route::resource('Enrolee', 'EnroleeController');
 Route::resource('Enrolee/create', 'EnroleeController@getCreate');
 Route::resource('Tuition', 'TuitionController');
@@ -45,3 +46,6 @@ Route::get('api/dropdown','SchedController@getDrop');
 Route::get('api/dropdownsub','SchedController@getDrop2');
 Route::resource('Schedule', 'SchedController');
 Route::resource('Schedule/create', 'SchedController@getCreate');
+Route::get('api/dropdown','CashieringController@getDrop');
+Route::get('api/dropdownname','CashieringController@getDropname');
+Route::get('api/dropdownpay','CashieringController@getDroppay');

@@ -405,5 +405,21 @@ margin-top: 4px;
 	position: absolute;
 }
 
+#select2-drop{
+	border-radius:0px;
+}
+
+#s2id_e1 .select2-choice{
+	border-radius:0px;
+	height:30px;
+	background:none;
+}
+
+#s2id_e2 .select2-choice{
+	border-radius:0px;
+	height:30px;
+	background:none;
+}
+
 
 

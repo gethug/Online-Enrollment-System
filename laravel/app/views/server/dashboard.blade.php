@@ -122,6 +122,12 @@
 				</li>
 
 
+      	 	<li class = "Cashiering" id = "hacc"> 
+					<i class="fa fa-money icon"></i><a class = "subs" id = "hacca" href = "Cashiering">Cashiering</a>
+					<div id = "triacc" class = "gide">
+				</li>
+
+
       	 </ul>
 
      </div>
@@ -143,6 +149,7 @@
 		@yield('Enrolee')
 		@yield('misc')
 		@yield('dis')
+		@yield('acc')
 	</div>
 @stop
 

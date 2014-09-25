@@ -138,6 +138,7 @@
  	<div class="form-group div-filds" style = "width:100%;">
 
  	<select class="form-control feilds" style = "width:50%;" name = "level" id = "level">
+ 					<option value = "">-Level-</option>
 	 			@foreach($levels as $level)
 				  <option value = "{{$level->lvl_id}}">{{ $level->level }}</option>
 				@endforeach
@@ -196,9 +197,9 @@
  	<div class="form-group div-filds" style = "width:50%;">
 
  	<select class="form-control feilds" style = "width:100%;" name = "subject" id ="subject">
-	 			@foreach($subjects as $subject)
-				  <option value = "{{$subject->s_id}}">{{ $subject->subj_name }}</option>
-				@endforeach
+	 	
+				  <option value = "">-Subject-</option>
+		
 				</select>
 
 				@if (Session::get('serror'))
@@ -219,9 +220,7 @@
  	<div class="form-group div-filds" style = "width:48%;">
 
 	<select class="form-control feilds" style = "width:100%;" name = "section" id = "section">
-	 			@foreach($sections as $section)
-				  <option value = "{{$section->sec_id}}">{{ $section->section }}</option>
-				@endforeach
+				  <option value = "">-Section-</option>
 				</select>
 
 				@if (Session::get('secerror'))

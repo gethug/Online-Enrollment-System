@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2014 at 01:08 AM
+-- Generation Time: Sep 26, 2014 at 01:48 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -91,6 +91,14 @@ CREATE TABLE IF NOT EXISTS `tblenrolee` (
   PRIMARY KEY (`en_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tblenrolee`
+--
+
+INSERT INTO `tblenrolee` (`en_id`, `type`, `lvl_id`, `fname`, `mname`, `lname`, `gender`, `h_addres`, `c_addres`, `b_place`, `b_date`, `nationality`, `religion`, `prev_school`, `schoolyear`, `mail_add`, `updated_at`, `created_at`) VALUES
+('S001', 'New', 1, 'Jess', 'Navaja', 'Hermosa', 'male', 'Sagbayan, Bohol', 'Tagbilaran City', 'Cebu City', '14.11.1994', 'Filipino', 'Roman Catholic', 'Saint Augustine Institute', '2011-2012', 'Pob. Sagbayan, Bohol', '2014-09-25', '2014-09-25'),
+('S002', 'New', 1, 'Jesus', 'Navaja', 'Hermosa', 'male', 'Sagbayan, Bohol', 'Tagbilaran City', 'Cebu City', '14.11.1994', 'Filipino', 'Roman Catholic', 'Saint Augustine Institute', '2011-2012', 'Pob. Sagbayan, Bohol', '2014-09-25', '2014-09-25');
+
 -- --------------------------------------------------------
 
 --
@@ -128,14 +136,15 @@ CREATE TABLE IF NOT EXISTS `tblmisc` (
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL,
   PRIMARY KEY (`m_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `tblmisc`
 --
 
 INSERT INTO `tblmisc` (`m_id`, `m_name`, `m_fee`, `mandatory`, `lvl_id`, `updated_at`, `created_at`) VALUES
-(2, 'Thesis', 4000, 1, 2, '2014-09-23', '2014-09-23');
+(3, 'Registration Fee', 500, 0, 1, '2014-09-25', '2014-09-25'),
+(4, 'Registration Fee', 500, 0, 2, '2014-09-25', '2014-09-25');
 
 -- --------------------------------------------------------
 
@@ -158,20 +167,36 @@ CREATE TABLE IF NOT EXISTS `tblparent` (
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL,
   PRIMARY KEY (`p_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `tblparent`
+--
+
+INSERT INTO `tblparent` (`p_id`, `en_id`, `f_name`, `m_name`, `l_name`, `age`, `heda`, `occp`, `religion`, `nationality`, `cell_no`, `updated_at`, `created_at`) VALUES
+(4, 'S001', 'Lito', 'Vitorillo', 'Hermosa', 23, 'College Graduate', 'Post man', 'Roman Catholic', 'Filipino', 9279312518, '2014-09-25', '2014-09-25'),
+(5, 'S002', 'Lito', 'Vitorillo', 'Hermosa', 23, 'College Graduate', 'Post man', 'Roman Catholic', 'Filipino', 9678975329, '2014-09-25', '2014-09-25');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblreg`
+-- Table structure for table `tblpymentsched`
 --
 
-CREATE TABLE IF NOT EXISTS `tblreg` (
-  `en_id` varchar(255) NOT NULL,
-  `reg` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tblpymentsched` (
+  `sy_id` int(10) NOT NULL,
+  `1st` varchar(255) NOT NULL,
+  `2nd` varchar(255) NOT NULL,
+  `3rd` varchar(255) NOT NULL,
+  `4th` varchar(255) NOT NULL,
+  `5th` varchar(255) NOT NULL,
+  `6th` varchar(255) NOT NULL,
+  `7th` varchar(255) NOT NULL,
+  `8th` varchar(255) NOT NULL,
+  `9th` varchar(255) NOT NULL,
+  `10th` varchar(255) NOT NULL,
   `updated_at` date NOT NULL,
-  `created_at` date NOT NULL,
-  PRIMARY KEY (`en_id`)
+  `created_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -268,6 +293,31 @@ INSERT INTO `tblsections` (`sec_id`, `lvl_id`, `section`, `updated_at`, `created
 (3, 1, 'daf', '2014-09-01', '2014-09-01'),
 (4, 2, 'Pancito', '2014-09-03', '2014-09-03'),
 (5, 2, 'Lasutan', '2014-09-03', '2014-09-03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblstudfee`
+--
+
+CREATE TABLE IF NOT EXISTS `tblstudfee` (
+  `f_id` int(10) NOT NULL AUTO_INCREMENT,
+  `en_id` varchar(255) NOT NULL,
+  `m_id` int(10) NOT NULL,
+  `m_name` varchar(255) NOT NULL,
+  `bal` double NOT NULL,
+  `updated_at` date NOT NULL,
+  `created_at` date NOT NULL,
+  PRIMARY KEY (`f_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `tblstudfee`
+--
+
+INSERT INTO `tblstudfee` (`f_id`, `en_id`, `m_id`, `m_name`, `bal`, `updated_at`, `created_at`) VALUES
+(3, 'S001', 3, 'Registration Fee', 500, '2014-09-25', '2014-09-25'),
+(4, 'S002', 3, 'Registration Fee', 500, '2014-09-25', '2014-09-25');
 
 -- --------------------------------------------------------
 

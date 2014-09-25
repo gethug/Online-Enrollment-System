@@ -81,11 +81,17 @@
 						->withErrors($validator)
 						->withInput();
 				} else{
+					$id = 3;
+					$misc = Misc::find($id);
+					$mid = $misc->m_id;
+					$fee = $misc->m_fee;
 
-					$regs = new Reg;
-					$regs->en_id = Input::get('ID');
-					$regs->reg = '0';
-					$regs->save();
+					$studs = new Studfee;
+					$studs->en_id = Input::get('ID');
+					$studs->m_id = $mid;
+					$studs->m_name = $misc->m_name;
+					$studs->bal = $fee;
+					$studs->save();
 
 					$enrolees = new Enrolee;
 					$enrolees->en_id = Input::get('ID');
@@ -253,8 +259,7 @@
 					$enrolees = Enrolee::find($id);
 					$enrolees->delete();
 					$parents = Parentss::where('en_id','=', $id)->delete();
-					$regs = Reg::find($id);
-					$regs->delete();
+					$studs = Studfee::where('en_id', '=', $id)->delete();
 					return Redirect::to('Enrolee');
 				} 
 

@@ -31,6 +31,10 @@
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/vendor/animate/animate.css">
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/vendor/animate/animate.min.css">
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/vendor/bootstrap/bootstrap.min.css">
+
+		<link media="all" type="text/css" rel="stylesheet" href="/select2-3.5.1/select2.css">
+		
+
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700|Oswald' rel='stylesheet' type='text/css'>
 		<script src="/assets/js/jquery.js"></script>
@@ -56,6 +60,7 @@
 	    <script type="text/javascript" src="/assets/js/vendor/chosen/chosen.jquery.min.js"></script>
 	    <script type="text/javascript" src="/assets/js/vendor/parsley/parsley.min.js"></script>
 	    <script src="/assets/js/vendor/wizard/jquery.bootstrap.wizard.min.js"></script>
+	     <script type="text/javascript" src="/select2-3.5.1/select2.js"></script>
 
 	    <script src="/assets/js/minimal.min.js"></script>
 	    <script src="/assets/js/custom.js"></script>
