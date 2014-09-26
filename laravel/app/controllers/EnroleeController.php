@@ -17,8 +17,7 @@
 				public function index()
 				{
 					$enrolees= Enrolee::join('tblparent', 'tblenrolee.en_id', '=', 'tblparent.en_id')
-					->join('tbllevel', 'tblenrolee.lvl_id', '=', 'tbllevel.lvl_id')
-					->select('tblenrolee.en_id','tblenrolee.type', 'tblenrolee.lvl_id', 'tblenrolee.fname', 'tblenrolee.mname', 'tblenrolee.lname', 'tblenrolee.gender', 'tblenrolee.h_addres', 'tblparent.f_name', 'tblparent.m_name', 'tblparent.l_name', 'tblparent.cell_no', 'tbllevel.level')
+					->select('tblenrolee.en_id','tblenrolee.type', 'tblenrolee.fname', 'tblenrolee.mname', 'tblenrolee.lname', 'tblenrolee.gender', 'tblenrolee.h_addres', 'tblparent.f_name', 'tblparent.m_name', 'tblparent.l_name', 'tblparent.cell_no')
 					->get();
 
 					return View::make('server.Enrolee.enrolee')
@@ -99,7 +98,6 @@
 					$enrolees->mname = Input::get('Mname');
 					$enrolees->lname = Input::get('Lastname');
 					$enrolees->type = Input::get('type');
-					$enrolees->lvl_id = Input::get('level');
 					$enrolees->gender = Input::get('gender');
 					$enrolees->h_addres = Input::get('HomeAddress');
 					$enrolees->c_addres = Input::get('CityAddress');
@@ -212,7 +210,6 @@
 					$enrolees->mname = Input::get('Mname');
 					$enrolees->lname = Input::get('Lastname');
 					$enrolees->type = Input::get('type');
-					$enrolees->lvl_id = Input::get('level');
 					$enrolees->gender = Input::get('gender');
 					$enrolees->h_addres = Input::get('HomeAddress');
 					$enrolees->c_addres = Input::get('CityAddress');

@@ -107,8 +107,8 @@
 				public function getDroppay()
 				{
 					$input = Input::get('option');
-					$Payble = Misc::find($input);
-        			$pay = Misc::pay($Payble->m_id);
+					$fee = Misc::find($input);
+        			$pay = Misc::bal($fee->m_id);
         			return Response::json($pay);
 				} 
 

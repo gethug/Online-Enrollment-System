@@ -21,7 +21,6 @@
   <thead>
         <tr style = "font-size:12px;">
             <th class = "text-center">ID</th>
-            <th class = "text-center">Level</th>
             <th class = "text-center">Type</th>
             <th class = "text-center">Name</th>
             <th class = "text-center">Gender</th>
@@ -36,7 +35,6 @@
         @foreach($enrolees as $enrolee)
             <tr style = "font-size:11px;" id = "items">
                 <td class = "text-center"> {{ $enrolee->en_id}}</td>
-                <td class = "text-center"> {{ $enrolee->level}}</td>
                  <td class = "text-center"> {{ $enrolee->type}}</td>
                 <td class = "text-center">{{ ucwords($enrolee->fname) . ' ' . ucwords($enrolee->mname) . ' ' . ucwords($enrolee->lname)}} </td>
                 <td class = "text-center"> {{ $enrolee->gender}}</td>

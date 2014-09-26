@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2014 at 01:48 AM
+-- Generation Time: Sep 26, 2014 at 05:44 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -96,8 +96,7 @@ CREATE TABLE IF NOT EXISTS `tblenrolee` (
 --
 
 INSERT INTO `tblenrolee` (`en_id`, `type`, `lvl_id`, `fname`, `mname`, `lname`, `gender`, `h_addres`, `c_addres`, `b_place`, `b_date`, `nationality`, `religion`, `prev_school`, `schoolyear`, `mail_add`, `updated_at`, `created_at`) VALUES
-('S001', 'New', 1, 'Jess', 'Navaja', 'Hermosa', 'male', 'Sagbayan, Bohol', 'Tagbilaran City', 'Cebu City', '14.11.1994', 'Filipino', 'Roman Catholic', 'Saint Augustine Institute', '2011-2012', 'Pob. Sagbayan, Bohol', '2014-09-25', '2014-09-25'),
-('S002', 'New', 1, 'Jesus', 'Navaja', 'Hermosa', 'male', 'Sagbayan, Bohol', 'Tagbilaran City', 'Cebu City', '14.11.1994', 'Filipino', 'Roman Catholic', 'Saint Augustine Institute', '2011-2012', 'Pob. Sagbayan, Bohol', '2014-09-25', '2014-09-25');
+('S001', 'New', 0, 'Jess', 'Navaja', 'Hermosa', 'male', 'Sagbayan, Bohol', 'Tagbilaran City', 'Cebu City', '14.11.1994', 'Filipino', 'Roman Catholic', 'Saint Augustine Institute', '2011-2012', 'Pob. Sagbayan, Bohol', '2014-09-26', '2014-09-26');
 
 -- --------------------------------------------------------
 
@@ -167,15 +166,14 @@ CREATE TABLE IF NOT EXISTS `tblparent` (
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL,
   PRIMARY KEY (`p_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `tblparent`
 --
 
 INSERT INTO `tblparent` (`p_id`, `en_id`, `f_name`, `m_name`, `l_name`, `age`, `heda`, `occp`, `religion`, `nationality`, `cell_no`, `updated_at`, `created_at`) VALUES
-(4, 'S001', 'Lito', 'Vitorillo', 'Hermosa', 23, 'College Graduate', 'Post man', 'Roman Catholic', 'Filipino', 9279312518, '2014-09-25', '2014-09-25'),
-(5, 'S002', 'Lito', 'Vitorillo', 'Hermosa', 23, 'College Graduate', 'Post man', 'Roman Catholic', 'Filipino', 9678975329, '2014-09-25', '2014-09-25');
+(6, 'S001', 'Lito', 'Vitorillo', 'Hermosa', 52, 'College Graduate', 'Post man', 'Roman Catholic', 'Filipino', 9092609523, '2014-09-26', '2014-09-26');
 
 -- --------------------------------------------------------
 
@@ -309,15 +307,14 @@ CREATE TABLE IF NOT EXISTS `tblstudfee` (
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL,
   PRIMARY KEY (`f_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `tblstudfee`
 --
 
 INSERT INTO `tblstudfee` (`f_id`, `en_id`, `m_id`, `m_name`, `bal`, `updated_at`, `created_at`) VALUES
-(3, 'S001', 3, 'Registration Fee', 500, '2014-09-25', '2014-09-25'),
-(4, 'S002', 3, 'Registration Fee', 500, '2014-09-25', '2014-09-25');
+(5, 'S001', 3, 'Registration Fee', 500, '2014-09-26', '2014-09-26');
 
 -- --------------------------------------------------------
 
@@ -374,7 +371,6 @@ CREATE TABLE IF NOT EXISTS `tblteacher` (
 --
 
 INSERT INTO `tblteacher` (`t_id`, `type_id`, `fname`, `mname`, `lname`, `degree`, `age`, `gender`, `contact`, `email`, `password`, `updated_at`, `created_at`) VALUES
-('S001', 1, 'charmy', '', 'pantyliner', 'aw', 23, 'female', 8054215, 'sdfsdf@asd.com', '$2y$10$XyQyy90p87pTfmIaG9TPCeJGodQ5o77uItLb7/V5IIE2gkvOiOLTu', '2014-09-23', '2014-09-23'),
 ('T001', 2, 'Jay Mar', '', 'Masibay', 'Computer Science', 25, 'male', 92609524, 'hermosagen@yahoo.com', '$2y$10$Sn56pc/LBi2gqLeLJ9yEq.YxlgUPZ4Ja8sb4PggSgp7DRMXoCrRU.', '2014-09-23', '2014-09-23');
 
 -- --------------------------------------------------------

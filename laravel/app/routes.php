@@ -48,4 +48,4 @@ Route::resource('Schedule', 'SchedController');
 Route::resource('Schedule/create', 'SchedController@getCreate');
 Route::get('api/dropdown','CashieringController@getDrop');
 Route::get('api/dropdownname','CashieringController@getDropname');
-Route::get('api/dropdownpay','CashieringController@getDroppay');
+Route::get('api/dropdown2','CashieringController@getDroppay');

@@ -23,16 +23,7 @@
 				</select>
 	 		</div>
 	</div>
-<!-- div for levels //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
- 	<div class="form-group div-filds" style = "width:100%">
-			<div class = "div-text" style = "width:100%">
-	 			<select class="form-control feilds" style = "width:98%;" name = "level" id = "level">
-	 			@foreach($levels as $level)
-				  <option value = "{{$level->lvl_id}}">{{$level->level}}</option>
-				@endforeach
-				</select>
-	 		</div>
-	</div>
+
 
 <!-- div for mail address ////////////////////////////////////////////////////////////////////////////////////////////////////-->
 

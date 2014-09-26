@@ -5,11 +5,11 @@ class Misc extends Eloquent{
 	protected $table = 'tblmisc';
 	 protected $primaryKey = 'm_id';
 
-	 public static function pay($id){
+	 public static function bal($id){
 	 	
-	 		return DB::table('tblstudfee')
-					->where('m_id', $id)
-					->first();
+	 		 return Studfee::Join('tblmisc', 'tblmisc.m_id', '=', 'tblstudfee.m_id')
+           ->where('tblstudfee.m_id', '=', $id)
+           ->get(['tblstudfee.*']);
 	 	          
           }
 }

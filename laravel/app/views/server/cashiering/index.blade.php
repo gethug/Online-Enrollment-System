@@ -11,6 +11,7 @@
              $('#collapseTwo').collapse();
            $('#collapseOne').collapse();
 
+
 });
 </script>
 
@@ -26,7 +27,7 @@
                                         { option: $(this).val() }, 
                                         function(data) {
                                                 var sec = $('#e2');
-                                                sec.empty();
+                                              
                                                
                                                 $(data).each( function(index, element) {
                                             sec.append("<option value='"+ element.m_id +"''>" + element.m_name + "</option>");
@@ -41,15 +42,19 @@
                                                
                                                 $(data).each( function(index, element) {
                                             
-                                            $('#n-filds').val(element.fname + " " + element.mname + " " + element.lname);
+                                            $('.name').val(element.fname + " " + element.mname + " " + element.lname);
                                         });
                                         });
                                 
                         });
+         });
+  </script>
 
+   <script type="text/javascript">
+  $(document).ready(function(){
        $('#e2').change(function(){
                                 
-                                 $.get("{{ url('api/dropdownpay')}}", 
+                                 $.get("{{ url('api/dropdown2')}}", 
                                         { option: $(this).val() }, 
                                         function(data) {
                                                 $(data).each( function(index, element) {
@@ -73,6 +78,7 @@
       </label>
       <div style = "margin-left: 266px;width: 100%;">
          <select class = "feilds "  id="e1" style = "width:50%;border-radius:0px; " name = "ID">
+           <option value="">-Student ID-</option>
          @foreach($enrolees as $enrolee)
         <option value="{{$enrolee->en_id}}">{{$enrolee->en_id}}</option>
         @endforeach
@@ -86,7 +92,7 @@
       <label style="display: inline-block;margin-left: 266px;">
         Student Name
       </label>
-        {{Form::text('name', '', array('placeholder' => 'Student Name', 'class' => 'form-control feilds', 'id' => 'n-filds', 'style' => 'width: 50%;margin: 5px auto;border-radius:0px;', 'readonly'))}}
+        {{Form::text('name', '', array('placeholder' => 'Student Name', 'class' => 'form-control feilds name', 'id' => 'n-filds', 'style' => 'width: 50%;margin: 5px auto;border-radius:0px;', 'readonly'))}}
       </div>
   </div>
 

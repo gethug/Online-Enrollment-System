@@ -6,5 +6,4 @@ class Studfee extends Eloquent{
 	 protected $primaryKey = 'f_id';
 
 	 
-
 }
