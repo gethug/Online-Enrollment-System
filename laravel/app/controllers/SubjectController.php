@@ -16,10 +16,16 @@
 				 */
 				public function index()
 				{
+					$sy = DB::table('tblschoolyear')
+					->where('active', 1)
+					->first();
+
+
 					$subjects= Subject::join('tbllevel', 'tblsubject.lvl_id', '=', 'tbllevel.lvl_id')
 					->select('tblsubject.s_id', 'tblsubject.subj_code', 
 						'tblsubject.subj_name', 'tblsubject.unit',
 						'tblsubject.prerequisite','tbllevel.level')
+					->where('sy_id', '=', $sy->sy_id)
 					->get();
 
 					return View::make('server.subject.subject')->with('subjects',$subjects);
@@ -53,16 +59,18 @@
 				 */
 				public function store()
 				{
+					$sy = DB::table('tblschoolyear')
+					->where('active', 1)
+					->first();
 
 					$rules = array(
 					'id' => 'required|unique:tblsubject,s_id',
-					'subjectcode' => 'required|unique:tblsubject,subj_code',
-					'subjectname' => 'required|unique:tblsubject,subj_name',
+					'subjectcode' => 'required|unique:tblsubject,subj_code,NULL,id,sy_id,' . $sy->sy_id,
+					'subjectname' => 'required|unique:tblsubject,subj_name,NULL,id,sy_id,' . $sy->sy_id,
 					'unit' => 'required|numeric'
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
-
 				if ($validator->fails()){
 					return Redirect::to('Subject/create')
 						->withErrors($validator)
@@ -77,8 +85,8 @@
 					$subjects->subj_name = Input::get('subjectname');
 					$subjects->unit = Input::get('unit');
 					$subjects->prerequisite = Input::get('prerequisite');
+					$subjects->sy_id = $sy->sy_id;
 					$subjects->save();
-
 
 					Session::flash('message','Successfully Saved!');
 					return Redirect::to('Subject');
@@ -123,10 +131,13 @@
 				 */
 				public function update($id)
 				{
+					$sy = DB::table('tblschoolyear')
+					->where('active', 1)
+					->first();
 						$rules = array(
 							'id' => 'required|unique:tblsubject,s_id,' . $id . ',s_id',
-							'subjectcode' => 'required|unique:tblsubject,subj_code,' . $id . ',s_id',
-							'subjectname' => 'required|unique:tblsubject,subj_name,' . $id . ',s_id',
+							'subjectcode' => 'required|unique:tblsubject,subj_code,' . $id . ',s_id' . $sy->sy_id,
+							'subjectname' => 'required|unique:tblsubject,subj_name,' . $id . ',s_id' . $sy->sy_id,
 							'unit' => 'required|numeric'
 								);
 

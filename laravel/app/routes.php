@@ -41,8 +41,12 @@ Route::resource('Miscellaneous','MiscController');
 Route::resource('Miscellaneous/create','MiscController@getCreate');
 Route::resource('Discount', 'DiscountController');
 Route::resource('Discount/create', 'DiscountController@getCreate');
+Route::resource('ClassStart', 'ClassController');
+Route::resource('ClassStart/create', 'ClassController@getCreate');
+Route::resource('PaySched', 'PayController');
+Route::resource('PaySched/create', 'PayController@getCreate');
 
-Route::get('api/dropdown','SchedController@getDrop');
+Route::get('api/dropdownsec','SchedController@getDrop');
 Route::get('api/dropdownsub','SchedController@getDrop2');
 Route::resource('Schedule', 'SchedController');
 Route::resource('Schedule/create', 'SchedController@getCreate');

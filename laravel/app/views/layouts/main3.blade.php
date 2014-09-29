@@ -77,5 +77,7 @@
 			@yield('medit')
 			@yield('dcreate')
 			@yield('dedit')
+			@yield('classcreate')
+			@yield('classedit')
 	</body>
 </html>

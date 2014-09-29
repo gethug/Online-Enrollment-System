@@ -1,12 +1,25 @@
 @extends('layouts.main3')
-@section('schedcreate')
+@section('schededit')
 <div class="container crud">
   <div class="jumbotron" id = "crud-con">
   <h2 class = "crud-head">Add Schedule</h2>
 
- 	{{Form::open(array('route' => 'Schedule.store', 'class' => 'form-inline'))}}
+ 	{{Form::open(array('route' => array('Schedule.update', $scheds->sched_id), 'class' => 'form-inline', 'method' => 'PUT'))}}
 
 <!-- div for day////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<script type="text/javascript">
+			    $(document).ready(function(){
+			        $("#level option[value= {{$scheds->lvl_id}}]").attr("selected", "selected");
+			        $("#subject option[value= {{$scheds->s_id}}]").attr("selected", "selected");
+			        $("#section option[value= {{$scheds->sec_id}}]").attr("selected", "selected");
+			         $("#subject option[value= {{$scheds->t_id}}]").attr("selected", "selected");
+			        $("#section option[value= {{$scheds->r_id}}]").attr("selected", "selected");
+			        $("#timepicker1").val("{{$scheds->start}}");
+			        $("#timepicker2").val("{{$scheds->end}}");
+				});
+			</script>
+
 
  	<div class="form-group div-filds" style = "margin-top: -13px; margin-bottom: -17px;">
 
@@ -197,9 +210,9 @@
  	<div class="form-group div-filds" style = "width:50%;">
 
  	<select class="form-control feilds" style = "width:100%;" name = "subject" id ="subject">
-	 	
-				  <option value = "">-Subject-</option>
-		
+	 		@foreach($subjects as $subject)
+				  <option value = "{{$subject->s_id}}">{{$subject->subj_name}}</option>
+			@endforeach
 				</select>
 
 				@if (Session::get('serror'))
@@ -220,7 +233,9 @@
  	<div class="form-group div-filds" style = "width:48%;">
 
 	<select class="form-control feilds" style = "width:100%;" name = "section" id = "section">
-				  <option value = "">-Section-</option>
+			@foreach($sections as $section)
+				  <option value = "{{$section->sec_id}}">{{$section->section}}</option>
+			@endforeach
 				</select>
 
 				@if (Session::get('secerror'))
@@ -242,7 +257,7 @@
 
 
 
- 		{{ Form::submit('Save', array('class' => 'btn btn-info', 'id' => 'csubmit', 'style' => 'color:white;')) }}
+ 		{{ Form::submit('Update', array('class' => 'btn btn-info', 'id' => 'csubmit', 'style' => 'color:white;')) }}
  	{{Form::close()}}
 </div>
 </div>

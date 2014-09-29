@@ -214,6 +214,15 @@ margin-left: -4px;
 	padding:9px 15px;
 }
 
+#datetimepicker{
+	background-color:white;
+}
+
+#datetimepicker1{
+	background-color:white;
+}
+
+
 .lsthead li:hover{
 	background-color: #67809F;
 	cursor: pointer;

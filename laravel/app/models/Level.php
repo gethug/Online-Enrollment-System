@@ -11,8 +11,13 @@ class Level extends Eloquent{
           }
 
       public static function subjects($id){
+        $sy = DB::table('tblschoolyear')
+          ->where('active', 1)
+          ->first();
+
            return Subject::Join('tbllevel', 'tbllevel.lvl_id', '=', 'tblsubject.lvl_id')
            ->where('tblsubject.lvl_id', '=', $id)
+           ->where('tblsubject.sy_id', '=', $sy->sy_id)
            ->get(['tblsubject.*']);
           }
 }

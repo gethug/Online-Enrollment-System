@@ -56,6 +56,11 @@
 					<div id = "trisy" class = "gide">
 				</li>
 
+				<li class = "ClassStart" id = "hstart">
+					<i class="fa fa-book icon"></i><a class = "subs" id = "hstarta" href = "ClassStart">&nbsp;&nbsp;Class Start</a>
+					<div id = "tristart" class = "gide">
+				</li>
+
 				<li class = "Level" id = "hlvl">
 					<i class="fa fa-level-up icon"></i><a class = "subs" id = "hlvla" href = "Level">&nbsp;&nbsp;&nbsp;Levels</a>
 					<div id = "tril" class = "gide">
@@ -79,6 +84,11 @@
 				<li class = "Tuition" id = "htuition">
 					<i class="fa fa-money icon"></i><a class = "subs" id = "htuitiona" href = "Tuition">&nbsp;Tuition fees</a>
 					<div id = "tritu" class = "gide">
+				</li>
+
+				<li class = "PaySched" id = "hpay">
+					<i class="fa fa-tasks icon"></i><a class = "subs" id = "hpaya" href = "PaySched">&nbsp;&nbsp;Payment Schedule</a>
+					<div id = "tripay" class = "gide">
 				</li>
 
 				<li class = "Miscellaneous" id = "hmisc">
@@ -150,6 +160,7 @@
 		@yield('misc')
 		@yield('dis')
 		@yield('acc')
+		@yield('class')
 	</div>
 @stop
 

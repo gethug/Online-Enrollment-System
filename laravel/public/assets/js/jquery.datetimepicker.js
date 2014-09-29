@@ -477,10 +477,10 @@
 				
 				var datetimepicker = $('<div '+(options.id?'id="'+options.id+'"':'')+' '+(options.style?'style="'+options.style+'"':'')+' class="xdsoft_datetimepicker xdsoft_noselect '+(options.weeks?' xdsoft_showweeks':'')+options.className+'"></div>'),
 					xdsoft_copyright = $('<div class="xdsoft_copyright"><a target="_blank" href="http://xdsoft.net/jqplugins/datetimepicker/">xdsoft.net</a></div>'),
-					datepicker = $('<div class="xdsoft_datepicker active"></div>'),
+					datepicker = $('<div class="xdsoft_datepicker activea"></div>'),
 					mounth_picker = $('<div class="xdsoft_mounthpicker"><button type="button" class="xdsoft_prev"></button><button type="button" class="xdsoft_today_button"></button><div class="xdsoft_label xdsoft_month"><span></span></div><div class="xdsoft_label xdsoft_year"><span></span></div><button type="button" class="xdsoft_next"></button></div>'),
 					calendar = $('<div class="xdsoft_calendar"></div>'),
-					timepicker = $('<div class="xdsoft_timepicker active"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box"></div><button type="button" class="xdsoft_next"></button></div>'),
+					timepicker = $('<div class="xdsoft_timepicker activea"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box"></div><button type="button" class="xdsoft_next"></button></div>'),
 					timeboxparent = timepicker.find('.xdsoft_time_box').eq(0),
 					timebox = $('<div class="xdsoft_time_variant"></div>'),
 					scrollbar = $('<div class="xdsoft_scrollbar"></div>'),
@@ -570,14 +570,14 @@
 					}
 
 					if( options.datepicker )
-						datepicker.addClass('active');
+						datepicker.addClass('activea');
 					else
-						datepicker.removeClass('active');
+						datepicker.removeClass('activea');
 
 					if( options.timepicker )
-						timepicker.addClass('active');
+						timepicker.addClass('activea');
 					else
-						timepicker.removeClass('active');
+						timepicker.removeClass('activea');
 
 					if( options.value ){
 						input&&input.val&&input.val(options.value);

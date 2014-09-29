@@ -16,8 +16,14 @@
 				 */
 				public function index()
 				{
+					$sy = DB::table('tblschoolyear')
+					->where('active', 1)
+					->first();
+
+
 					$enrolees= Enrolee::join('tblparent', 'tblenrolee.en_id', '=', 'tblparent.en_id')
 					->select('tblenrolee.en_id','tblenrolee.type', 'tblenrolee.fname', 'tblenrolee.mname', 'tblenrolee.lname', 'tblenrolee.gender', 'tblenrolee.h_addres', 'tblparent.f_name', 'tblparent.m_name', 'tblparent.l_name', 'tblparent.cell_no')
+					->where('sy_id', '=', $sy->sy_id)
 					->get();
 
 					return View::make('server.Enrolee.enrolee')
@@ -49,6 +55,10 @@
 				 */
 				public function store()
 				{
+					$sy = DB::table('tblschoolyear')
+					->where('active', 1)
+					->first();
+
 
 						$rules = array(
 					'ID' => 'required',
@@ -90,6 +100,7 @@
 					$studs->m_id = $mid;
 					$studs->m_name = $misc->m_name;
 					$studs->bal = $fee;
+					$studs->sy_id = $sy->sy_id;
 					$studs->save();
 
 					$enrolees = new Enrolee;
@@ -108,6 +119,7 @@
 					$enrolees->prev_school = Input::get('PreviousSchool');
 					$enrolees->schoolyear = Input::get('Schoolyear');
 					$enrolees->mail_add = Input::get('mailaddress');
+					$enrolees->sy_id = $sy->sy_id;
 					$enrolees->save();
 
 					$parents = new Parentss;
