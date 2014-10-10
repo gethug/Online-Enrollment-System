@@ -92,6 +92,8 @@
 				{
 					$schoolyear = Schoolyear::find($id);
 					$sys = Schoolyear::all();
+					$enrolees = Enrolee::all();
+
 					foreach($sys as $sy){
 
 						if ($sy->Active == 1){
@@ -99,9 +101,33 @@
 							$sy->save();
 						}
 					}
-
 					$schoolyear->Active = 1;
 					$schoolyear->save();
+
+					$sy = DB::table('tblschoolyear')
+					->where('active', 1)
+					->first();
+
+					$bal = Misc::where('m_id', '=', 3)->first();
+					foreach($enrolees as $enrolee)
+					{
+						$reg = Studfee::where('en_id', '=', $enrolee->en_id)
+						->where('sy_id', '=', $sy->sy_id)
+						->count();
+
+						if($reg == 0)
+						{
+							
+							$fee = new Studfee;
+							$fee->en_id = $enrolee->en_id;
+							$fee->m_id = $bal->m_id;
+							$fee->m_name = $bal->m_name;
+							$fee->bal = $bal->m_fee;
+							$fee->sy_id = $sy->sy_id;
+							$fee->save();
+						}
+
+					}
 					return Redirect::to('SY');
 				}
 

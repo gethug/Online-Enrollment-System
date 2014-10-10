@@ -34,16 +34,14 @@
       <div class="panel-body" style = "padding:0px;">
      <ul class = "lsthead" id = "file">
 
-				
-
-				<li class = "Section" id = "hsec" style = "margin-top:10px;">
-					<i class="fa fa-sitemap icon"></i><a class = "subs" id = "hseca" href = "Section">  Section</a>
-					<div id = "trisec" class = "gide">
+				<li class = "SY" id = "hsy" style = "margin-top:10px;">
+					<i class="fa fa-calendar icon"></i><a class = "subs" id = "hsya" href = "SY">&nbsp;&nbsp;School year</a>
+					<div id = "trisy" class = "gide">
 				</li>
 
-				<li class = "Room" id = "hrm"> 
-					<i class="fa fa-sign-in icon"></i><a class = "subs" id = "hrma" href = "Room">&nbsp;&nbsp;Rooms</a>
-					<div id = "trir" class = "gide">
+				<li class = "Level" id = "hlvl">
+					<i class="fa fa-level-up icon"></i><a class = "subs" id = "hlvla" href = "Level">&nbsp;&nbsp;&nbsp;Year Level</a>
+					<div id = "tril" class = "gide">
 				</li>
 
 				<li class = "Subject" id = "hsubj">
@@ -51,57 +49,111 @@
 					<div id = "tris" class = "gide">
 				</li>
 
-				<li class = "SY" id = "hsy">
-					<i class="fa fa-calendar icon"></i><a class = "subs" id = "hsya" href = "SY">&nbsp;&nbsp;School year</a>
-					<div id = "trisy" class = "gide">
+				<li class = "Section" id = "hsec" >
+					<i class="fa fa-sitemap icon"></i><a class = "subs" id = "hseca" href = "Section">  Section</a>
+					<div id = "trisec" class = "gide">
 				</li>
 
-				<li class = "ClassStart" id = "hstart">
-					<i class="fa fa-book icon"></i><a class = "subs" id = "hstarta" href = "ClassStart">&nbsp;&nbsp;Class Start</a>
-					<div id = "tristart" class = "gide">
+				<li class = "Adviser" id = "hadv">
+					<i class="fa fa-tasks icon"></i><a class = "subs" id = "hadva" href = "Adviser">&nbsp;Adviser</a>
+					<div id = "triadv" class = "gide">
 				</li>
 
-				<li class = "Level" id = "hlvl">
-					<i class="fa fa-level-up icon"></i><a class = "subs" id = "hlvla" href = "Level">&nbsp;&nbsp;&nbsp;Levels</a>
-					<div id = "tril" class = "gide">
+				<li class = "Room" id = "hrm"> 
+					<i class="fa fa-sign-in icon"></i><a class = "subs" id = "hrma" href = "Room">&nbsp;&nbsp;Rooms</a>
+					<div id = "trir" class = "gide">
 				</li>
 
-				<li class = "Systemuser" id = "hteachr">
-					<i class="fa fa-users icon"></i><a class = "subs" id = "hteachra" href = "Systemuser">&nbsp;System User</a>
+				<li class = "Teacher" id = "hteachr">
+					<i class="fa fa-users icon"></i><a class = "subs" id = "hteachra" href = "Teacher">&nbsp;Teacher</a>
 					<div id = "trit" class = "gide">
 				</li>
 
-				<li  class = "Usertype" id = "hcash">
-					<i class="fa fa-male icon"></i><a class = "subs" id = "hcasha" href = "Usertype">&nbsp;&nbsp;&nbsp;User Types</a>
-					<div id = "tric" class = "gide">
-				</li>
-
-				<li class = "administrator" id = "hadmin">
-					<i class="fa fa-user icon"></i><a class = "subs" id = "hadmina" href = "administrator">&nbsp;&nbsp;Administrator</a>
-					<div id = "tria" class = "gide">
-				</li>
-
-				<li class = "Tuition" id = "htuition">
+					<li class = "Tuition" id = "htuition">
 					<i class="fa fa-money icon"></i><a class = "subs" id = "htuitiona" href = "Tuition">&nbsp;Tuition fees</a>
 					<div id = "tritu" class = "gide">
 				</li>
 
+
+				<li class = "Miscellaneous" id = "hmisc">
+					<i class="fa fa-rub icon"></i><a class = "subs" id = "hmisca" href = "Miscellaneous">&nbsp;&nbsp;Fees</a>
+					<div id = "trimisc" class = "gide">
+				</li>
+
+					<li class = "Discount" id = "hdis">
+					<i class="fa fa-rub icon"></i><a class = "subs" id = "hdisa" href = "Discount">&nbsp;&nbsp;Discount</a>
+					<div id = "tridis" class = "gide">
+				</li>
+
+			 <li class = "Schedule" id = "hsched"> 
+					<i class="fa fa-clock-o icon"></i><a class = "subs" id = "hscheda" href = "Schedule">  Schedule</a>
+					<div id = "trisc" class = "gide">
+				</li>
+
+				<li class = "Enrolee" id = "hen"> 
+					<i class="fa fa-users icon"></i><a class = "subs" id = "hena" href = "Enrolee">&nbsp;Enrolee</a>
+					<div id = "trie" class = "gide">
+					</div>
+				</li>
+
+			
 				<li class = "PaySched" id = "hpay">
 					<i class="fa fa-tasks icon"></i><a class = "subs" id = "hpaya" href = "PaySched">&nbsp;&nbsp;Payment Schedule</a>
 					<div id = "tripay" class = "gide">
 				</li>
 
-				<li class = "Miscellaneous" id = "hmisc">
-					<i class="fa fa-rub icon"></i><a class = "subs" id = "hmisca" href = "Miscellaneous">&nbsp;&nbsp;Miscellaneous fees</a>
-					<div id = "trimisc" class = "gide">
-				</li>
-				<li class = "Discount" id = "hdis">
-					<i class="fa fa-rub icon"></i><a class = "subs" id = "hdisa" href = "Discount">&nbsp;&nbsp;Discount</a>
-					<div id = "tridis" class = "gide">
-				</li>
+				
 
 				
+				
 			</ul>
+
+
+
+
+							<div class="panel panel-default"  id = "accrdn" style = "margin-top: -12px;">
+				    <div class="panel-heading" id = "colps">
+				      <h4 class="panel-title">
+				        <a id = "colapsethre" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" style = "font-size:13px;color: #ABD5F1;">
+				          <i class="fa fa-users" style = "margin-left: -9px;margin-right: 9px;color: white;"></i>&nbsp;&nbsp;SystemUser
+				        </a>
+				      </h4>
+				    </div>
+				    <div id="collapseThree" class="panel-collapse collapse">
+				      <div class="panel-body" style = "padding:0px;">
+				      	 <ul class = "lsthead" id = "file">
+
+				      	 	<li class = "Student" id = "hstud"> 
+								<i class="fa fa-plus-circle icon"></i><a class = "subs" id = "hstuda" href = "Student">&nbsp;&nbsp;Student</a>
+								<div id = "tristud" class = "gide">
+							</li>
+
+				      	 	<li class = "administrator" id = "hadmin">
+								<i class="fa fa-plus-circle icon"></i><a class = "subs" id = "hadmina" href = "SystemUser">&nbsp;&nbsp;Administrator</a>
+								<div id = "tria" class = "gide">
+							</li>
+
+
+				      	 	<li class = "SystemUser" id = "huser">
+								<i class="fa fa-plus-circle icon"></i><a class = "subs" id = "husera" href = "SystemUser">&nbsp;&nbsp;Teacher</a>
+								<div id = "triuser" class = "gide">
+							</li>
+
+							<li class = "Cashier" id = "hcsh"> 
+								<i class="fa fa-plus-circle icon"></i><a class = "subs" id = "hcsha" href = "Cashier">&nbsp;&nbsp;Cashier</a>
+								<div id = "tricsh" class = "gide">
+							</li>
+				      	 </ul>
+
+				     </div>
+				    </div>
+				  </div>
+
+
+
+
+
+
 
       </div>
     </div>
@@ -119,22 +171,23 @@
       <div class="panel-body" style = "padding:0px;">
       	 <ul class = "lsthead" id = "file">
 
-
-				<li class = "Enrolee" id = "hen" style = "margin-top: 15px;"> 
-					<i class="fa fa-users icon"></i><a class = "subs" id = "hena" href = "Enrolee">&nbsp;Enrolee</a>
-					<div id = "trie" class = "gide">
-					</div>
+      	 	<li class = "Enroll" id = "henroll"  style = "margin-top: 15px;"> 
+					<i class="fa fa-briefcase icon"></i><a class = "subs" id = "henrolla" href = "Enroll">  Enroll</a>
+					<div id = "trienroll" class = "gide">
 				</li>
 
-      	 	<li class = "Schedule" id = "hsched"> 
-					<i class="fa fa-clock-o icon"></i><a class = "subs" id = "hscheda" href = "Schedule">  Schedule</a>
-					<div id = "trisc" class = "gide">
-				</li>
+
+      	 	
 
 
       	 	<li class = "Cashiering" id = "hacc"> 
-					<i class="fa fa-money icon"></i><a class = "subs" id = "hacca" href = "Cashiering">Cashiering</a>
+					<i class="fa fa-money icon"></i><a class = "subs" id = "hacca" href = "Cashiering">Payment</a>
 					<div id = "triacc" class = "gide">
+				</li>
+
+			<li class = "Grade" id = "hgra"> 
+					<i class="fa fa-money icon"></i><a class = "subs" id = "hgraa" href = "Grade">Grade</a>
+					<div id = "trigra" class = "gide">
 				</li>
 
 
@@ -161,6 +214,13 @@
 		@yield('dis')
 		@yield('acc')
 		@yield('class')
+		@yield('pay')
+		@yield('enroll')
+		@yield('cash')
+		@yield('adviser')
+		@yield('enrollstudent')
+		@yield('student')
+		@yield('gra')
 	</div>
 @stop
 

@@ -7,7 +7,7 @@
          $( "#hsy" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hsya" ).addClass("active" );
           $( "#trisy" ).addClass("tri" );
-          $("#trisy").css("margin-left","66px");
+          $("#trisy").css("margin-left","67px");
 });
 </script>
 
@@ -22,7 +22,7 @@
              <th class = "text-center">ID</th>
             <th class = "text-center">School Year</th>
             <th class = "no-sort"></th>
-             <th class = "no-sort"></th>
+          
         </tr>
     </thead>
     <tbody>
@@ -39,13 +39,7 @@
                      array($sy->sy_id), array('class' => 'btn btn-lg btn-primary','disabled' => 'disabled', 'id' => 'btnedit')) }}
                 </td>
                 @endif
-                 <td  style = "width:13px;">
-                        {{ Form::open(array('method' 
-                    => 'DELETE', 'route' => array('SY.destroy', $sy->sy_id))) }}                       
-                            {{ Form::submit('Delete', array('class'
-                    => 'btn btn-danger', 'id' => 'btndel')) }}
-                        {{ Form::close() }}
-                    </td>
+                
             </tr>
         @endforeach
 

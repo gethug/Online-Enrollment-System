@@ -16,9 +16,26 @@
 				 */
 				public function index()
 				{
-					$teachers = Teacher::join('tbltype', 'tblteacher.type_id', '=', 'tbltype.type_id')
-					->select('tblteacher.t_id', 'tbltype.type','tblteacher.fname', 'tblteacher.mname', 'tblteacher.lname','tblteacher.degree','tblteacher.age','tblteacher.gender','tblteacher.contact','tblteacher.contact', 'tblteacher.email')
-					->get();
+					$teachers = Teacher::all();
+					$subjects = Subject::all();
+					
+				/**	$arr = array();
+					foreach($teachers as $teacher)
+					{
+						$converts = (explode(', ',$teacher->specialization));
+						$x = "";
+						foreach($converts as $convert)
+						{
+						$s = Subject::where('s_id', '=', $convert)
+						->select("subj_name")
+						->get();
+						$x .= $s[0]->subj_name;
+					
+						}
+						
+							array_push($arr, $x, $teacher->t_id, $teacher->fname, $teacher->mname, $teacher->lname, $teacher->age, $teacher->gender, $teacher->contact);
+					}
+					return $arr;*/
 					return View::make('server.teacher.teacher')->with('teachers', $teachers);
 
 				}
@@ -26,9 +43,9 @@
 
 				public function getCreate()
 				{
-					$users = Usertype::all();
+					$subjects = Subject::all();
 					return View::make('server.teacher.create')
-					->with('users', $users);
+					->with('subjects', $subjects);
 					
 				}
 
@@ -56,39 +73,33 @@
 					'id' => 'required|unique:tblteacher,t_id',
 					'Firstname' => 'required',
 					'Lastname' => 'required',
-					'degree' => 'required',
 					'age' => 'required|numeric',
-					'contact' => 'required|numeric|min:11|unique:tblteacher,contact',
-					'email'	=> 'required|email|unique:tblteacher,email',
-					'password' => 'required|min:7'
+					'contact' => 'required|numeric|min:11|unique:tblteacher,contact'
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
 
 				if ($validator->fails()){
-					return Redirect::to('Systemuser/create')
+					return Redirect::to('Teacher/create')
 						->withErrors($validator)
-						->withInput(Input::except('password'));
+						->withInput();
 				} else{
 
 					
+	
 					$teachers = new Teacher;
 					$teachers->t_id = Input::get('id');
-					$teachers->type_id = Input::get('type');
 					$teachers->fname = Input::get('Firstname');
 					$teachers->mname = Input::get('Mname');
 					$teachers->lname = Input::get('Lastname');
-					$teachers->degree = Input::get('degree');
 					$teachers->age = Input::get('age');
 					$teachers->gender = Input::get('gender');
 					$teachers->contact = Input::get('contact');
-					$teachers->email = Input::get('email');
-					$teachers->password = Hash::make(Input::get('password'));
 					$teachers->save();
 
 
 					Session::flash('message','Successfully Saved!');
-					return Redirect::to('Systemuser');
+					return Redirect::to('Teacher');
 				}
 
 		
@@ -114,11 +125,11 @@
 				public function edit($id)
 				{
 					$teachers = Teacher::find($id);
-					$users = Usertype::all();
-
+					$subjects = Subject::all();
+				
 					return View::make('server.teacher.edit')
 						->with('teachers', $teachers)
-						->with('users', $users);
+						->with('subjects', $subjects);
 				}
 
 				/**
@@ -133,36 +144,31 @@
 					'id' => 'required|unique:tblteacher,t_id,' . $id . ',t_id',
 					'Firstname' => 'required',
 					'Lastname' => 'required',
-					'degree' => 'required',
 					'age' => 'required|numeric',
 					'contact' => 'required|numeric|unique:tblteacher,contact,' . $id . ',t_id',
-					'email'	=> 'required|email|unique:tblteacher,email,' . $id . ',t_id',
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
 
 				if ($validator->fails()){
-					return Redirect::to('Systemuser/' . $id . '/edit')
+					return Redirect::to('Teacher/' . $id . '/edit')
 						->withErrors($validator)
 						->withInput();
 				} else{
 					
 					$teachers = Teacher::find($id);
 					$teachers->t_id = Input::get('id');
-					$teachers->type_id = Input::get('type');
 					$teachers->fname = Input::get('Firstname');
 					$teachers->mname = Input::get('Mname');
 					$teachers->lname = Input::get('Lastname');
-					$teachers->degree = Input::get('degree');
 					$teachers->age = Input::get('age');
 					$teachers->gender = Input::get('gender');
 					$teachers->contact = Input::get('contact');
-					$teachers->email = Input::get('email');
 					$teachers->save();
 
 
 					Session::flash('message','Successfully Updated!');
-					return Redirect::to('Systemuser');
+					return Redirect::to('Teacher');
 				}
 				}
 
@@ -176,7 +182,7 @@
 				{
 					$teachers= Teacher::find($id);
 					$teachers->delete();
-					return Redirect::to('Systemuser');
+					return Redirect::to('Teacher');
 				} 
 
 

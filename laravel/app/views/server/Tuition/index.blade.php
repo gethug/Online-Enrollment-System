@@ -7,7 +7,7 @@
          $( "#htuition" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#htuitiona" ).addClass("active" );
           $( "#tritu" ).addClass("tri" );
-            $("#tritu").css("margin-left","68px");
+            $("#tritu").css("margin-left","70px");
 });
 </script>
 

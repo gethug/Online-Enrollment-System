@@ -7,7 +7,8 @@
          $( "#hadmin" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hadmina" ).addClass("active" );
           $( "#tria" ).addClass("tri" );
-            $("#tria").css("margin-left","58px");
+            $("#tria").css("margin-left","57px");
+              $('#collapseThree').collapse();
 });
 </script>
 

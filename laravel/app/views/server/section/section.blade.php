@@ -7,7 +7,7 @@
            $( "#hsec" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hseca" ).addClass("active" );
           $( "#trisec" ).addClass("tri" );
-          $("#trisec").css("margin-left","93px");
+          $("#trisec").css("margin-left","94px");
 });
 </script>
 
@@ -24,6 +24,8 @@
              <th class = "text-center">ID</th>
             <th class = "text-center">Section</th>
             <th class = "text-center">Level</th>
+             <th class = "text-center">Minimum Students</th>
+              <th class = "text-center">Maximum Students</th>
             <th class = "no-sort"></th>
             <th class = "no-sort"></th>
         </tr>
@@ -34,6 +36,8 @@
                 <td class = "text-center">{{$section->sec_id}} </td>
                 <td class = "text-center">{{$section->section}} </td>
                 <td class = "text-center">{{$section->level}} </td>
+                <td class = "text-center">{{$section->min}} </td>
+                <td class = "text-center">{{$section->max}} </td>
                 <td style = "width:13px;">{{ link_to_route('Section.edit', 'Edit',
                      array($section->sec_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>

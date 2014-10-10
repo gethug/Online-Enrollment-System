@@ -3,16 +3,16 @@
 @section('class')
 <script type="text/javascript">
     $(document).ready(function(){
-         $( "#hstart" ).addClass("active1" );
-         $( "#hstart" ).animate({ "margin-left": "-=209px" }, "fast" );
-          $( "#hstarta" ).addClass("active" );
-          $( "#tristart" ).addClass("tri" );
-            $("#tristart").css("margin-left","72px");
+         $( "#hpay" ).addClass("active1" );
+         $( "#hpay" ).animate({ "margin-left": "-=209px" }, "fast" );
+          $( "#hpaya" ).addClass("active" );
+          $( "#tripay" ).addClass("tri" );
+            $("#tripay").css("margin-left","27px");
 });
 </script>
 
 <div class = "table-responsive" id = "tablet"  >
-<h2 id = "cat" style = ""><i class="fa fa-book" style = "margin-right: 10px;"></i>Class Start&nbsp;<a href = "ClassStart/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a></h2>
+<h2 id = "cat" style = ""><i class="fa fa-book" style = "margin-right: 10px;"></i>Payment Schedule&nbsp;<a href = "PaySched/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a></h2>
 <div class="panel panel-default">
   <div class="panel-body">
 <table class="table table-hover" id = "inlineEditDataTable" >
@@ -30,26 +30,27 @@
                   <th class = "text-center">9th Payment</th>
                    <th class = "text-center">10th Payment</th>
             <th class = "no-sort"></th>
-            <th class = "no-sort"></th>
+      
         </tr>
     </thead>
     <tbody>
-        @foreach($starts as $start)
+        @foreach($pays as $pay)
             <tr style = "font-size:11px;" id = "items">
-             <td class = "text-center"> {{ $start->sy_id}} </td>
-                <td class = "text-center"> {{ ucwords($start->start) . '-' . ucwords($start->end)}} </td>
-                <td class = "text-center">{{$start->class_start}} </td>
-                <td class = "text-center"> {{ $start->class_end}}</td>
-                <td style = "width:13px;">{{ link_to_route('ClassStart.edit', 'Edit',
-                     array($start->sy_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
+             <td class = "text-center"> {{ $pay->sy_id}} </td>
+                <td class = "text-center"> {{ $pay->first}} </td>
+                <td class = "text-center">{{ $pay->sec}} </td>
+                <td class = "text-center"> {{ $pay->third}}</td>
+                 <td class = "text-center"> {{ $pay->forth}}</td>
+                  <td class = "text-center"> {{ $pay->fifth}}</td>
+                   <td class = "text-center"> {{ $pay->sixth}}</td>
+                    <td class = "text-center"> {{ $pay->svnth}}</td>
+                     <td class = "text-center"> {{ $pay->eyth}}</td>
+                      <td class = "text-center"> {{ $pay->ninth}}</td>
+                       <td class = "text-center"> {{ $pay->tenth}}</td>
+                <td style = "width:13px;">{{ link_to_route('PaySched.edit', 'Edit',
+                     array($pay->sy_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>
-                 <td  style = "width:13px;">
-                        {{ Form::open(array('method' 
-                    => 'DELETE', 'route' => array('ClassStart.destroy', $start->sy_id))) }}                       
-                            {{ Form::submit('Delete', array('class'
-                    => 'btn btn-danger', 'id' => 'btndel')) }}
-                        {{ Form::close() }}
-                    </td>
+            
             </tr>
         @endforeach
 

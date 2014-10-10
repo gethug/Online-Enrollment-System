@@ -18,6 +18,7 @@
 		<link media="all" type="text/css" rel="stylesheet" href="/assets/css/jquery.datetimepicker.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700|Oswald' rel='stylesheet' type='text/css'>
+		<link media="all" type="text/css" rel="stylesheet" href="/select2-3.5.1/select2.css">
 		<script src="/assets/js/jquery.js"></script>
 		<script src="/assets/js/bootstrap-timepicker.js"></script>
 	    <script src="/assets/js/vendor/bootstrap/bootstrap.min.js"></script>
@@ -43,13 +44,14 @@
 	    <script type="text/javascript" src="/assets/js/vendor/chosen/chosen.jquery.min.js"></script>
 	    <script type="text/javascript" src="/assets/js/vendor/parsley/parsley.min.js"></script>
 	    <script src="/assets/js/vendor/wizard/jquery.bootstrap.wizard.min.js"></script>
+	    <script type="text/javascript" src="/select2-3.5.1/select2.js"></script>
 
 	    <script src="/assets/js/minimal.min.js"></script>
 	    <script src="/assets/js/custom.js"></script>
 	   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	</head>
 
-	<body style = "background-color: #ecf0f1;overflow:scroll;">
+	<body style = "background-color: #ecf0f1; overflow:scroll;">
 
 			@yield('admincreate')
 			@yield('adminedit')
@@ -79,5 +81,16 @@
 			@yield('dedit')
 			@yield('classcreate')
 			@yield('classedit')
+			@yield('paycreate')
+			@yield('payedit')
+			@yield('sysedit')
+			@yield('syscreate')
+			@yield('cshcreate')
+			@yield('cshedit')
+			@yield('advcreate')
+			@yield('advedit')
+			@yield('studcreate')
+			@yield('studedit')
+			@yield('gradecreate')
 	</body>
 </html>

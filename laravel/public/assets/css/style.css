@@ -223,6 +223,40 @@ margin-left: -4px;
 }
 
 
+
+#datetimepicker3{
+	background-color:white;
+}
+
+#datetimepicker4{
+	background-color:white;
+}
+
+#datetimepicker5{
+	background-color:white;
+}
+
+#datetimepicker6{
+	background-color:white;
+}
+
+#datetimepicker7{
+	background-color:white;
+}
+
+#datetimepicker8{
+	background-color:white;
+}
+
+#datetimepicker9{
+	background-color:white;
+}
+
+#datetimepicker10{
+	background-color:white;
+}
+
+
 .lsthead li:hover{
 	background-color: #67809F;
 	cursor: pointer;
@@ -242,6 +276,7 @@ margin-left: -4px;
 }
 
 #sidebar{
+	overflow:visible;
 	border-top:2px solid #2277AF;
 	width: 210px;
 	margin-top:-2px;
@@ -249,7 +284,7 @@ margin-left: -4px;
 	display:inline-block;
 	float:left;
 	background-color:#34495e;
-	height: 100%;
+	height: 120%;
 }
 
 #tablet{
@@ -358,7 +393,7 @@ margin-left: -4px;
 	display: inline-block;
 }
 #gender{
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: bold;
 	color: #a5a5a5;
 }
@@ -391,7 +426,9 @@ margin-left: -4px;
 #collapseTwo{
 	background-color:#34495e;
 }
-
+#collapseThree{
+	background-color:#34495e;
+}
 .sdelist{
 	margin-left: -15px;
 }
@@ -431,6 +468,46 @@ margin-top: 4px;
 	height:30px;
 	background:none;
 }
+#s2id_e3 .select2-choice{
+	border-radius:0px;
+	height:30px;
+	background:none;
+}
+#s2id_e4 .select2-choice{
+	border-radius:0px;
+	height:30px;
+	background:none;
+}
+
+
+.others h5{
+	margin-bottom: 5px;
+}
+
+#total{
+	float: right;
+height: 26px;
+text-align: right;
+width: 15%;
+background-color: white;
+}
+
+#radio1{
+	display:inherit;
+	float:none;
+	z-index: 99;
+}
+
+#radio2{
+	display:inherit;
+	float:none;
+	z-index: 99;
+}
+
+#gender::before{
+	display:none;
+}
+
 
 
 

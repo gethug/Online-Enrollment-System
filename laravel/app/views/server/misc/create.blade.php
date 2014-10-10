@@ -2,11 +2,32 @@
 @section('mcreate')
 <div class="container crud">
   <div class="jumbotron" id = "crud-con" style = "width:35%">
-  <h3 class = "crud-head">Add Miscellaneous Fee</h3>
+  <h3 class = "crud-head">Add Fee</h3>
 
  	{{Form::open(array('route' => 'Miscellaneous.store', 'class' => 'form-inline'))}}
 
 
+
+ 	<div class="form-group div-filds" style = "width:100%">
+			<div class = "div-text fee" style = "width:100%">
+	 			<select class="form-control feilds" style = "width:96%;" name = "fee" id = "fee" >
+	 			<option value = "">-Type of Fee-</option>
+				<option value = "other">Other School Fee</option>
+				<option value = "miscellaneous">Miscellaneous Fee</option>
+				</select>
+	 		</div>
+
+	 		@if($errors->first('fee')) 
+			<div class = "validte">
+				<script type="text/javascript">
+					 $(document).ready(function(){
+         				$( ".fee" ).addClass("has-error" );
+					 });
+				</script>
+				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('fee')}}</h6>
+			</div>
+		@endif
+	</div>
 
 	<div class="form-group div-filds" style = "width:100%">
 			<div class = "div-text" style = "width:100%">

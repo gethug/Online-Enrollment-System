@@ -7,19 +7,20 @@
            $( "#hmisc" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hmisca" ).addClass("active" );
           $( "#trimisc" ).addClass("tri" );
-          $("#trimisc").css("margin-left","28px");
+          $("#trimisc").css("margin-left","110px");
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = ""><i class="fa fa-rub" style = "margin-right: 10px;"></i> Miscellaneous Fee&nbsp;<a href = "Miscellaneous/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a> <br> <small>List of Fee</small></h2>
+<h2 id = "cat" style = ""><i class="fa fa-rub" style = "margin-right: 10px;"></i> Fee&nbsp;<a href = "Miscellaneous/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a> <br> <small>List of Fee</small></h2>
 <div class="panel panel-default">
   <div class="panel-body">
 <table class="table table-hover" id = "inlineEditDataTable">
   <thead>
         <tr style = "font-size:12px;" >
              <th class = "text-center">ID</th>
+             <th class = "text-center">Fee Type</th>
             <th class = "text-center">Name</th>
             <th class = "text-center">Cost</th>
             <th class = "text-center">Level</th>
@@ -30,7 +31,12 @@
     <tbody>
         @foreach($miscs as $misc)
             <tr style = "font-size:11px;" id = "items">
-                <td class = "text-center">{{$misc->m_id}} </td>
+                <td class = "text-center">{{$misc->m_id}}</td>
+                @if($misc->m_type == 'other')
+                 <td class = "text-center">{{$misc->m_type}}&nbsp;school&nbsp;fee</td>
+                 @else
+                 <td class = "text-center">{{$misc->m_type}}&nbsp;fee</td>
+                 @endif
                 <td class = "text-center">{{$misc->m_name}} </td>
                 <td class = "text-center">{{$misc->m_fee}} </td>
                 <td class = "text-center">{{$misc->level}} </td>

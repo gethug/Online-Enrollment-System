@@ -142,7 +142,7 @@
 				$validator = Validator::make($schoolyear, $rules);
 
 				if ($validator->fails()){
-					return Redirect::to('ClassStart/' . $id . '/create')
+					return Redirect::to('ClassStart/' . $id . '/edit')
 						->withErrors($validator)
 						->withInput();
 				} else{

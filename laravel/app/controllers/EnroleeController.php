@@ -95,13 +95,7 @@
 					$mid = $misc->m_id;
 					$fee = $misc->m_fee;
 
-					$studs = new Studfee;
-					$studs->en_id = Input::get('ID');
-					$studs->m_id = $mid;
-					$studs->m_name = $misc->m_name;
-					$studs->bal = $fee;
-					$studs->sy_id = $sy->sy_id;
-					$studs->save();
+					
 
 					$enrolees = new Enrolee;
 					$enrolees->en_id = Input::get('ID');
@@ -135,6 +129,14 @@
 					$parents->cell_no = Input::get("MobileNumber");
 					$parents->save();
 
+					$studs = new Studfee;
+					$studs->en_id = Input::get('ID');
+					$studs->m_id = $mid;
+					$studs->m_name = $misc->m_name;
+					$studs->bal = $fee;
+					$studs->sy_id = $sy->sy_id;
+					$studs->save();
+
 
 					Session::flash('message','Successfully Saved!');
 					return Redirect::to('Enrolee');
@@ -151,7 +153,18 @@
 				 */
 				public function show($id)
 				{
-					//
+					$levels = Level::all();
+					$enrolees = Enrolee::find($id);
+
+					$parents = DB::table('tblparent')
+					->where('en_id', $id)
+					->first();
+
+
+					return View::make('server.Enrolee.show')
+						->with('enrolees', $enrolees)
+						->with('parents', $parents)
+						->with('levels',$levels);
 				}
 
 				/**
@@ -269,6 +282,11 @@
 					$enrolees->delete();
 					$parents = Parentss::where('en_id','=', $id)->delete();
 					$studs = Studfee::where('en_id', '=', $id)->delete();
+					return Redirect::to('Enrolee');
+				} 
+
+				public function home($id)
+				{
 					return Redirect::to('Enrolee');
 				} 
 

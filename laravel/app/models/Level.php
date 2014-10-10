@@ -20,5 +20,31 @@ class Level extends Eloquent{
            ->where('tblsubject.sy_id', '=', $sy->sy_id)
            ->get(['tblsubject.*']);
           }
+
+
+           public static function tuition($id){
+    
+            return DB::table('tbltuition')
+                ->where('lvl_id', $id)
+                ->first();
+              
+          }
+
+
+          public static function others($id){
+            return Misc::Join('tbllevel', 'tbllevel.lvl_id', '=', 'tblmisc.lvl_id')
+            ->where('tblmisc.lvl_id', '=', $id)
+            ->where('tblmisc.m_type', '=', 'other')
+            ->where('tblmisc.mandatory', '=', 1)
+            ->get(['tblmisc.*']);
+          }
+
+           public static function misc($id){
+            return Misc::Join('tbllevel', 'tbllevel.lvl_id', '=', 'tblmisc.lvl_id')
+            ->where('tblmisc.lvl_id', '=', $id)
+            ->where('tblmisc.m_type', '=', 'miscellaneous')
+            ->where('tblmisc.mandatory', '=', 1)
+            ->get(['tblmisc.*']);
+          }
 }
 

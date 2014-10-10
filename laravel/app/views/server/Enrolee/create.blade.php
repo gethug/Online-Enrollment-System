@@ -13,7 +13,6 @@
 			<div class = "div-text" style = "width:100%">
 	 			<select class="form-control feilds" style = "width:98%;" name = "type">
 				  <option value = "New">New</option>
-				  <option value = "Old">Old</option>
 				  <option value = "Transferee">Transferee</option>
 				</select>
 	 		</div>

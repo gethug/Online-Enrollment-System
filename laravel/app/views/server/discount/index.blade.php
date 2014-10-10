@@ -7,7 +7,7 @@
            $( "#hdis" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hdisa" ).addClass("active" );
           $( "#tridis" ).addClass("tri" );
-          $("#tridis").css("margin-left","86px");
+          $("#tridis").css("margin-left","87px");
 });
 </script>
 

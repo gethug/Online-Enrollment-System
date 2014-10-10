@@ -17,7 +17,7 @@
 				public function index()
 				{
 					$sections= Section::join('tbllevel', 'tblsections.lvl_id', '=', 'tbllevel.lvl_id')
-					->select('tblsections.sec_id', 'tblsections.section', 'tbllevel.level')
+					->select('tblsections.sec_id', 'tblsections.section', 'tbllevel.level', 'tblsections.min', 'tblsections.max')
 					->get();
 
 					return View::make('server.section.section')
@@ -53,7 +53,9 @@
 				{
 					$id = Input::get('level');
 					$rules = array(
-					'section' => 'required|unique:tblsections,section,NULL,id,lvl_id,' . $id
+					'section' => 'required|unique:tblsections,section,NULL,id,lvl_id,' . $id,
+					'minimum' => 'required|numeric',
+					'maximum' => 'required|numeric'
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
@@ -67,6 +69,8 @@
 					$sections = new Section;
 					$sections->lvl_id = Input::get('level');
 					$sections->section = Input::get('section');
+					$sections->min = Input::get('minimum');
+					$sections->max = Input::get('maximum');
 					$sections->save();
 
 
@@ -116,7 +120,9 @@
 				{
 					$lvlid = Input::get('level');
 					$rules = array(
-					'section' => 'required|unique:tblsections,section,' . $id . ',sec_id,lvl_id,' . $lvlid
+					'section' => 'required|unique:tblsections,section,' . $id . ',sec_id,lvl_id,' . $lvlid,
+					'minimum' => 'required|numeric',
+					'maximum' => 'required|numeric'
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
@@ -131,6 +137,8 @@
 					$sections = Section::find($id);
 					$sections->lvl_id = Input::get('level');
 					$sections->section = Input::get('section');
+					$sections->min = Input::get('minimum');
+					$sections->max = Input::get('maximum');
 					$sections->save();
 
 

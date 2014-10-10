@@ -17,7 +17,7 @@
 				public function index()
 				{
 					$miscs = Misc::join('tbllevel', 'tblmisc.lvl_id', '=', 'tbllevel.lvl_id')
-					->select('tblmisc.m_name', 'tblmisc.m_id','tblmisc.m_fee','tbllevel.level')
+					->select('tblmisc.m_type', 'tblmisc.m_name', 'tblmisc.m_id','tblmisc.m_fee','tbllevel.level')
 					->get();
 
 					return View::make('server.misc.index')
@@ -60,6 +60,7 @@
 					$man = Input::get('mandatory');
 					$levels = Level::all();
 					$rules = array(
+					'fee' => 'required',
 					'name' => 'required|unique:tblmisc,m_name,NULL,id,lvl_id,' . $id , 
 					'cost' => 'required|numeric'
 						);
@@ -75,6 +76,7 @@
 					if ($all == 'all'){
 						foreach ($levels as $level){
 							$miscs = new Misc;
+							$miscs->m_type = Input::get('fee');
 							$miscs->m_name = Input::get('name');
 							$miscs->m_fee = Input::get('cost');
 							$miscs->lvl_id = $level->lvl_id;
@@ -89,6 +91,7 @@
 					}
 					else{
 							$miscs = new Misc;
+							$miscs->m_type = Input::get('fee');
 							$miscs->m_name = Input::get('name');
 							$miscs->m_fee = Input::get('cost');
 							$miscs->lvl_id = Input::get('level');
@@ -149,6 +152,7 @@
 					$lvlid = Input::get('level');
 					$man = Input::get('mandatory');
 					$rules = array(
+						'fee' => 'required',
 					'name' => 'required|unique:tblmisc,m_name,' . $id . ',m_id,lvl_id,' . $lvlid, 
 					'cost' => 'required|numeric'
 						);
@@ -164,6 +168,7 @@
 					
 				
 							$miscs = Misc::find($id);
+							$miscs->m_type = Input::get('fee');
 							$miscs->m_name = Input::get('name');
 							$miscs->m_fee = Input::get('cost');
 							$miscs->lvl_id = Input::get('level');

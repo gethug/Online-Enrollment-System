@@ -2,7 +2,7 @@
 @section('levelcreate')
 <div class="container crud">
   <div class="jumbotron" id = "crud-con" style = "width:35%">
-  <h2 class = "crud-head">Add Level</h2>
+  <h2 class = "crud-head">Add Year Level</h2>
 
  	{{Form::open(array('route' => 'Level.store', 'class' => 'form-inline'))}}
 

@@ -7,13 +7,13 @@
          $( "#hlvl" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hlvla" ).addClass("active" );
           $( "#tril" ).addClass("tri" );
-            $("#tril").css("margin-left","99px");
+            $("#tril").css("margin-left","76px");
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = ""><i class="fa fa-level-up" style = "margin-right: 10px;"></i>Levels&nbsp;<a href = "Level/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a><br> <small>List of Level</small></h2>
+<h2 id = "cat" style = ""><i class="fa fa-level-up" style = "margin-right: 10px;"></i>Year Level&nbsp;<a href = "Level/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a><br> <small>List of Year Level</small></h2>
 <div class="panel panel-default">
   <div class="panel-body">
 <table class="table table-hover table-datatable " id = "inlineEditDataTable">

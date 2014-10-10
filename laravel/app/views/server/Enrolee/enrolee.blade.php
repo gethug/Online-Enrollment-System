@@ -7,14 +7,12 @@
          $( "#hen" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hena" ).addClass("active" );
           $( "#trie" ).addClass("tri" );
-          $('#collapseTwo').collapse();
-           $('#collapseOne').collapse();
 });
 </script>
 
 
 <div class = "table-responsive" id = "tablet" >
-<h2 id = "cat" style = ""><i class="fa fa-users" style = "margin-right: 10px;"></i>Enrolee&nbsp;<a href = "Enrolee/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a> <br> <small>List of Enrolee</small></h2>
+<h2 id = "cat" style = ""><i class="fa fa-users" style = "margin-right: 10px;"></i>Enrollee&nbsp;<a href = "Enrolee/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a> <br> <small>List of Enrollee</small></h2>
 <div class="panel panel-default">
   <div class="panel-body">
 <table class="table table-hover" id = "inlineEditDataTable">
@@ -29,6 +27,7 @@
             <th class = "text-center">Cell No.</th>
             <th class = "no-sort"></th>
             <th class = "no-sort"></th>
+            <th class = "no-sort"></th>
         </tr>
     </thead>
     <tbody>
@@ -41,6 +40,9 @@
                 <td class = "text-center"> {{ $enrolee->h_addres}}</td>
                 <td class = "text-center"> {{ ucwords($enrolee->f_name) . ' ' . ucwords($enrolee->m_name) . ' ' . ucwords($enrolee->l_name)}}</td>
                 <td class = "text-center"> {{ $enrolee->cell_no}}</td>
+                  <td style = "width:13px;">{{ link_to_route('Enrolee.show', 'View more',
+                     array($enrolee->en_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
+                </td>
                 <td style = "width:13px;">{{ link_to_route('Enrolee.edit', 'Edit',
                      array($enrolee->en_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>

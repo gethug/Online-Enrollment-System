@@ -4,7 +4,9 @@
   <div class="jumbotron" id = "crud-con">
   <h2 class = "crud-head">Edit teacher</h2>
 
- 	{{Form::open(array('route' => array('Systemuser.update', $teachers->t_id), 'class' => 'form-inline', 'method' => 'PUT'))}}
+ 	{{Form::open(array('route' => array('Teacher.update', $teachers->t_id), 'class' => 'form-inline', 'method' => 'PUT'))}}
+
+
 
 <!-- div for ID //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds" style = "width:98%;">
@@ -22,24 +24,6 @@
 			</div>
 		@endif
  	</div>
-
-<!-- div for ID //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-	<script type="text/javascript">
-			    $(document).ready(function(){
-			        $("#level option[value= {{$teachers->type_id}}]").attr("selected", "selected");
-				});
-			</script>
-
-
-	<div class="form-group div-filds" style = "width:100%">
-			<div class = "div-text" style = "width:100%">
-	 			<select class="form-control feilds" style = "width:96%;" name = "type" id = "level">
-	 			@foreach($users as $user)
-				  <option value = "{{$user->type_id}}">{{$user->type}}</option>
-				@endforeach
-				</select>
-	 		</div>
-	</div>
 
 <!-- div for name ////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds">
@@ -79,25 +63,11 @@
 <!-- div for degree and AGe ////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds">
 
- 		<div class = "div-text deg">
- 			{{Form::text('degree', $teachers->degree, array('placeholder' => 'Degree', 'class' => 'form-control feilds', 'style' => 'width:359px;'))}}
- 		</div>
-
+ 
  		<div class = "div-text age">
- 			{{Form::text('age', $teachers->age, array('placeholder' => 'Age', 'class' => 'form-control feilds', 'style' => 'width:177px;'))}}
+ 			{{Form::text('age', $teachers->gender, array('placeholder' => 'Age', 'class' => 'form-control feilds', 'style' => 'width:177px;'))}}
  		</div>
 
-
- 		@if($errors->first('degree')) 
-			<div class = "validte">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".deg" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('degree')}}</h6>
-			</div>
-		@endif
 
 		@if($errors->first('age')) 
 			<div class = "validte" style = "float: right;">
@@ -114,10 +84,10 @@
 
  	<!-- div for Gender////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
- 	<div class="form-group div-filds" style = "margin-top: 12px; margin-bottom: 10px;">
+ 	<div class="form-group div-filds" style = "margin-top: 12px; margin-bottom: -2px;">
 
- 			@if ($teachers->gender =='male')
 
+ 			@if($teachers->gender == "male")
 					 <div class="radio" style = "margin-left:10px;">
 					  			<label id = "gender">
 
@@ -127,16 +97,14 @@
 					  			</label>
 						</div>
 
-					<div class="radio"  style = "margin-left:5px;">
+						<div class="radio"  style = "margin-left:5px;">
 					  			<label id = "gender">
 					    			{{Form::radio('gender', 'female')}}
 					   					Female
 					  			</label>
 						</div>
-				@else
-
-
-					 <div class="radio" style = "margin-left:10px;">
+						@else
+					<div class="radio" style = "margin-left:10px;">
 					  			<label id = "gender">
 
 					  			{{Form::radio('gender', 'male')}}
@@ -145,23 +113,19 @@
 					  			</label>
 						</div>
 
-					<div class="radio"  style = "margin-left:5px;">
+						<div class="radio"  style = "margin-left:5px;">
 					  			<label id = "gender">
 					    			{{Form::radio('gender', 'female', true)}}
 					   					Female
 					  			</label>
 						</div>
-
-
-
 			@endif
-
 	</div>
 
 <!-- div for contact ////////////////////////////////////////////////////////////////////////////////////////////////////-->
 			<div class="form-group div-filds" style = "width:98%;">
 			 	<div class = "div-text contc input-group" style = "width:100%;">
-			 	<div class="input-group-addon" style = "font-weight: bold; background-color: white;">+639</div>
+			 	<div class="input-group-addon" style = "font-weight: bold; background-color: white;">+63</div>
 			 		{{Form::text('contact', $teachers->contact, array('placeholder' => 'Contact', 'class' => 'form-control feilds', 'style' => 'width:100%;'))}}
 			 		</div>
 
@@ -177,35 +141,20 @@
 					@endif
 			 	</div>
 
-<!-- div for email and password ////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-	<div class="form-group div-filds" style = "width : 98%">
-
-		<div class = "div-text mail " style = "width : 100%">
- 			{{Form::text('email', $teachers->email, array('placeholder' => 'Email', 'class' => 'form-control feilds', 'id' => 'filds', 'style' => 'width : 100%;'))}}
- 		</div>
 
 
- 		@if($errors->first('email')) 
-			<div class = "validte" >
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".mail" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('email')}}</h6>
-			</div>
-		@endif
 
- 	</div>
-
-
- 		{{ Form::submit('Update', array('class' => 'btn btn-info', 'id' => 'csubmit', 'style' => 'color:white; display:block;')) }}
+ 		{{ Form::submit('Save', array('class' => 'btn btn-info', 'id' => 'csubmit', 'style' => 'color:white;')) }}
  	{{Form::close()}}
 </div>
 </div>
 
 @stop
+
+
+
+
+
 
 
 

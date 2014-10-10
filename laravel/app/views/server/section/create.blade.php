@@ -30,9 +30,45 @@
 				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('section')}}</h6>
 			</div>
 		@endif
+
  	</div>
 
+ 	<div class="form-group div-filds">
+ 	<label style = "width: 100%;">
+ 		No. of Students
+ 	</label>
+		<div class = "div-text min" style = "width: 30%; display: inline-block;">
+ 			{{Form::text('minimum', '', array('placeholder' => 'Min', 'class' => 'form-control feilds', 'id' => 'filds', 'style' => 'width:69px;'))}}
+ 		</div>
+ 		<div class = "div-text max" style = "width: 30%; display: inline-block;">
+ 			{{Form::text('maximum', '', array('placeholder' => 'max', 'class' => 'form-control feilds', 'id' => 'filds', 'style' => 'width:69px;'))}}
+ 		</div>
+ 		@if($errors->first('minimum')) 
+			<div class = "validte">
+				<script type="text/javascript">
+					 $(document).ready(function(){
+         				$( ".min" ).addClass("has-error" );
+					 });
+				</script>
+				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('minimum')}}</h6>
+			</div>
+		@endif
 
+		@if($errors->first('maximum')) 
+			<div class = "validte" >
+				<script type="text/javascript">
+					 $(document).ready(function(){
+         				$( ".max" ).addClass("has-error" );
+					 });
+				</script>
+			
+				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('maximum')}}</h6>
+			</div>
+		@endif
+
+ 	</div>
+
+<!-- <button style="position:absolute">BACK</button> -->
  		{{ Form::submit('Save', array('class' => 'btn btn-info', 'id' => 'csubmit', 'style' => 'color:white;')) }}
  	{{Form::close()}}
 </div>

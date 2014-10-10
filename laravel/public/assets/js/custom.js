@@ -30,6 +30,10 @@ $(document).ready(function(){
 						    $("#lvl").removeAttr("disabled");
 						  }
 						}
+
+						$( "#colapsethre" ).click(function() {
+  					$('#collapseThree').collapse('show');
+});
 	
 });
 

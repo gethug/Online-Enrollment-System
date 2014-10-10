@@ -2,9 +2,13 @@
 @section('tcreate')
 <div class="container crud">
   <div class="jumbotron" id = "crud-con">
-  <h2 class = "crud-head">Add System User</h2>
+  <h2 class = "crud-head">Add Teacher</h2>
 
- 	{{Form::open(array('route' => 'Systemuser.store', 'class' => 'form-inline'))}}
+ 	{{Form::open(array('route' => 'Teacher.store', 'class' => 'form-inline'))}}
+
+
+
+
 
 <!-- div for ID //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds" style = "width:98%;">
@@ -22,19 +26,6 @@
 			</div>
 		@endif
  	</div>
-
-
-<!-- div for levels //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
- 	<div class="form-group div-filds" style = "width:100%">
-			<div class = "div-text" style = "width:100%">
-	 			<select class="form-control feilds" style = "width:98%;" name = "type">
-	 			@foreach($users as $user)
-				  <option value = "{{$user->type_id}}">{{$user->type}}</option>
-				  @endforeach
-				</select>
-	 		</div>
-	</div>
-
 
 <!-- div for name ////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds">
@@ -74,25 +65,11 @@
 <!-- div for degree and AGe ////////////////////////////////////////////////////////////////////////////////////////////////////-->
  	<div class="form-group div-filds">
 
- 		<div class = "div-text deg">
- 			{{Form::text('degree', '', array('placeholder' => 'Degree', 'class' => 'form-control feilds', 'style' => 'width:359px;'))}}
- 		</div>
-
+ 
  		<div class = "div-text age">
  			{{Form::text('age', '', array('placeholder' => 'Age', 'class' => 'form-control feilds', 'style' => 'width:177px;'))}}
  		</div>
 
-
- 		@if($errors->first('degree')) 
-			<div class = "validte">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".deg" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('degree')}}</h6>
-			</div>
-		@endif
 
 		@if($errors->first('age')) 
 			<div class = "validte" style = "float: right;">
@@ -109,7 +86,7 @@
 
  	<!-- div for Gender////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
- 	<div class="form-group div-filds" style = "margin-top: 12px; margin-bottom: 10px;">
+ 	<div class="form-group div-filds" style = "margin-top: 12px; margin-bottom: -2px;">
 
 					 <div class="radio" style = "margin-left:10px;">
 					  			<label id = "gender">
@@ -132,7 +109,7 @@
 <!-- div for contact ////////////////////////////////////////////////////////////////////////////////////////////////////-->
 			<div class="form-group div-filds" style = "width:98%;">
 			 	<div class = "div-text contc input-group" style = "width:100%;">
-			 	<div class="input-group-addon" style = "font-weight: bold; background-color: white;">+639</div>
+			 	<div class="input-group-addon" style = "font-weight: bold; background-color: white;">+63</div>
 			 		{{Form::text('contact', '', array('placeholder' => 'Contact', 'class' => 'form-control feilds', 'style' => 'width:100%;'))}}
 			 		</div>
 
@@ -147,44 +124,6 @@
 						</div>
 					@endif
 			 	</div>
-
-<!-- div for email and password ////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-	<div class="form-group div-filds">
-
-		<div class = "div-text mail">
- 			{{Form::text('email', '', array('placeholder' => 'Email', 'class' => 'form-control feilds', 'id' => 'filds'))}}
- 		</div>
- 		<div class = "div-text password">
- 			{{Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control feilds', 'id' => 'filds'))}}
- 		</div>
-
- 		@if($errors->first('email')) 
-			<div class = "validte">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".mail" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('email')}}</h6>
-			</div>
-		@endif
-
-		@if($errors->first('password')) 
-			<div class = "validte" style = "float:right;">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".password" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('password')}}</h6>
-			</div>
-		@endif
-
-
-			
-
- 	</div>
 
 
  		{{ Form::submit('Save', array('class' => 'btn btn-info', 'id' => 'csubmit', 'style' => 'color:white;')) }}

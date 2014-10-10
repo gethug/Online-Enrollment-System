@@ -2,7 +2,7 @@
 @section('levelcreate')
 <div class="container crud">
   <div class="jumbotron" id = "crud-con" style = "width:35%">
-  <h2 class = "crud-head">Edit Level</h2>
+  <h2 class = "crud-head">Edit Year Level</h2>
 
  	{{Form::open(array('route' => array('Level.update', $level->lvl_id), 'class' => 'form-inline', 'method' => 'PUT'))}}
 

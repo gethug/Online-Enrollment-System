@@ -7,9 +7,7 @@
          $( "#hsched" ).animate({ "margin-left": "-=209px" }, "fast" );
           $( "#hscheda" ).addClass("active" );
           $( "#trisc" ).addClass("tri" );
-            $("#trisc").css("margin-left","85px");
-             $('#collapseTwo').collapse();
-              $('#collapseOne').collapse();
+            $("#trisc").css("margin-left","86px");
 });
 </script>
 

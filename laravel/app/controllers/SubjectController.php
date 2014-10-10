@@ -20,12 +20,11 @@
 					->where('active', 1)
 					->first();
 
-
 					$subjects= Subject::join('tbllevel', 'tblsubject.lvl_id', '=', 'tbllevel.lvl_id')
 					->select('tblsubject.s_id', 'tblsubject.subj_code', 
 						'tblsubject.subj_name', 'tblsubject.unit',
 						'tblsubject.prerequisite','tbllevel.level')
-					->where('sy_id', '=', $sy->sy_id)
+					->where('tblsubject.sy_id', '=', $sy->sy_id)
 					->get();
 
 					return View::make('server.subject.subject')->with('subjects',$subjects);
@@ -136,8 +135,8 @@
 					->first();
 						$rules = array(
 							'id' => 'required|unique:tblsubject,s_id,' . $id . ',s_id',
-							'subjectcode' => 'required|unique:tblsubject,subj_code,' . $id . ',s_id' . $sy->sy_id,
-							'subjectname' => 'required|unique:tblsubject,subj_name,' . $id . ',s_id' . $sy->sy_id,
+							'subjectcode' => 'required|unique:tblsubject,subj_code,' . $id . ',s_id,sy_id,' . $sy->sy_id,
+							'subjectname' => 'required|unique:tblsubject,subj_name,' . $id . ',s_id,sy_id,' . $sy->sy_id,
 							'unit' => 'required|numeric'
 								);
 
