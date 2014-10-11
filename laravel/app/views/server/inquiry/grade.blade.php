@@ -3,12 +3,12 @@
 @section('gra')
 <script type="text/javascript">
     $(document).ready(function(){
-         $( "#hgra" ).addClass("active1" );
-         $( "#hgra" ).animate({ "margin-left": "-=209px" }, "fast" );
-          $( "#hgraa" ).addClass("active" );
-          $( "#trigra" ).addClass("tri" );
-            $("#trigra").css("margin-left","105px");
-             $('#collapseTwo').collapse();
+         $( "#higra" ).addClass("active1" );
+         $( "#higra" ).animate({ "margin-left": "-=209px" }, "fast" );
+          $( "#higraa" ).addClass("active" );
+          $( "#triigra" ).addClass("tri" );
+            $("#triigra").css("margin-left","105px");
+             $('#collapseFour').collapse();
            $('#collapseOne').collapse();
 
 
@@ -68,7 +68,7 @@
                                         function(data) {
                                           var x = "";
                                                 $(data).each( function(index, element) {
-                                                  x += "<tr> <td>" + element.fname + " " + element.mname + " " + element.lname + "</td><td>" + element.subj_name + "</td><td class = 'text-center'><a style = 'height: 21px;padding-top: 1px;font-size: 13px;' href='Grade/"+ element.g_id +"/edit' id = '"+ element.en_id +"' class='btn btn-success'>Grade</a></td></tr>";
+                                                  x += "<tr> <td>" + element.fname + " " + element.mname + " " + element.lname + "</td><td>" + element.subj_name + "</td><td class = 'text-center'>"+ element.first +"</td><td class = 'text-center'>" + element.second + "</td><td class = 'text-center'>" + element.third + "</td><td class = 'text-center'>" + element.fourth + "</td></tr>";
                                             
                                         });
                                            $(".paylist tbody").html(x);     
@@ -153,7 +153,10 @@
         <tr style = "font-size:12px;" >
              <th class = "text-center">Student</th>
             <th class = "text-center">Subject</th>
-            <th class = "text-center">Grade</th>
+              <th class = "text-center">First</th>
+                <th class = "text-center">Second</th>
+                  <th class = "text-center">Third</th>
+                    <th class = "text-center">Fourth</th>
             </tr>
     </thead>
     <tbody>

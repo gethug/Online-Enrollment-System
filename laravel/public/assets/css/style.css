@@ -288,8 +288,8 @@ margin-left: -4px;
 }
 
 #tablet{
-	width : 82%; 
-	position:relative;
+	width : 1108px;
+	position:absolute;
 	display: inline-block;
 	margin-left: 16px;
 	margin-top: 20px;
@@ -429,6 +429,9 @@ margin-left: -4px;
 #collapseThree{
 	background-color:#34495e;
 }
+#collapseFour{
+	background-color:#34495e;
+}
 .sdelist{
 	margin-left: -15px;
 }
@@ -437,6 +440,7 @@ margin-left: -4px;
 	border-radius: 0px;
 	color:white;
 }
+
 
 .tri{
 	width: 0px;

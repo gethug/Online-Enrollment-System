@@ -2,6 +2,8 @@
 
 @section('dash')
 
+
+
 <div class = "container-fluid" style = "height:48px; background-color:#2980b9;padding:0px;">
 
 
@@ -186,8 +188,37 @@
 				</li>
 
 			<li class = "Grade" id = "hgra"> 
-					<i class="fa fa-money icon"></i><a class = "subs" id = "hgraa" href = "Grade">Grade</a>
+					<i class="fa fa-tasks icon"></i><a class = "subs" id = "hgraa" href = "Grade">Grade</a>
 					<div id = "trigra" class = "gide">
+				</li>
+
+
+      	 </ul>
+
+     </div>
+    </div>
+  </div>
+
+   <div class="panel panel-default"  id = "accrdn">
+    <div class="panel-heading" id = "colps">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+          <i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp;Inquiry
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body" style = "padding:0px;">
+      	 <ul class = "lsthead" id = "file">
+
+      	 	<li class = "GradeInquiry" id = "higra"> 
+					<i class="fa fa-tasks icon"></i><a class = "subs" id = "higraa" href = "GradeInquiry">Grade</a>
+					<div id = "triigra" class = "gide">
+				</li>
+
+			<li class = "ScheduleInquiry" id = "hische"> 
+					<i class="fa fa-list icon"></i><a class = "subs" id = "hischea" href = "ScheduleInquiry">Schedule</a>
+					<div id = "triische" class = "gide">
 				</li>
 
 
@@ -199,6 +230,9 @@
 </div>
 
 		</div>
+
+
+			
 		@yield('add')
 		@yield('rooms')
 		@yield('section')

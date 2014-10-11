@@ -341,25 +341,7 @@ $('#e3').change(function(){
       </div>
   </div>
 
-  <div class="form-group div-filds" style = "margin-top: 12px; margin-bottom: -4px;">
-
-           <div class="radio" style = "margin-left:246px;display:inline-block">
-                  <label id = "gender" class = "instal">
-
-                  {{Form::radio('payment', 'Installment', true, ['id' => 'radio1'])}}
-                  Installment
-
-                  </label>
-            </div>
-
-          <div class="radio"  style = "margin-left:5px;display:inline-block">
-                  <label id = "gender" class = "fpay">
-                    {{Form::radio('payment', 'Full Payment', false, ['id' => 'radio2'])}}
-                      Full Payment
-                  </label>
-            </div>
-
-  </div>
+ 
 
   <div class="form-group div-filds others" style = "margin-top: 12px; margin-bottom: -4px;margin-left: 118px;margin-right: 40px; visibility: hidden;" >
 

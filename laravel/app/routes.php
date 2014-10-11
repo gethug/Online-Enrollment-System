@@ -56,6 +56,16 @@ Route::resource('PaySched/create', 'PayController@getCreate');
 Route::resource('Enroll', 'EnrollController');
 Route::resource('Enroll/create', 'EnrollController@getCreate');
 
+Route::resource('GradeInquiry', 'GradeInquireController');
+Route::get('api/dropdownsec','GradeInquireController@getDropsec');
+Route::get('api/dropdowngra','GradeInquireController@getDropgra');
+Route::get('api/dropdownsubj','GradeInquireController@getDropsubj');
+
+Route::get('api/dropdownsched','SchedInquireController@getDropsched');
+Route::get('api/dropdownsec','SchedInquireController@getDrop2');
+Route::resource('ScheduleInquiry', 'SchedInquireController');
+
+
 Route::get('api/dropdownsec','GradeController@getDropsec');
 Route::get('api/dropdowngra','GradeController@getDropgra');
 Route::get('api/dropdownsubj','GradeController@getDropsubj');

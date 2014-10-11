@@ -12,7 +12,7 @@
 });
 </script>
 
-<div class = "table-responsive" id = "tablet"  >
+<div  id = "tablet"  >
 <h2 id = "cat" style = ""><i class="fa fa-user" style = "margin-right: 10px;"></i>Administrator&nbsp;<a href = "administrator/create" style = "text-decoration: none;">+<small style = "color: #428bca;">New</small></a><br> <small>List of administrator</small></h2>
 <div class="panel panel-default">
   <div class="panel-body">
