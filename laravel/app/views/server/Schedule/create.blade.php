@@ -38,7 +38,7 @@
 	</script>
 <!-- div for day////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
- 	<div class="form-group div-filds" style = "margin-top: -13px; margin-bottom: -17px;">
+ 	<div class="form-group div-filds day" style = "margin-top: -13px; margin-bottom: -17px;">
 
 					 <div class="checkbox" style = "margin-left:10px;">
 					  			<label id = "gender">
@@ -79,6 +79,17 @@
 					   					S
 					  			</label>
 						</div>
+
+						@if (Session::get('derror'))
+				<div class = "validte">
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".day" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px" class = "val-lbl">{{ Session::get('derror')}}</h6>
+							</div>
+				@endif
 
 
 

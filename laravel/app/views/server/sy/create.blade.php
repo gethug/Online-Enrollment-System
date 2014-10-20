@@ -48,7 +48,7 @@
 	 		</div>
 	 			<span class = "sydash"> - </span>
 	 		<div class = "div-text end" style = "width:40%">
-	 			<select class="form-control feilds" style = "width:90%; margin-left:45px;" name = "end" id = "end">
+	 			<select class="form-control feilds" style = "width:90%; margin-left:45px;" name = "end" id = "end" readonly>
 	 			@for ($sy = 2001; $sy <= 2031 ;$sy++)
 				  <option value = "{{$sy}}">{{$sy}}</option>
 				@endfor

@@ -57,6 +57,8 @@
 						->withErrors($validator)
 						->withInput();
 				} else{
+
+					$end = Input::get('end');
 					$active = 0;
 					$schoolyears = new Schoolyear;
 					$schoolyears->start = Input::get('schoolyear');

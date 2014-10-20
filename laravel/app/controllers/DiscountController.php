@@ -62,7 +62,13 @@
 						->withErrors($validator)
 						->withInput();
 				} else{
-					
+					$per = Input::get('percentage');
+					if($per <= 0 or $per > 100)
+					{
+						return Redirect::to('Discount/create')
+						->with('error', ' Invalid Value')
+						->withInput();
+					}
 					$discounts = new Discount;
 					$discounts->d_name = Input::get('name');
 					$discounts->d_per = Input::get('percentage');
@@ -120,7 +126,15 @@
 						->withErrors($validator)
 						->withInput();
 				} else{
-					
+					$per = Input::get('percentage');
+					if($per <= 0 or $per > 100)
+					{
+						return Redirect::to('Discount/'. $id . '/edit')
+						->with('error', ' Invalid Value')
+						->withInput();
+					}
+
+
 					$discounts = Discount::find($id);
 					$discounts->d_name = Input::get('name');
 					$discounts->d_per = Input::get('percentage');

@@ -3,11 +3,12 @@
 @section('dash')
 
 
+	    
+</script>
 
 <div class = "container-fluid" style = "height:48px; background-color:#2980b9;padding:0px;">
-
-
-
+<img src="/assets/images/SAIlogo.png" style = "margin-left: 6px;max-width: 7%;position: absolute;margin-top: -8px;" class="img-responsive backg" alt="Responsive image">
+<h4 style = "display:inline-block; color: white;margin-left: 85px;margin-top: 16px;font-family: 'Open Sans Condensed', sans-serif;"> Saint Augustine Institute</h4>
 		<div class="btn-group" style = "float:right;">
 		  <button id = "btn-settings" class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
 		    <i class = "fa fa-cog" style = "font-size: 17px;"></i> <span class="caret"></span>

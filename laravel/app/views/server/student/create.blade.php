@@ -39,7 +39,7 @@
 	<div class="form-group div-filds">
 
 		<div class = "div-text user">
- 			{{Form::text('user', 'Username', array('placeholder' => 'Username', 'class' => 'form-control feilds', 'id' => 'filds'))}}
+ 			{{Form::text('user', '', array('placeholder' => 'Username', 'class' => 'form-control feilds', 'id' => 'filds'))}}
  		</div>
  		<div class = "div-text password">
  			{{Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control feilds', 'id' => 'filds' , 'style' => 'margin-top: 10px;'))}}

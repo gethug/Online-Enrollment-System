@@ -63,7 +63,6 @@
 					->first();
 
 					$rules = array(
-					'id' => 'required|unique:tblsubject,s_id',
 					'subjectcode' => 'required|unique:tblsubject,subj_code,NULL,id,sy_id,' . $sy->sy_id,
 					'subjectname' => 'required|unique:tblsubject,subj_name,NULL,id,sy_id,' . $sy->sy_id,
 					'unit' => 'required|numeric'
@@ -76,10 +75,15 @@
 						->withInput();
 				} else{
 
-					
+					$unit = Input::get('unit');
+					if($unit <= 0)
+					{
+						return Redirect::to('Subject/create')
+						->with('error', 'invalid value');
+					}
+
 					$subjects = new Subject;
 					$subjects->lvl_id = Input::get('level');
-					$subjects->s_id = Input::get('id');
 					$subjects->subj_code = Input::get('subjectcode');
 					$subjects->subj_name = Input::get('subjectname');
 					$subjects->unit = Input::get('unit');
@@ -134,7 +138,6 @@
 					->where('active', 1)
 					->first();
 						$rules = array(
-							'id' => 'required|unique:tblsubject,s_id,' . $id . ',s_id',
 							'subjectcode' => 'required|unique:tblsubject,subj_code,' . $id . ',s_id,sy_id,' . $sy->sy_id,
 							'subjectname' => 'required|unique:tblsubject,subj_name,' . $id . ',s_id,sy_id,' . $sy->sy_id,
 							'unit' => 'required|numeric'
@@ -147,11 +150,15 @@
 								->withErrors($validator)
 								->withInput();
 						} else{
-
+							$unit = Input::get('unit');
+								if($unit <= 0)
+								{
+									return Redirect::to('Subject/create')
+									->with('error', 'invalid value');
+								}
 							
 							$subjects = Subject::find($id);
 							$subjects->lvl_id = Input::get('level');
-							$subjects->s_id = Input::get('id');
 							$subjects->subj_code = Input::get('subjectcode');
 							$subjects->subj_name = Input::get('subjectname');
 							$subjects->unit = Input::get('unit');

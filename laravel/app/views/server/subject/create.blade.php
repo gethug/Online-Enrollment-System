@@ -16,22 +16,7 @@
 				</select>
 	 		</div>
 	</div>
-<!-- div for ID //////////////////////////////////////////////////////////////////////////////////////////////////////////-->
- 	<div class="form-group div-filds" style = "width:98%;">
- 	<div class = "div-text ID" style = "width: 100%">
- 		{{Form::text('id', '', array('placeholder' => 'ID', 'class' => 'form-control feilds', 'style' => 'width:100%;'))}}
- 		</div>
- 		@if($errors->first('id')) 
-			<div class = "validte">
-				<script type="text/javascript">
-					 $(document).ready(function(){
-         				$( ".ID" ).addClass("has-error" );
-					 });
-				</script>
-				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('id')}}</h6>
-			</div>
-		@endif
- 	</div>
+
 
 
 <!-- div for subject code, name, unit ////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -80,6 +65,17 @@
 				<h6 style = "margin: 5px" class = "val-lbl">{{ $errors->first('unit')}}</h6>
 			</div>
 		@endif
+
+		@if (Session::get('error'))
+				<div class = "validte" style = "float: right;margin-right: 136px;">
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".unit" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px:" class = "val-lbl">{{ Session::get('error')}}</h6>
+							</div>
+				@endif
 
  	</div>
 

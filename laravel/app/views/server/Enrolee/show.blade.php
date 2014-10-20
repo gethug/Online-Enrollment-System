@@ -2,7 +2,7 @@
 @section('Enedit')
 <div class="container crud">
   <div class="jumbotron" id = "crud-con">
-  <h3 class = "crud-head">Edit Enrolee<br><small>Student Information </small></h3>
+  <h3 class = "crud-head">Enrollee<br><small>Student Information </small></h3>
 
  	{{Form::open(array('route' => array('Enrolee.update', $enrolees->en_id), 'class' => 'form-inline', 'method' => 'PUT'))}}
 

@@ -21,9 +21,6 @@
         <tr style = "font-size:12px;">
             <th class = "text-center">ID</th>
             <th class = "text-center">Name</th>
-            <th class = "text-center">Age</th>
-            <th class = "text-center">Gender</th>
-            <th class = "text-center">Contact</th>
             <th class = "no-sort"></th>
             <th class = "no-sort"></th>
         </tr>
@@ -33,9 +30,6 @@
             <tr style = "font-size:11px;" id = "items">
                 <td class = "text-center"> {{ $teacher->t_id}}</td>
                 <td class = "text-center">{{ ucwords($teacher->fname) . ' ' . ucwords($teacher->mname) . ' ' . ucwords($teacher->lname)}} </td>
-                <td class = "text-center"> {{ $teacher->age}}</td>
-                <td class = "text-center"> {{ $teacher->gender}}</td>
-                <td class = "text-center"> {{ $teacher->contact}}</td>
                 <td style = "width:13px;">{{ link_to_route('Teacher.edit', 'Edit',
                      array($teacher->t_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>

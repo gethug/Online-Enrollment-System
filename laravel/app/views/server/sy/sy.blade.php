@@ -32,7 +32,7 @@
                 <td class = "text-center">{{ ucwords($sy->start) . '-' . ucwords($sy->end)}} </td>
                 @if($sy->Active != 1)
                 <td style = "width:13px;">{{ link_to_route('SY.edit', 'Activate',
-                     array($sy->sy_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
+                     array($sy->sy_id), array('class' => 'btn btn-info', 'style' => 'background-color: #e74c3c; border: 0px;', 'id' => 'btnedit')) }}
                 </td>
                 @else
                   <td style = "width:13px;">{{ link_to_route('SY.edit', 'Activate',

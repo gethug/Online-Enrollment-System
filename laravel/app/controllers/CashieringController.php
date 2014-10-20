@@ -104,15 +104,7 @@
 					{
 						
 
-						$historys = new Payhistory;
-						$historys->en_id = $pays->en_id;
-						$historys->m_name = "Advance Payment";
-						$historys->paid = $bal;
-						$historys->sy_id = $sy->sy_id;
-						$historys->h_day = 0;
-						$historys->save();
-
-						Session::flash('message','Successfully Paid! Advance Payment: ' . $bal);
+						Session::flash('message','Successfully Paid! Change: ' . $bal);
 						return Redirect::to('Cashiering');
 					}
 					else
@@ -530,12 +522,13 @@
 
 					
 
-					if ($fee < 0)
+					if ($fee < 0 or $fee < $pays->bal)
 					{
 						return Redirect::to('Cashiering')->with('error', 'Invalid amount');
 					}
+					$fbal = $fee - $pays->bal;
 					$final = Studfee::find($pays->f_id);
-					$final->bal = $bal;
+					$final->bal = 0;
 					$final->save();
 
 					$history = new Payhistory;
@@ -545,7 +538,11 @@
 					$history->sy_id = $sy->sy_id;
 					$history->h_day = 0;
 					$history->save();
-					
+					if($fbal > 0)
+					{
+						Session::flash('message','Successfully Paid! Change:' . $fbal);
+						return Redirect::to('Cashiering');
+					}
 						Session::flash('message','Successfully Paid!');
 						return Redirect::to('Cashiering');
 					

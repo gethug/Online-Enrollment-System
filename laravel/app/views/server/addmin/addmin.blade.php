@@ -23,7 +23,6 @@
             <th class = "text-center">Name</th>
             <th class = "text-center">UserName</th>
             <th class = "no-sort"></th>
-            <th class = "no-sort"></th>
         </tr>
     </thead>
     <tbody>
@@ -35,13 +34,6 @@
                 <td style = "width:13px;">{{ link_to_route('administrator.edit', 'Edit',
                      array($admin->a_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>
-                 <td  style = "width:13px;">
-                        {{ Form::open(array('method' 
-                    => 'DELETE', 'route' => array('administrator.destroy', $admin->a_id))) }}                       
-                            {{ Form::submit('Delete', array('class'
-                    => 'btn btn-danger', 'id' => 'btndel')) }}
-                        {{ Form::close() }}
-                    </td>
             </tr>
         @endforeach
 

@@ -79,10 +79,10 @@
 				public function update($id)
 				{
 					$rules = array(
-					'first' => 'required',
-					'second' => 'required',
-					'third' => 'required',
-					'fourth' => 'required'
+					'first' => 'required|numeric',
+					'second' => 'required|numeric',
+					'third' => 'required|numeric',
+					'fourth' => 'required|numeric'
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
@@ -92,7 +92,38 @@
 						->withErrors($validator)
 						->withInput();
 				} else{
-					
+					$first = Input::get('first');
+					$second = Input::get('second');
+					$third = Input::get('third');
+					$fourth = Input::get('fourth');
+
+					if($first > 100 or $first < 0)
+					{
+						return Redirect::to('Grade/' . $id . '/edit')
+						->with('ferror', 'invalid input')
+						->withInput();
+					}
+
+					if($second > 100 or $second < 0)
+					{
+						return Redirect::to('Grade/' . $id . '/edit')
+						->with('serror', 'invalid input')
+						->withInput();
+					}
+
+					if($third > 100 or $third < 0)
+					{
+						return Redirect::to('Grade/' . $id . '/edit')
+						->with('terror', 'invalid input')
+						->withInput();
+					}
+
+					if($fourth > 100 or $fourth < 0)
+					{
+						return Redirect::to('Grade/' . $id . '/edit')
+						->with('foerror', 'invalid input')
+						->withInput();
+					}
 
 					$grades = Grade::find($id);
 					$grades->first = Input::get('first');

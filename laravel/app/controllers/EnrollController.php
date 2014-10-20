@@ -21,7 +21,7 @@
 					->where('active', 1)
 					->first();
 
-
+							
 					$enrolls = Enroll::join('tbllevel', 'tblenroled.lvl_id', '=', 'tbllevel.lvl_id')
 					->join('tblenrolee', 'tblenroled.en_id', '=', 'tblenrolee.en_id')
 					->join('tblsections', 'tblenroled.sec_id', '=', 'tblsections.sec_id')
@@ -51,10 +51,11 @@
 					$sy = DB::table('tblschoolyear')
 					->where('active', 1)
 					->first();
-
+					$pays = PaySched::where('sy_id','=', $sy->sy_id)->first();
 					$enrolls = Enroll::where('sy_id','=',$sy->sy_id)->get();
 					$levels = Level::all();
-					$discounts = Discount::all();
+					$discs = Discount::where('d_id', '=', 5)->get();
+					$discounts = Discount::where('d_id', '!=', 5)->get();
 					$enrolees = Enrolee::join('tblstudfee', 'tblenrolee.en_id', '=', 'tblstudfee.en_id')
 					->select('tblenrolee.en_id', 'tblenrolee.fname', 'tblenrolee.mname', 'tblenrolee.lname', 'tblstudfee.m_id', 'tblstudfee.bal', 'tblstudfee.sy_id')
 					->where('tblstudfee.sy_id', '=', $sy->sy_id)
@@ -65,7 +66,9 @@
 					->with('levels', $levels)
 					->with('enrolees', $enrolees)
 					->with('discounts', $discounts)
-					->with('enrolls', $enrolls);
+					->with('enrolls', $enrolls)
+					->with('pays', $pays)
+					->with('discs', $discs);
 				}
 
 				/**
@@ -88,13 +91,13 @@
 				$validator = Validator::make(Input::all(), $rules);
 
 				if ($validator->fails()){
-					return Redirect::to('Enroll')
+					return Redirect::to('Enroll/create')
 						->withErrors($validator)
 						->withInput();
 				} else{
 					
 					
-
+					$payfee = Input::get('pay');
 
 					$enrolls = new Enroll;
 					$enrolls->en_id = Input::get('ID');
@@ -103,6 +106,9 @@
 					$enrolls->d_id = Input::get('discount');
 					$enrolls->sy_id = $sy->sy_id;
 					$enrolls->save();
+
+					if($payfee == 'installment'){
+
 
 					$total = Input::get('total');
 					$total = $total / 10;
@@ -121,11 +127,7 @@
 					$breaks->tenth = $total;
 					$breaks->sy_id = $sy->sy_id;
 					$breaks->save();
-
 					$lvl = Input::get('level');
-					$fees = Misc::where('lvl_id', '=', $lvl)
-					->where('mandatory', '=', 0)
-					->get();
 					
 					$tui = Tuition::where('lvl_id', '=', $lvl)->first();
 
@@ -136,6 +138,26 @@
 						$studs->bal = $total;
 						$studs->sy_id = $sy->sy_id;
 						$studs->save();
+						}
+
+						if($payfee == 'full'){
+							$lvl = Input::get('level');
+									
+									$tui = Tuition::where('lvl_id', '=', $lvl)->first();
+
+									$studs = new Studfee;
+										$studs->en_id = Input::get('ID');
+										$studs->m_id = $tui->tu_id;
+										$studs->m_name = 'Full Tuition Fee';
+										$studs->bal = Input::get('total');
+										$studs->sy_id = $sy->sy_id;
+										$studs->save();
+						}
+
+					$lvl = Input::get('level');
+					$fees = Misc::where('lvl_id', '=', $lvl)
+					->where('mandatory', '=', 0)
+					->get();
 
 					foreach($fees as $fee)
 					{

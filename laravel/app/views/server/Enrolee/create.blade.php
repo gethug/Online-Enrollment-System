@@ -2,7 +2,7 @@
 @section('Encreate')
 <div class="container crud">
   <div class="jumbotron" id = "crud-con">
-  <h3 class = "crud-head">New Enrolee<br><small>Student Information </small></h3>
+  <h3 class = "crud-head">New Enrollee<br><small>Student Information </small></h3>
 
  	{{Form::open(array('route' => 'Enrolee.store', 'class' => 'form-inline'))}}
 

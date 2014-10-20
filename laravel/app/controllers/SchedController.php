@@ -111,7 +111,14 @@
 	                                	 if(is_array($days))
 	                							{
 							                        foreach($days as $day){
-							                                 	$selected = $selected . $day . ',';
+							                                 	if($selected == "")
+							                        	{
+							                        		$selected = $selected . $day;
+							                        	}
+							                        	else
+							                        	{
+							                        		$selected = $selected .',' . $day;
+							                        	}
 							                                 } 
 	                							}
 	                                 
@@ -145,6 +152,24 @@
 
 					foreach($scheds as $sched)
 					{
+
+						$dbdeys = explode(',',$sched->day);
+						$deys = Input::get('day');
+						$sub = Input::get('subject');
+						$sec = Input::get('section');
+						foreach($dbdeys as $debs){
+							foreach($deys as $dey)
+							{
+								if($debs == $dey){
+									if($sec == $sched->sec_id && $sub == $sched->s_id)
+									{
+								return Redirect::to('/Schedule/create')->with('derror', 'Schedule Conflict in days')->withInput();
+
+									}
+								}
+							}
+
+						}
 					//Teacher------------------------------------------------------------------------------------------------------
 						if($tex != 0)
 						{
@@ -240,7 +265,14 @@
 		                                	 if(is_array($days))
 		                							{
 								                        foreach($days as $day){
-								                                 	$selected = $selected . $day . ',';
+								                                 		if($selected == "")
+							                        	{
+							                        		$selected = $selected . $day;
+							                        	}
+							                        	else
+							                        	{
+							                        		$selected = $selected .',' . $day;
+							                        	}
 								                                 } 
 		                							}
 		                                 
@@ -275,7 +307,14 @@
 		                                	 if(is_array($days))
 		                							{
 								                        foreach($days as $day){
-								                                 	$selected = $selected . $day . ',';
+								                                 		if($selected == "")
+							                        	{
+							                        		$selected = $selected . $day;
+							                        	}
+							                        	else
+							                        	{
+							                        		$selected = $selected .',' . $day;
+							                        	}
 								                                 } 
 		                							}
 		                                 
@@ -388,40 +427,7 @@
 
 						
 
-						if(strtotime($scheds[0]->start) == strtotime($start)  && strtotime($scheds[0]->end) == strtotime($end)){
-						$selected = "";
-						$days =  Input::get('day');
-	                                if(isset($days)){
-	                                	 if(is_array($days))
-	                							{
-							                        foreach($days as $day){
-							                                 	$selected = $selected . $day . ',';
-							                                 } 
-	                							}
-	                                 
-	                                }
-						$syr = 0;
-						$sys = Schoolyear::all();
-						foreach($sys as $sy){
-							if($sy->Active == 1){
-								$syr = $sy->sy_id;
-							}
-						}
-						$scheds = Sched::find($id);
-						$scheds->sec_id = Input::get('section');
-						$scheds->lvl_id = Input::get('level');
-						$scheds->s_id = Input::get('subject');
-						$scheds->start = Input::get('start');
-						$scheds->end = Input::get('end');
-						$scheds->day = $selected;
-						$scheds->t_id = Input::get('teacher');
-						$scheds->r_id = Input::get('room');
-						$scheds->sy_id = $syr;
-						$scheds->save();
-
-						Session::flash('message','Successfully Saved!');
-						return Redirect::to('Schedule');
-					}
+						
 
 
 
@@ -434,7 +440,14 @@
 	                                	 if(is_array($days))
 	                							{
 							                        foreach($days as $day){
-							                                 	$selected = $selected . $day . ',';
+							                                 		if($selected == "")
+							                        	{
+							                        		$selected = $selected . $day;
+							                        	}
+							                        	else
+							                        	{
+							                        		$selected = $selected .',' . $day;
+							                        	}
 							                                 } 
 	                							}
 	                                 
@@ -468,6 +481,25 @@
 
 					foreach($scheds as $sched)
 					{
+
+						
+						$dbdeys = explode(',',$sched->day);
+						$deys = Input::get('day');
+						$sub = Input::get('subject');
+						$sec = Input::get('section');
+						foreach($dbdeys as $debs){
+							foreach($deys as $dey)
+							{
+								if($debs == $dey){
+									if($sec == $sched->sec_id && $sub == $sched->s_id)
+									{
+								return Redirect::to('/Schedule/' . $id . '/edit')->with('derror', 'Schedule Conflict in days')->withInput();
+
+									}
+								}
+							}
+
+						}
 					//Teacher------------------------------------------------------------------------------------------------------
 						if($tex != 0)
 						{
@@ -563,7 +595,14 @@
 		                                	 if(is_array($days))
 		                							{
 								                        foreach($days as $day){
-								                                 	$selected = $selected . $day . ',';
+								                                 	  		if($selected == "")
+							                        	{
+							                        		$selected = $selected . $day;
+							                        	}
+							                        	else
+							                        	{
+							                        		$selected = $selected .',' . $day;
+							                        	}
 								                                 } 
 		                							}
 		                                 
@@ -598,7 +637,14 @@
 		                                	 if(is_array($days))
 		                							{
 								                        foreach($days as $day){
-								                                 	$selected = $selected . $day . ',';
+								                                 	  		if($selected == "")
+							                        	{
+							                        		$selected = $selected . $day;
+							                        	}
+							                        	else
+							                        	{
+							                        		$selected = $selected .',' . $day;
+							                        	}
 								                                 } 
 		                							}
 		                                 

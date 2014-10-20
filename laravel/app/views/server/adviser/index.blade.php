@@ -22,8 +22,8 @@
   <thead>
         <tr style = "font-size:12px;" >
              <th class = "text-center">ID</th>
-            <th class = "text-center">Adviser</th>
             <th class = "text-center">Section</th>
+            <th class = "text-center">Adviser</th>
             <th class = "no-sort"></th>
             <th class = "no-sort"></th>
         </tr>

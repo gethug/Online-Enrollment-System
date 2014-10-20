@@ -35,13 +35,20 @@
                 <td style = "width:13px;">{{ link_to_route('Discount.edit', 'Edit',
                      array($discount->d_id), array('class' => 'btn btn-info', 'id' => 'btnedit')) }}
                 </td>
-                 <td  style = "width:13px;">
+                @if($discount->d_id == 5)
+                <td>
+                </td>
+                 
+                    @else
+                    <td  style = "width:13px;">
                         {{ Form::open(array('method' 
                     => 'DELETE', 'route' => array('Discount.destroy', $discount->d_id))) }}                       
                             {{ Form::submit('Delete', array('class'
                     => 'btn btn-danger', 'id' => 'btndel')) }}
                         {{ Form::close() }}
                     </td>
+                    
+                @endif
             </tr>
         @endforeach
 

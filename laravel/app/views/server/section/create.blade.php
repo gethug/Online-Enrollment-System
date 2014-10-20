@@ -43,6 +43,20 @@
  		<div class = "div-text max" style = "width: 30%; display: inline-block;">
  			{{Form::text('maximum', '', array('placeholder' => 'max', 'class' => 'form-control feilds', 'id' => 'filds', 'style' => 'width:69px;'))}}
  		</div>
+
+
+ 		@if (Session::get('error'))
+				<div class = "validte">
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".min" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px" class = "val-lbl">{{ Session::get('error')}}</h6>
+							</div>
+				@endif
+
+
  		@if($errors->first('minimum')) 
 			<div class = "validte">
 				<script type="text/javascript">

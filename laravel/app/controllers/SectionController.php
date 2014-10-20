@@ -65,6 +65,14 @@
 						->withErrors($validator)
 						->withInput();
 				} else{
+
+					$min = Input::get('minimum');
+					$max = Input::get('maximum');
+					if ($min > $max)
+					{
+						return Redirect::to('Section/create')
+						->with('error', 'Invalid Value, Maximum students must be greater than Minimum Students');
+					}
 					
 					$sections = new Section;
 					$sections->lvl_id = Input::get('level');

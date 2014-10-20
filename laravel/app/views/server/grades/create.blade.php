@@ -27,6 +27,17 @@
 			</div>
 		@endif
 
+		@if (Session::get('ferror'))
+				<div class = "validte" >
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".first" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px:" class = "val-lbl">{{ Session::get('ferror')}}</h6>
+							</div>
+				@endif
+
 
  	</div>
 
@@ -51,6 +62,16 @@
 			</div>
 		@endif
 
+	@if (Session::get('serror'))
+				<div class = "validte" >
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".second" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px:" class = "val-lbl">{{ Session::get('serror')}}</h6>
+							</div>
+				@endif
 
  	</div>
 
@@ -75,7 +96,16 @@
 			</div>
 		@endif
 
-
+		@if (Session::get('terror'))
+				<div class = "validte" >
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".third" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px:" class = "val-lbl">{{ Session::get('terror')}}</h6>
+							</div>
+				@endif
  	</div>
 
  	<div class="form-group div-filds">
@@ -99,6 +129,17 @@
 			</div>
 		@endif
 
+
+@if (Session::get('foerror'))
+				<div class = "validte" >
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".fourth" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px:" class = "val-lbl">{{ Session::get('foerror')}}</h6>
+							</div>
+				@endif
 
  	</div>
 

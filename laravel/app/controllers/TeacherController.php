@@ -70,11 +70,8 @@
 				{
 
 					$rules = array(
-					'id' => 'required|unique:tblteacher,t_id',
 					'Firstname' => 'required',
 					'Lastname' => 'required',
-					'age' => 'required|numeric',
-					'contact' => 'required|numeric|min:11|unique:tblteacher,contact'
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
@@ -88,13 +85,9 @@
 					
 	
 					$teachers = new Teacher;
-					$teachers->t_id = Input::get('id');
 					$teachers->fname = Input::get('Firstname');
 					$teachers->mname = Input::get('Mname');
 					$teachers->lname = Input::get('Lastname');
-					$teachers->age = Input::get('age');
-					$teachers->gender = Input::get('gender');
-					$teachers->contact = Input::get('contact');
 					$teachers->save();
 
 
@@ -141,11 +134,8 @@
 				public function update($id)
 				{
 					$rules = array(
-					'id' => 'required|unique:tblteacher,t_id,' . $id . ',t_id',
 					'Firstname' => 'required',
 					'Lastname' => 'required',
-					'age' => 'required|numeric',
-					'contact' => 'required|numeric|unique:tblteacher,contact,' . $id . ',t_id',
 						);
 
 				$validator = Validator::make(Input::all(), $rules);
@@ -157,13 +147,9 @@
 				} else{
 					
 					$teachers = Teacher::find($id);
-					$teachers->t_id = Input::get('id');
 					$teachers->fname = Input::get('Firstname');
 					$teachers->mname = Input::get('Mname');
 					$teachers->lname = Input::get('Lastname');
-					$teachers->age = Input::get('age');
-					$teachers->gender = Input::get('gender');
-					$teachers->contact = Input::get('contact');
 					$teachers->save();
 
 

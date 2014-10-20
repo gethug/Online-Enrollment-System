@@ -37,6 +37,17 @@
 			</div>
 		@endif
 
+		@if (Session::get('error'))
+				<div class = "validte">
+								<script type="text/javascript">
+									 $(document).ready(function(){
+				         				$( ".cost" ).addClass("has-error" );
+									 });
+								</script>
+								<h6 style = "margin: 5px:" class = "val-lbl">{{ Session::get('error')}}</h6>
+							</div>
+				@endif
+
  	</div>
 
 

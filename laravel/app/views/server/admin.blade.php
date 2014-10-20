@@ -21,8 +21,8 @@
 
 							  		</div>
 							  			<div id = "ap">
-							  			<h1 class="text-center" id = "Logo" style = "font-size: 93px;"><strong> SAI</strong></h1>
-							  			<h4 class="text-center" id = "sign"> Saint Augustine Institute</h4>
+							  			<img src="/assets/images/SAIlogo.png" style = "margin:0px auto;max-width: 70%;" class="img-responsive" alt="Responsive image">
+							  			<h4 class="text-center" id = "sign" style = "color:#454545;margin-top: -3px"> Saint Augustine Institute<br><small> Enrollment System</small></h4>
 							  			</div>
 							  	</div>
 							  			<h4 id = "log" > Log in</h4>
@@ -45,7 +45,7 @@
 
 										 <div class="input-group" id = "IDN">
 										      <div class="input-group-addon" id = "rad" style = " background-color: #14b9d5;"><i class="fa fa-user" style = "color: white;"></i></div>
-										      {{ Form::text('idnumber', '', array('placeholder' => 'ID Number', 'autofocus' => '', 'class' => 'form-control', 'id' => 'rad3')) }}
+										      {{ Form::text('idnumber', '', array('placeholder' => 'Username', 'autofocus' => '', 'class' => 'form-control', 'id' => 'rad3')) }}
 										    </div>
 
 										    		@if($errors->first('idnumber')) 

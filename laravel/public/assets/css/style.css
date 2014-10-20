@@ -1,6 +1,7 @@
 @font-face { font-family: 'Open Sans Condensed', sans-serif; src: url(assets/fonts/OpenSans-CondLight.ttf) }
 #admin{
 	overflow:scroll;
+	
 }
 
 #con {
@@ -500,12 +501,14 @@ background-color: white;
 	display:inherit;
 	float:none;
 	z-index: 99;
+	display: inline-block;
 }
 
 #radio2{
 	display:inherit;
 	float:none;
 	z-index: 99;
+	display: inline-block;
 }
 
 #gender::before{

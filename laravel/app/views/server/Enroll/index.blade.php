@@ -30,7 +30,6 @@
    var per = 0;
    var name;
    var x;
-   var misc;
     $('#e1').change(function(){
                                 $.get("{{ url('api/dropdown')}}", 
                                         { option: $(this).val() }, 
@@ -60,7 +59,7 @@
                                         function(data) {
                                            $(".llist").empty();
                                                 $(data).each( function(index, element) {
-                                             $( ".llist" ).append( "<li style = 'display:block;color:#454545;margin-left: -50px;'>" + element.m_name + " <span style ='float:right; margin-right: 50px;'>" + element.paid + " Php</span></li>");
+                                             $( ".llist" ).append( "<li style = 'display:block;color:#454545;margin-left: -50px;'>" + element.m_name + " <span style ='float:right; margin-right: 50px;'>Php " + element.paid + "</span></li>");
                                             min = min + element.paid;
                                         });
 
@@ -70,7 +69,6 @@
                         });
    
        $('#e2').change(function(){
-        misc = 0;
            x = 0;
                                 $.get("{{ url('api/dropdownsec')}}", 
                                         { option: $(this).val() }, 
@@ -91,28 +89,27 @@
                                                  $(".total").empty();
                                                   $(".total2").empty();
                                                 $(data).each( function(index, element) {
-                                                  misc = misc + element.tuition;
                                                   tui = element.tuition;
                                             x = x + element.tuition;
                                             discount = element.tuition;
-                                             $( ".tlist" ).append( "<li style = 'display:block;color:#454545;'> Tuition Fee <span style ='float:right;'>" + misc + " Php</span></li>");
+                                             $( ".tlist" ).append( "<li style = 'display:block;color:#454545;'> Tuition Fee <span style ='float:right;'>Php " + element.tuition + "</span></li>");
 
                                             if (per != 0){
                                               var y = per / 100;
                                             var dis = discount * y;
-                                           $( ".dlist" ).append( "<li style = 'display:block;color:#454545;margin-left: 45px;'>" + name+ " <span style ='float:right;'>" + dis + " Php</span></li>");
+                                           $( ".dlist" ).append( "<li style = 'display:block;color:#454545;margin-left: 45px;'>" + name+ " <span style ='float:right;'>Php " + dis + "</span></li>");
                                             }
                                                
                                         });
-                                               $( ".total" ).append( "<li style = 'display:block;color:#454545;'> Sub Total <span style ='float:right;'>" + x + " Php</span></li>");    
+                                               $( ".total" ).append( "<li style = 'display:block;color:#454545;'> Sub Total <span style ='float:right;'>Php " + x + "</span></li>");    
                                              var total = x - min;
-                                             $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total + "'style = 'float:right;' class='form-control' id='total' type='text' name = 'total' placeholder='Disabled input here...' readonly = 'readonly'></li>"); 
+                                             $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total.toFixed(2) + "'style = 'float:right;' class='form-control' id='total' type='text' name = 'total' placeholder='Disabled input here...' readonly = 'readonly'></li>"); 
                                            if (per != 0){
                                               var y = per / 100;
                                             var dis = discount * y;
                                             var total = x - (min + dis);
                                              $(".total2").empty();
-                                          $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total + "'style = 'float:right;' class='form-control' id='total' type='text' name = 'total' placeholder='Disabled input here...' readonly = 'readonly'></li>"); 
+                                          $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total.toFixed(2) + "'style = 'float:right;' class='form-control' id='total' type='text' name = 'total' placeholder='Disabled input here...' readonly = 'readonly'></li>"); 
                                             }
 
                                         });
@@ -125,19 +122,19 @@
                                                $(".total").empty();
                                                 $(".total2").empty();
                                                 $(data).each( function(index, element) {
-                                            $( ".olist" ).append( "<li style = 'display:block;color:#454545;'>" + element.m_name + " <span style ='float:right;'>" + element.m_fee + " Php</span></li>");
+                                            $( ".olist" ).append( "<li style = 'display:block;color:#454545;'>" + element.m_name + " <span style ='float:right;'>Php " + element.m_fee + "</span></li>");
                                             x = x + element.m_fee;
                                         });
-                                         $( ".total" ).append( "<li style = 'display:block;color:#454545;'> Sub Total <span style ='float:right;'>" + x + " Php</span></li>");    
+                                         $( ".total" ).append( "<li style = 'display:block;color:#454545;'> Sub Total <span style ='float:right;'>Php " + x + "</span></li>");    
                                           var total = x - min;
-                                            $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total + "'style = 'float:right;' class='form-control' name = 'total' id='total' type='text' placeholder='Disabled input here...' readonly = 'readonly'></li>"); 
+                                            $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total.toFixed(2) + "'style = 'float:right;' class='form-control' name = 'total' id='total' type='text' placeholder='Disabled input here...' readonly = 'readonly'></li>"); 
                                         
                                                if (per != 0){
                                               var y = per / 100;
                                             var dis = discount * y;
                                             var total = x - (min + dis);
                                              $(".total2").empty();
-                                           $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total + "'style = 'float:right;' class='form-control' name = 'total' id='total' type='text' placeholder='Disabled input here...' readonly = 'readonly'></li>"); 
+                                           $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total.toFixed(2) + "'style = 'float:right;' class='form-control' name = 'total' id='total' type='text' placeholder='Disabled input here...' readonly = 'readonly'></li>"); 
                                             }
                                         });
 
@@ -147,16 +144,14 @@
                                                $(".mlist").empty();
                                                $(".total").empty();
                                                 $(".total2").empty();
-                                                $(".tlist").empty();
                                                 $(data).each( function(index, element) {
-                                            $( ".mlist" ).append( "<li style = 'display:block;color:#454545;'>" + element.m_name + " <span style ='float:right;'>" + element.m_fee + " Php</span></li>");
+                                            $( ".mlist" ).append( "<li style = 'display:block;color:#454545;'>" + element.m_name + " <span style ='float:right;'>Php " + element.m_fee + "</span></li>");
                                             x = x + element.m_fee;
-                                            misc = misc + element.m_fee;
                                         });
-                                       $( ".tlist" ).append( "<li style = 'display:block;color:#454545;'> Tuition Fee <span style ='float:right;'>" + misc + " Php</span></li>");
-                                                $( ".total" ).append( "<li style = 'display:block;color:#454545;'>Sub Total <span style ='float:right;'>" + x + " Php</span></li>");
+                                      
+                                                $( ".total" ).append( "<li style = 'display:block;color:#454545;'>Sub Total <span style ='float:right;'>Php " + x + "</span></li>");
                                                  var total = x - min;
-                                             $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total + "'style = 'float:right;' class='form-control' name = 'total' id='total' type='text' placeholder='Disabled input here...' readonly = 'readonly'></li>");      
+                                             $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total.toFixed(2) + "'style = 'float:right;' class='form-control' name = 'total' id='total' type='text' placeholder='Disabled input here...' readonly = 'readonly'></li>");      
                                          
 
 
@@ -166,13 +161,11 @@
                                             var dis = discount * y;
                                             var total = x - (min + dis);
                                              $(".total2").empty();
-                                              $( ".tlist" ).append( "<li style = 'display:block;color:#454545;'> Tuition Fee <span style ='float:right;'>" + misc + " Php</span></li>");
-                                          $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total + "'style = 'float:right;' name = 'total' class='form-control' id='total' type='text' placeholder='Disabled input here...' readonly = 'readonly'></li>");  
+                                          $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total.toFixed(2) + "'style = 'float:right;' name = 'total' class='form-control' id='total' type='text' placeholder='Disabled input here...' readonly = 'readonly'></li>");  
                                             }
 
                                         });
    $(".others").css( "visibility", "visible" );
-                                 
                         });
   $('#e4').change(function(){
                                 $.get("{{ url('api/dropdowndisc')}}", 
@@ -186,10 +179,10 @@
                                                   name = element.d_name;
                                                   var y = element.d_per / 100;
                                                   var dis = discount * y;
-                                           $( ".dlist" ).append( "<li style = 'display:block;color:#454545;margin-left: -50px;'>" + element.d_name + " <span style ='float:right;margin-right: 50px;'>" + dis + " Php</span></li>");
+                                           $( ".dlist" ).append( "<li style = 'display:block;color:#454545;margin-left: -50px;'>" + element.d_name + " <span style ='float:right;margin-right: 50px;'>Php " + dis.toFixed(2) + "</span></li>");
                                           
                                                 var total = x - (min + dis);
-                                             $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total + "'style = 'float:right;' name = 'total' class='form-control' id='total' type='text' placeholder='Disabled input here...' readonly = 'readonly'></li>");   
+                                             $( ".total2" ).append( "<li style = 'display:block;color:#454545;'> Total Amount<input value = '" + total.toFixed(2) + "'style = 'float:right;' name = 'total' class='form-control' id='total' type='text' placeholder='Disabled input here...' readonly = 'readonly'></li>");   
                                         });
                                         });
 
@@ -214,19 +207,73 @@ $('#e3').change(function(){
                         });
 
 
+
+
         $('.instal').click(function() {
            if($('#radio1').is(':checked')) {
+             $(".flist").empty();
+             if(per == 0)
+             {
+              var total = x - min;
+          $('#total').val(total.toFixed(2));
+             }
+             else
+             {
+                var dis = ((per / 100) * tui);
+                var total = (x - min) - dis;
+              $('#total').val(total.toFixed(2));
+             }
+            
 
-            alert("it's checked 1"); 
+                var totaled = $('#total').val();
+                var broke = totaled / 10;
+             $("#frst").text(broke.toFixed(2));
+              $("#scnd").text(broke.toFixed(2));
+               $("#thrd").text(broke.toFixed(2));
+                $("#frth").text(broke.toFixed(2));
+                 $("#ffth").text(broke.toFixed(2));
+                  $("#sxth").text(broke.toFixed(2));
+                   $("#svnth").text(broke.toFixed(2));
+                    $("#eight").text(broke.toFixed(2));
+                     $("#ninth").text(broke.toFixed(2));
+                      $("#tenth").text(broke.toFixed(2));
 
+                       $(".installment").css( "visibility", "visible" );
+                        $(".installment").css( "height", "100%" );
           }
         });
 
          $('.fpay').click(function() {
            if($('#radio2').is(':checked')) {
-            var fullpay = 0;
-            fullpay = tui * .20;
-            alert(fullpay); 
+
+
+            if(per == 0)
+            {
+               var fulldis = {{$discs[0]->d_per}};
+            var total = x - min;
+             var fulldisc = total - ((fulldis / 100) * tui);
+             var full = (fulldis / 100) * tui;
+          $('#total').val(fulldisc.toFixed(2));
+           $( ".flist" ).append( "<li style = 'display:block;color:#454545;margin-left: -50px;'>Full Payment Discount <span style ='float:right; margin-right: 50px;'>Php " + full.toFixed(2) + "</span></li>");
+            }
+
+            else
+            {
+              var dis = ((per / 100) * tui);
+            var fulldis = {{$discs[0]->d_per}};
+            var total = (x - min) - dis;
+            var fulldisc = total - ((fulldis / 100) * tui);
+            var full = (fulldis / 100) * tui;
+          $('#total').val(fulldisc.toFixed(2));
+           $( ".flist" ).append( "<li style = 'display:block;color:#454545;margin-left: -50px;'>Full Payment Discount <span style ='float:right; margin-right: 50px;'>Php " + full.toFixed(2) + "</span></li>");
+            }
+           
+
+
+      
+          $(".installment").css( "visibility", "hidden" );
+          $(".installment").css( "height", "0px" );
+
 
           }
         });
@@ -341,6 +388,26 @@ $('#e3').change(function(){
       </div>
   </div>
 
+  <div class="form-group div-filds" style = "margin-top: 12px; margin-bottom: -2px; margin-left:241px;">
+
+           <div class="radio instal" style = "margin-left:10px;display: inline-block">
+                  <label id = "gender">
+
+                  {{Form::radio('pay', 'installment', false, ['id' => 'radio1'])}}
+                  Installment
+
+                  </label>
+            </div>
+
+          <div class="radio fpay"  style = "margin-left:-15px;display: inline-block">
+                  <label id = "gender">
+                    {{Form::radio('pay', 'full', false, ['id' => 'radio2'])}}
+                      Full Payment
+                  </label>
+            </div>
+
+  </div>
+
  
 
   <div class="form-group div-filds others" style = "margin-top: 12px; margin-bottom: -4px;margin-left: 118px;margin-right: 40px; visibility: hidden;" >
@@ -365,6 +432,8 @@ $('#e3').change(function(){
             <h5 style = "color:#454545;margin-left: 50px;font-weight: bold;">Less</h5>
             <ul style = "margin-left: 85px;margin-right: 230px; list-style:none;" class = "llist">
             </ul>
+             <ul style = "margin-left: 85px;margin-right: 230px; list-style:none;" class = "flist">
+            </ul>
 
             <h5 style = "color:#454545;margin-left: 70px;font-weight: bold;">Discount</h5>
             <ul style = "margin-left: 85px;margin-right: 230px; list-style:none;" class = "dlist">
@@ -373,6 +442,70 @@ $('#e3').change(function(){
             <ul style = "color:#454545;margin-left: 10px;margin-right: 230px;font-weight: bold;" class = "total2">
             </ul>
 
+  </div>
+
+
+  <div class="form-group div-filds installment" style = "width:65%;margin: 0px auto;visibility:hidden; height: 0px;margin-top: 42px;" id = "tblpaylist">
+      <table class="table table-bordered" id = "paylist">
+        <thead>
+        <tr style = "font-size:12px;" >
+             <th class = "text-left">Payment Date</th>
+            <th class = "text-right">Amount</th>
+            </tr>
+    </thead>
+ <tbody>
+            <tr style = "font-size:11px;" id = "items">
+                <td class = "text-left">{{$pays->first}} </td>
+                <td class = "text-right" id = "frst"> </td>
+            </tr>
+
+            <tr style = "font-size:11px;" id = "items">
+                <td class = "text-left">{{$pays->sec}} </td>
+                <td class = "text-right" id = "scnd"> </td>
+            </tr>
+
+            <tr style = "font-size:11px;" id = "items">
+                <td class = "text-left">{{$pays->third}} </td>
+                <td class = "text-right" id = "thrd"> </td>
+            </tr>
+
+            <tr style = "font-size:11px;" id = "items">
+                <td class = "text-left">{{$pays->forth}} </td>
+                <td class = "text-right" id = "frth"> </td>
+            </tr>
+
+            <tr style = "font-size:11px;" id = "items">
+                <td class = "text-left">{{$pays->fifth}} </td>
+                <td class = "text-right" id = "ffth"> </td>
+            </tr>
+
+            <tr style = "font-size:11px;" id = "items">
+                <td class = "text-left">{{$pays->sixth}} </td>
+                <td class = "text-right" id = "sxth"> </td>
+            </tr>
+
+            <tr style = "font-size:11px;" id = "items">
+                <td class = "text-left">{{$pays->svnth}} </td>
+                <td class = "text-right" id = "svnth"> </td>
+            </tr>
+
+            <tr style = "font-size:11px;" id = "items">
+                <td class = "text-left">{{$pays->eyth}} </td>
+                <td class = "text-right" id = "eight"> </td>
+            </tr>
+
+            <tr style = "font-size:11px;" id = "items">
+                <td class = "text-left">{{$pays->ninth}} </td>
+                <td class = "text-right" id = "ninth"> </td>
+            </tr>
+
+            <tr style = "font-size:11px;" id = "items">
+                <td class = "text-left">{{$pays->tenth}} </td>
+                <td class = "text-right" id = "tenth"> </td>
+            </tr>
+    </tbody>
+ 
+      </table>
   </div>
 
 

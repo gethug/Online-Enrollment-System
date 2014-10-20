@@ -67,7 +67,7 @@
 							}
 							else {
 
-								return Redirect::to('/login')->withInput(Input::except('password'))->with('error', 'Invalid ID number or Password');
+								return Redirect::to('/login')->withInput(Input::except('password'))->with('error', 'Invalid Username/Password');
 							}
 
 						}
@@ -120,7 +120,8 @@
 				 */
 				public function destroy($id)
 				{
-					//
+					Auth::logout();
+					return Redirect::to('/login');
 				} 
 
 
